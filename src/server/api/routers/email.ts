@@ -29,7 +29,7 @@ export const emailRouter = createTRPCRouter({
       const { data, error } = await resend.emails.send({
         from: "官网渠道 <site@mg.lifec.dev>",
         to: [
-          "aicmortal@gmail.com",
+          "yue.qian@magic-shield.com",   
         ],
         subject: "官网新增客户登记",
         react: email
