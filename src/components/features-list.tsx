@@ -11,7 +11,7 @@ export function FeaturesList() {
   return (
     <section className="px-4 py-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center relative">
           <div className="space-y-8">
             <FadeIn>
               <div className="space-y-6">
@@ -63,7 +63,7 @@ export function FeaturesList() {
           <motion.div 
             className="relative"
             ref={ref}
-            style={{ rotate }}
+            style={{ rotate, position: 'relative' }}
           >
             {/* You can add an illustration or image here */}
           </motion.div>

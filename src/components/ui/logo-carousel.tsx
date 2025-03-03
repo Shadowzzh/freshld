@@ -119,12 +119,11 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
               key={`${logos[currentIndex]?.id ?? "placeholder"}-${currentIndex}`}
               className="absolute inset-0 flex items-center justify-center"
               // Animation for when the logo enters
-              initial={{ y: "10%", opacity: 0, filter: "blur(8px)" }}
+              initial={{ y: "10%", opacity: 0 }}
               // Animation for when the logo is displayed
               animate={{
                 y: "0%",
                 opacity: 1,
-                filter: "blur(0px)",
                 transition: {
                   type: "spring",
                   stiffness: 300,
@@ -138,12 +137,14 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
               exit={{
                 y: "-20%",
                 opacity: 0,
-                filter: "blur(6px)",
                 transition: {
                   type: "tween",
                   ease: "easeIn",
                   duration: 0.3,
                 },
+              }}
+              style={{
+                filter: CurrentLogo ? "blur(0px)" : "blur(8px)",
               }}
             >
               {typeof CurrentLogo === "function" ? (
@@ -152,7 +153,7 @@ const LogoColumn: React.FC<LogoColumnProps> = React.memo(
                 <Image
                   src={CurrentLogo}
                   alt={logos[currentIndex]?.name ?? "Logo"}
-                  className="h-20 max-h-[80%] w-20 max-w-[80%] object-contain md:h-32 md:w-32"
+                  className="h-20 max-h-[80%] w-auto max-w-[80%] object-contain md:h-32 md:w-auto"
                   width={128}
                   height={128}
                 />
