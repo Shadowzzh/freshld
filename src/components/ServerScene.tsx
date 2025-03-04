@@ -4,6 +4,9 @@ import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Environment } from '@react-three/drei'
 import { ServerModel } from './ServerModel'
+import { suspend } from 'suspend-react'
+const studio = import('@pmndrs/assets/hdri/studio.exr').then((module) => module.default)
+
 
 export function ServerScene() {
   return (
@@ -27,7 +30,7 @@ export function ServerScene() {
             minPolarAngle={Math.PI / 6}
             maxPolarAngle={Math.PI * 5 / 6}
           />
-          <Environment preset="studio" />
+          <Environment files={suspend(studio) as string} />
         </Suspense>
       </Canvas>
     </div>
