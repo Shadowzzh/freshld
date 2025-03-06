@@ -1,3 +1,4 @@
+"use client";
 import {
   Modal,
   ModalContent,
@@ -9,12 +10,14 @@ import {
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { toast } from "sonner";
-import { api } from "~/trpc/react";
+import { useTRPC } from "~/trpc/react";
 import { useForm } from "@tanstack/react-form";
+import { useMutation } from "@tanstack/react-query";
 export function FreeTrial() {
+  const api = useTRPC();
   const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
 
-  const sendEmail = api.email.sendEmail.useMutation({
+  const sendEmail = useMutation(api.email.sendEmail.mutationOptions({
     onSuccess: () => {
       toast.success("提交成功");
       onClose();
@@ -22,7 +25,7 @@ export function FreeTrial() {
     onError: () => {
       toast.error("提交失败");
     },
-  });
+  }));
   const form = useForm({
     defaultValues: {
       name: "",
