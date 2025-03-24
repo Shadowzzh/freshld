@@ -15,18 +15,18 @@ export function FeaturesList() {
           <div className="space-y-8">
             <FadeIn>
               <div className="space-y-6">
-                <motion.div 
+                <motion.div
                   className="inline-flex items-center gap-3 bg-white rounded-full px-4 py-2 border"
                   whileHover={{ scale: 1.05 }}
                 >
                   <span className="text-sm">从2012年至今</span>
                   <Switch />
                 </motion.div>
-                
+
                 <h2 className="text-4xl md:text-5xl font-medium leading-tight">
                   奇盾信息技术有限公司<span className="text-purple-500">发展历程</span>
                 </h2>
-                
+
                 <p className="text-gray-600 max-w-xl">
                   广州奇盾信息技术有限公司是广州国资委重点扶持的高科技企业，公司总部位于广州，杭州、上海、无锡设有分支机构和研发中心。
                 </p>
@@ -40,13 +40,14 @@ export function FeaturesList() {
                 { year: 2017, text: '杭州奇盾成立' },
                 { year: 2021, text: '明焰NGEP产品发布' },
                 { year: 2023, text: 'CNAPP商用产品云原生安全管理平台发布' },
+                { year: 2025, text: '银联 10 万节点验收成功' },
               ].map((milestone, index) => (
                 <FadeIn key={milestone.year} delay={0.1 * index}>
-                  <motion.div 
+                  <motion.div
                     className="flex items-center gap-4"
                     whileHover={{ x: 10 }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="w-16 h-8 rounded-full bg-[#CCFF00] flex items-center justify-center text-sm font-medium"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
@@ -60,7 +61,7 @@ export function FeaturesList() {
             </div>
           </div>
 
-          <motion.div 
+          <motion.div
             className="relative"
             ref={ref}
             style={{ rotate, position: 'relative' }}
