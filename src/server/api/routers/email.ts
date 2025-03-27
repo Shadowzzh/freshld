@@ -25,16 +25,16 @@ export const emailRouter = createTRPCRouter({
         company: input.company,
         node: input.node,
       })
-      
+
       const { data, error } = await resend.emails.send({
-        from: "官网渠道 <site@mg.lifec.dev>",
+        from: "官网渠道 <site@fyreshld.com>",
         to: [
-          "yue.qian@magic-shield.com",   
+          "yue.qian@magic-shield.com",
         ],
         subject: "官网新增客户登记",
         react: email
       });
-  
+
 
       return {
         data,
