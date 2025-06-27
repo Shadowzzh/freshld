@@ -9,15 +9,15 @@ import {
   Row,
   Section,
   Text,
-} from "@react-email/components";
+} from '@react-email/components'
 
 interface EmailTemplateProps {
-  name: string;
-  phone: string;
-  email: string;
-  address: string;
-  company: string;
-  node: string;
+  name: string
+  phone: string
+  email: string
+  address: string
+  company: string
+  node: string
 }
 
 export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
@@ -100,77 +100,77 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           </Row>
         </Section>
         <Text style={footerCopyright}>
-          Copyright © {new Date().getFullYear()} Magic Shield. <br />{" "}
-          <Link href="https://www.fyreshld.com">All rights reserved</Link>
+          Copyright © {new Date().getFullYear()} Magic Shield. <br />{' '}
+          <Link href='https://www.fyreshld.com'>All rights reserved</Link>
         </Text>
       </Container>
     </Body>
   </Html>
-);
+)
 
 const main = {
   fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-  backgroundColor: "#ffffff",
-};
+  backgroundColor: '#ffffff',
+}
 
 const resetText = {
-  margin: "0",
-  padding: "0",
+  margin: '0',
+  padding: '0',
   lineHeight: 1.4,
-};
+}
 
 const container = {
-  margin: "0 auto",
-  padding: "20px 0 48px",
-  width: "660px",
-  maxWidth: "100%",
-};
+  margin: '0 auto',
+  padding: '20px 0 48px',
+  width: '660px',
+  maxWidth: '100%',
+}
 
-const tableCell = { display: "table-cell" };
+const tableCell = { display: 'table-cell' }
 
 const heading = {
-  fontSize: "32px",
-  fontWeight: "300",
-  color: "#888888",
-};
+  fontSize: '32px',
+  fontWeight: '300',
+  color: '#888888',
+}
 
 const informationTable = {
-  borderCollapse: "collapse" as const,
-  borderSpacing: "0px",
-  color: "rgb(51,51,51)",
-  backgroundColor: "rgb(250,250,250)",
-  borderRadius: "3px",
-  fontSize: "12px",
-};
+  borderCollapse: 'collapse' as const,
+  borderSpacing: '0px',
+  color: 'rgb(51,51,51)',
+  backgroundColor: 'rgb(250,250,250)',
+  borderRadius: '3px',
+  fontSize: '12px',
+}
 
 const informationTableRow = {
-  height: "46px",
-};
+  height: '46px',
+}
 
 const informationTableColumn = {
-  paddingLeft: "20px",
-  borderStyle: "solid",
-  borderColor: "white",
-  borderWidth: "0px 1px 1px 0px",
-  height: "44px",
-};
+  paddingLeft: '20px',
+  borderStyle: 'solid',
+  borderColor: 'white',
+  borderWidth: '0px 1px 1px 0px',
+  height: '44px',
+}
 
 const informationTableLabel = {
   ...resetText,
-  color: "rgb(102,102,102)",
-  fontSize: "10px",
-};
+  color: 'rgb(102,102,102)',
+  fontSize: '10px',
+}
 
 const informationTableValue = {
-  fontSize: "12px",
-  margin: "0",
-  padding: "0",
+  fontSize: '12px',
+  margin: '0',
+  padding: '0',
   lineHeight: 1.4,
-};
+}
 
 const footerCopyright = {
-  margin: "25px 0 0 0",
-  textAlign: "center" as const,
-  fontSize: "12px",
-  color: "rgb(102,102,102)",
-};
+  margin: '25px 0 0 0',
+  textAlign: 'center' as const,
+  fontSize: '12px',
+  color: 'rgb(102,102,102)',
+}

@@ -1,23 +1,42 @@
-import "~/styles/globals.css";
+import type { Metadata, Viewport } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { Toaster } from 'sonner'
+import { rootLayoutMetadata } from '@/lib/metadata'
+import './globals.css'
 
-import { GeistSans } from "geist/font/sans";
-import { type Metadata } from "next";
-import { Providers } from "./providers";
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
 
-export const metadata: Metadata = {
-  title: "明焰安全-领先的全栈云原生安全",
-  description:
-    "明焰安全,为客户提供终端信息安全解决方案和服务,实时发现并防御各种已知未知的恶意信息攻击,划时代的终端信息安全防护方案",
-};
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
+
+export const metadata: Metadata = rootLayoutMetadata
+
+export const viewport: Viewport = {
+  colorScheme: 'light',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body>
-        <Providers>{children}</Providers>
+    <html lang='zh-CN'>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+        <Toaster position='top-right' richColors />
       </body>
     </html>
-  );
+  )
 }

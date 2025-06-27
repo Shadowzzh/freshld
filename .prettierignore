@@ -1,0 +1,9 @@
+# 构建输出
+dist/
+node_modules/
+
+# 缓存
+.astro/
+
+# 锁文件
+pnpm-lock.yaml

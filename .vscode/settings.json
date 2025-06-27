@@ -1,0 +1,15 @@
+// .vscode/settings.json（项目根目录）
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.packageManager": "pnpm",
+  "eslint.nodePath": ".pnpm"
+}

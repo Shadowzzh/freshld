@@ -1,86 +1,36 @@
-# 关于本项目
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-这是一个使用 [T3 Stack](https://create.t3.gg/) 创建的项目，通过 `create-t3-app` 启动。
+## Getting Started
 
-### 如何开始
+First, run the development server:
 
-这个项目的目标是尽可能简单，提供了基本的框架，之后可以根据需求添加其他功能。以下是项目中使用的技术栈：
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-如果你对这些技术不熟悉，可以查阅各自的文档，或加入 [Discord](https://t3.gg/discord) 寻求帮助。
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### 学习资源
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-如果你想深入了解 [T3 Stack](https://create.t3.gg/)，可以参考以下资源：
+## Learn More
 
-- [T3 Stack 文档](https://create.t3.gg/)
-- [学习 T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — 查阅这些精彩的教程
-- 查看 [create-t3-app GitHub 仓库](https://github.com/t3-oss/create-t3-app) — 欢迎你的反馈和贡献！
+To learn more about Next.js, take a look at the following resources:
 
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### 项目配置文件
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-1. [package.json](./package.json) - [详细注释文档](./docs/package.json详解.md)
-2. [tsconfig.json](./tsconfig.json) \*
-3. [next.config.js](./next.config.js) \*
-4. [tailwind.config.ts](./tailwind.config.ts) \*
-5. [postcss.config.js](./postcss.config.js) \*
-6. [.eslintrc.cjs](./.eslintrc.cjs) \*
+## Deploy on Vercel
 
-### 应用入口与布局
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. [src/app/layout.tsx](./src/app/layout.tsx) \*
-2. [src/app/providers.tsx](./src/app/providers.tsx) \*
-3. [src/app/page.tsx](./src/app/page.tsx) \*
-
-### 环境配置
-
-1. [src/env.js](./src/env.js) \*
-
-### 核心组件
-
-1. [src/components/hero.tsx](./src/components/hero.tsx) \*
-2. [src/components/navbar.tsx](./src/components/navbar.tsx) \*
-3. [src/components/features.tsx](./src/components/features.tsx) \*
-4. [src/components/features-list.tsx](./src/components/features-list.tsx) \*
-5. [src/components/services.tsx](./src/components/services.tsx) \*
-6. [src/components/free-trial.tsx](./src/components/free-trial.tsx) \*
-7. [src/components/footer.tsx](./src/components/footer.tsx) \*
-
-### 3D模型与动画组件
-
-1. [src/components/DiamondScene.tsx](./src/components/DiamondScene.tsx) \*
-2. [src/components/PrismaticDiamond.tsx](./src/components/PrismaticDiamond.tsx) \*
-3. [src/components/ServerModel.tsx](./src/components/ServerModel.tsx) \*
-4. [src/components/ServerScene.tsx](./src/components/ServerScene.tsx) \*
-5. [src/components/ProtectiveNetwork.tsx](./src/components/ProtectiveNetwork.tsx) \*
-6. [src/components/CoreTechnologies.tsx](./src/components/CoreTechnologies.tsx) \*
-7. [src/components/ProductCases.tsx](./src/components/ProductCases.tsx) \*
-
-### 邮件功能
-
-1. [src/components/email-template.tsx](./src/components/email-template.tsx) \*
-2. [src/lib/resend.ts](./src/lib/resend.ts) \*
-3. [src/server/api/routers/email.ts](./src/server/api/routers/email.ts) \*
-
-### tRPC配置
-
-1. [src/server/api/trpc.ts](./src/server/api/trpc.ts) \*
-2. [src/server/api/root.ts](./src/server/api/root.ts) \*
-3. [src/trpc/server.ts](./src/trpc/server.ts) \*
-4. [src/trpc/react.tsx](./src/trpc/react.tsx) \*
-5. [src/trpc/query-client.ts](./src/trpc/query-client.ts) \*
-
-### 工具函数
-
-1. [src/lib/utils.ts](./src/lib/utils.ts) \*
-
-### 样式
-
-1. [src/styles/globals.css](./src/styles/globals.css) \*
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,0 +1,41 @@
+@keyframes bg-scroll {
+  0% {
+    background-size: 100% 100%;
+  }
+
+  100% {
+    background-size: 120% 120%;
+  }
+}
+
+.animate-bg-scroll {
+  animation: bg-scroll 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes video-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(20%);
+  }
+}
+
+.animate-video-scroll {
+  animation: video-scroll 60s linear infinite alternate-reverse;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
