@@ -22,7 +22,7 @@ export function Header() {
           'relative z-30',
         )}
       >
-        <div className='flex items-center flex-1 h-full'>
+        <div className='flex items-center flex-1 h-full justify-between'>
           {/* Logo */}
           <div className='flex-shrink-0 -ml-1 sm:-ml-2'>
             <div className='flex items-center'>
@@ -52,11 +52,11 @@ export function Header() {
             )}
           />
 
+          {/* 预约演示 */}
+          <ContactButton className={cn('lg:flex hidden')} />
+
           {/* Mobile Navigation */}
           <HeaderMenusMobile />
-
-          {/* 预约演示 */}
-          <ContactButton />
         </div>
       </div>
     </header>
