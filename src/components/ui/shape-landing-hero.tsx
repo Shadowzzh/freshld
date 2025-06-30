@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Circle } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 function ElegantShape({
   className,
@@ -40,15 +40,7 @@ function ElegantShape({
       }}
       className={cn('absolute', className)}
     >
-      <motion.div
-        animate={{
-          y: [0, 15, 0],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: 'easeInOut',
-        }}
+      <div
         style={{
           width,
           height,
@@ -65,12 +57,12 @@ function ElegantShape({
             'after:bg-[radial-gradient(circle_at_50%_50%,oklch(0.7893_0.1528_71.86_/_0.2),transparent_70%)]',
           )}
         />
-      </motion.div>
+      </div>
     </motion.div>
   )
 }
 
-// 屏幕尺寸检测 Hook
+// 屏幕尺寸检测 Hook（防抖优化）
 function useScreenSize() {
   const [screenSize, setScreenSize] = useState({
     width: 0,
@@ -85,13 +77,23 @@ function useScreenSize() {
       })
     }
 
+    // 防抖处理
+    let timeoutId: NodeJS.Timeout
+    function debouncedResize() {
+      clearTimeout(timeoutId)
+      timeoutId = setTimeout(updateScreenSize, 150)
+    }
+
     // 初始化
     updateScreenSize()
 
     // 监听窗口大小变化
-    window.addEventListener('resize', updateScreenSize)
+    window.addEventListener('resize', debouncedResize)
 
-    return () => window.removeEventListener('resize', updateScreenSize)
+    return () => {
+      window.removeEventListener('resize', debouncedResize)
+      clearTimeout(timeoutId)
+    }
   }, [])
 
   return screenSize
@@ -121,6 +123,61 @@ function HeroGeometric({
   const { width } = useScreenSize()
   const scaleFactor = getScaleFactor(width)
 
+  // 缓存形状尺寸计算
+  const shapeConfigs = useMemo(
+    () => [
+      {
+        delay: 0.3,
+        width: Math.round(550 * scaleFactor),
+        height: Math.round(150 * scaleFactor),
+        rotate: 12,
+        gradient: 'from-primary/[0.15]',
+        className: 'left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]',
+      },
+      {
+        delay: 0.5,
+        width: Math.round(500 * scaleFactor),
+        height: Math.round(120 * scaleFactor),
+        rotate: -15,
+        gradient: 'from-primary/[0.12]',
+        className: 'right-[-5%] md:right-[0%] top-[70%] md:top-[75%]',
+      },
+      {
+        delay: 0.4,
+        width: Math.round(300 * scaleFactor),
+        height: Math.round(80 * scaleFactor),
+        rotate: -8,
+        gradient: 'from-primary/[0.18]',
+        className: 'left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]',
+      },
+      {
+        delay: 0.6,
+        width: Math.round(200 * scaleFactor),
+        height: Math.round(60 * scaleFactor),
+        rotate: 20,
+        gradient: 'from-primary/[0.10]',
+        className: 'right-[15%] md:right-[20%] top-[10%] md:top-[15%]',
+      },
+      {
+        delay: 0.7,
+        width: Math.round(150 * scaleFactor),
+        height: Math.round(40 * scaleFactor),
+        rotate: -25,
+        gradient: 'from-primary/[0.14]',
+        className: 'left-[20%] md:left-[25%] top-[5%] md:top-[10%]',
+      },
+      {
+        delay: 0.8,
+        width: Math.round(100 * scaleFactor),
+        height: Math.round(30 * scaleFactor),
+        rotate: 35,
+        gradient: 'from-primary/[0.16]',
+        className: 'right-[5%] md:right-[10%] bottom-[20%] md:bottom-[25%]',
+      },
+    ],
+    [scaleFactor],
+  )
+
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -141,59 +198,17 @@ function HeroGeometric({
 
       {/* 几何形状装饰 */}
       <div className='absolute inset-0 overflow-hidden'>
-        <ElegantShape
-          delay={0.3}
-          width={Math.round(550 * scaleFactor)}
-          height={Math.round(150 * scaleFactor)}
-          rotate={12}
-          gradient='from-primary/[0.15]'
-          className='left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]'
-        />
-
-        <ElegantShape
-          delay={0.5}
-          width={Math.round(500 * scaleFactor)}
-          height={Math.round(120 * scaleFactor)}
-          rotate={-15}
-          gradient='from-primary/[0.12]'
-          className='right-[-5%] md:right-[0%] top-[70%] md:top-[75%]'
-        />
-
-        <ElegantShape
-          delay={0.4}
-          width={Math.round(300 * scaleFactor)}
-          height={Math.round(80 * scaleFactor)}
-          rotate={-8}
-          gradient='from-primary/[0.18]'
-          className='left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]'
-        />
-
-        <ElegantShape
-          delay={0.6}
-          width={Math.round(200 * scaleFactor)}
-          height={Math.round(60 * scaleFactor)}
-          rotate={20}
-          gradient='from-primary/[0.10]'
-          className='right-[15%] md:right-[20%] top-[10%] md:top-[15%]'
-        />
-
-        <ElegantShape
-          delay={0.7}
-          width={Math.round(150 * scaleFactor)}
-          height={Math.round(40 * scaleFactor)}
-          rotate={-25}
-          gradient='from-primary/[0.14]'
-          className='left-[20%] md:left-[25%] top-[5%] md:top-[10%]'
-        />
-
-        <ElegantShape
-          delay={0.8}
-          width={Math.round(100 * scaleFactor)}
-          height={Math.round(30 * scaleFactor)}
-          rotate={35}
-          gradient='from-primary/[0.16]'
-          className='right-[5%] md:right-[10%] bottom-[20%] md:bottom-[25%]'
-        />
+        {shapeConfigs.map((config, index) => (
+          <ElegantShape
+            key={index}
+            delay={config.delay}
+            width={config.width}
+            height={config.height}
+            rotate={config.rotate}
+            gradient={config.gradient}
+            className={config.className}
+          />
+        ))}
       </div>
 
       {/* 可选的内容区域 */}
