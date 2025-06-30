@@ -126,7 +126,6 @@ export function ContactForm({ variant = 'default' }: ContactFormProps) {
 
   return (
     <AnimatedSlideIn
-      delay={isDialog ? 0 : 0.2}
       direction={isDialog ? 'up' : 'right'}
       className={cn(
         isDialog
@@ -134,10 +133,7 @@ export function ContactForm({ variant = 'default' }: ContactFormProps) {
           : 'bg-card p-8 rounded-2xl border border-primary/15',
       )}
     >
-      <AnimatedList
-        initialDelay={isDialog ? 0 : 0.2}
-        className={cn(isDialog ? 'mb-6' : 'mb-8')}
-      >
+      <AnimatedList className={cn(isDialog ? 'mb-6' : 'mb-8')}>
         <h3 className={cn('font-bold mb-2', isDialog ? 'text-xl' : 'text-2xl')}>
           {isDialog ? '预约产品演示' : '立即联系我们'}
         </h3>
@@ -153,7 +149,7 @@ export function ContactForm({ variant = 'default' }: ContactFormProps) {
           void form.handleSubmit()
         }}
       >
-        <AnimatedList initialDelay={0.2} delayStep={0.1} className='space-y-6'>
+        <AnimatedList className='space-y-6'>
           {/* 公司名称 */}
           <form.Field
             name='company'

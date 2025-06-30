@@ -175,11 +175,7 @@ export default function MeasureScenarios() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <AnimatedList
-                initialDelay={0.1}
-                delayStep={0.1}
-                className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-              >
+              <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 {filteredScenarios.map(scenario => (
                   <div
                     key={scenario.id}

@@ -309,19 +309,14 @@ export default function NGEPScenarios() {
           {/* 主要场景 - 圆形布局 */}
           <div className='relative mb-20'>
             <div className='flex flex-col lg:flex-row items-center gap-16'>
-              <AnimatedSection delay={0.3}>
+              <AnimatedSection>
                 <Scenarios />
               </AnimatedSection>
 
               {/* 右侧详细说明 */}
               <div className={cn('flex-1', 'space-y-8')}>
                 {/* 场景卡片列表 */}
-                <AnimatedList
-                  initialDelay={0.3}
-                  delayStep={0.2}
-                  direction='right'
-                  className={cn('space-y-3')}
-                >
+                <AnimatedList direction='right' className={cn('space-y-3')}>
                   {scenarios.slice(0, 3).map((scenario, index) => (
                     <div
                       key={index}
@@ -454,11 +449,7 @@ export default function NGEPScenarios() {
           </div>
 
           {/* 次要场景 - 网格布局 */}
-          <AnimatedList
-            initialDelay={0.3}
-            delayStep={0.2}
-            className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-16'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-16'>
             {scenarios.slice(6).map((scenario, index) => (
               <div
                 key={index + 6}
@@ -522,7 +513,7 @@ export default function NGEPScenarios() {
 
         {/* 场景统计 */}
         <div className='max-w-7xl mx-auto'>
-          <AnimatedSection delay={0.3}>
+          <AnimatedSection>
             <div
               className={cn(
                 'bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/15',
@@ -543,8 +534,6 @@ export default function NGEPScenarios() {
               </div>
 
               <AnimatedList
-                initialDelay={0.3}
-                delayStep={0.2}
                 className={cn('grid grid-cols-2 md:grid-cols-4 gap-8')}
               >
                 {[
@@ -573,7 +562,7 @@ export default function NGEPScenarios() {
 
         {/* 典型案例 */}
         <div className='max-w-7xl mx-auto'>
-          <AnimatedSection delay={0.3}>
+          <AnimatedSection>
             <div
               className={cn(
                 'mt-16 p-12 rounded-2xl',

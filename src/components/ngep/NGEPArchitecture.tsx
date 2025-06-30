@@ -207,12 +207,7 @@ export default function NGEPArchitecture() {
               </div>
 
               {/* 集成特点列表 */}
-              <AnimatedList
-                initialDelay={0.3}
-                delayStep={0.2}
-                direction='right'
-                className='space-y-4'
-              >
+              <AnimatedList direction='right' className='space-y-4'>
                 {[
                   '标准API接口，快速对接',
                   '统一数据格式，无缝协作',
@@ -229,7 +224,6 @@ export default function NGEPArchitecture() {
 
             {/* 右侧集成图谱 - 使用 OrbitingCircles */}
             <AnimatedSection
-              delay={0.5}
               direction='right'
               className='relative flex items-center justify-center'
             >
@@ -312,11 +306,7 @@ export default function NGEPArchitecture() {
 
         {/* 部署特点 - 对比表格式 */}
         <div className='mb-20'>
-          <AnimatedList
-            initialDelay={0.3}
-            delayStep={0.2}
-            className='text-center mb-16'
-          >
+          <AnimatedList className='text-center mb-16'>
             <div
               className={cn(
                 'inline-flex items-center px-4 py-2 rounded-full',
@@ -347,7 +337,7 @@ export default function NGEPArchitecture() {
           </AnimatedList>
 
           {/* 对比表格布局 */}
-          <AnimatedSection delay={0.3}>
+          <AnimatedSection>
             <div className='bg-card rounded-2xl border border-gray-200 overflow-hidden'>
               <div className='grid grid-cols-1 md:grid-cols-2'>
                 {/* 传统方案 */}
@@ -363,11 +353,7 @@ export default function NGEPArchitecture() {
                       复杂部署，性能影响大
                     </p>
                   </div>
-                  <AnimatedList
-                    initialDelay={0.3}
-                    delayStep={0.2}
-                    className='space-y-3'
-                  >
+                  <AnimatedList className='space-y-3'>
                     {[
                       '部署周期：2-4周',
                       'CPU占用：5-15%',
@@ -398,12 +384,7 @@ export default function NGEPArchitecture() {
                       快速部署，零业务影响
                     </p>
                   </div>
-                  <AnimatedList
-                    initialDelay={0.2}
-                    delayStep={0.2}
-                    direction='right'
-                    className='space-y-3'
-                  >
+                  <AnimatedList direction='right' className='space-y-3'>
                     {deploymentFeatures.map((feature, index) => (
                       <div key={index} className='flex items-center space-x-3'>
                         <CheckCircle className='w-4 h-4 text-primary flex-shrink-0' />
@@ -434,7 +415,7 @@ export default function NGEPArchitecture() {
         </div>
 
         {/* 架构图 */}
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection>
           <div
             className={cn(
               'bg-gradient-to-r from-gray-800 to-blue-700',
@@ -459,7 +440,7 @@ export default function NGEPArchitecture() {
         </AnimatedSection>
 
         {/* CTA区域 */}
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection>
           <div className='relative bg-background pb-20'>
             <div className='container mx-auto px-4'>
               <div className='relative z-10 max-w-4xl mx-auto'>

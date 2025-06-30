@@ -143,7 +143,7 @@ export default function NGEPCapabilities() {
         </AnimatedSection>
 
         {/* 能力阶段 */}
-        <AnimatedList initialDelay={0.2} delayStep={0.2} className='space-y-16'>
+        <AnimatedList className='space-y-16'>
           {capabilities.map((capability, index) => (
             <div key={index} className={cn('relative')}>
               {/* 阶段标题 */}
@@ -230,7 +230,7 @@ export default function NGEPCapabilities() {
         </AnimatedList>
 
         {/* 统计数据 */}
-        <AnimatedSection delay={1.0}>
+        <AnimatedSection>
           <div
             className={cn(
               'mt-20 p-12 rounded-2xl',
@@ -239,11 +239,7 @@ export default function NGEPCapabilities() {
             )}
           >
             <h3 className='text-2xl font-bold mb-8'>防护效果统计</h3>
-            <AnimatedList
-              initialDelay={0.3}
-              delayStep={0.2}
-              className='grid grid-cols-2 md:grid-cols-4 gap-8'
-            >
+            <AnimatedList className='grid grid-cols-2 md:grid-cols-4 gap-8'>
               <MetallicShineCard>
                 <div className='mb-2'>
                   <NumberTicker

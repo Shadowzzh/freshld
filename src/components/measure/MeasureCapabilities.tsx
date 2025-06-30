@@ -107,8 +107,6 @@ export default function MeasureCapabilities() {
 
           {/* 能力网格 */}
           <AnimatedList
-            initialDelay={0.2}
-            delayStep={0.15}
             className={cn(
               'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20',
               '',
@@ -185,11 +183,7 @@ export default function MeasureCapabilities() {
           </AnimatedSection>
 
           {/* 统计指标网格 */}
-          <AnimatedList
-            initialDelay={0.6}
-            delayStep={0.2}
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {metrics.map((metric, index) => (
               <div
                 key={index}

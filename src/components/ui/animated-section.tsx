@@ -34,11 +34,11 @@ export function AnimatedList(props: AnimatedListProps) {
   const {
     children,
     className,
-    delayStep = 0.1,
+    delayStep = 0.2,
     initialDelay = 0,
     itemClassName,
     direction = 'up',
-    duration = 0.6,
+    duration = 0.3,
   } = props
 
   return (
@@ -84,7 +84,7 @@ export function AnimatedSection(props: AnimatedSectionProps) {
     delay = 0,
     direction = 'up',
     distance = 20,
-    duration = 0.6,
+    duration = 0.3,
     once = true,
   } = props
 
@@ -161,7 +161,7 @@ export const AnimatedSlideIn = (props: AnimatedSectionProps) => {
     <AnimatedSection
       direction={direction} // 从左侧滑入的动画
       distance={distance} // 标准的移动距离
-      duration={0.6} // 标准的动画速度
+      duration={0.3} // 标准的动画速度
       delay={delay} // 传入的延迟时间（可选，会自动计算）
       className={className} // 传入的样式类名
     >

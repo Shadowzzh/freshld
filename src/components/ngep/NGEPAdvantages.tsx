@@ -109,11 +109,7 @@ export default function NGEPAdvantages() {
         </AnimatedSection>
 
         {/* 核心优势网格 */}
-        <AnimatedList
-          initialDelay={0.2}
-          delayStep={0.2}
-          className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20'
-        >
+        <AnimatedList className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20'>
           {ngepAdvantages.map((advantage, index) => (
             <div
               key={index}
@@ -167,7 +163,7 @@ export default function NGEPAdvantages() {
         </AnimatedList>
 
         {/* 关键技术 */}
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection>
           <div
             className={cn(
               'bg-gradient-to-br from-primary/10 via-transparent to-primary/5',
@@ -184,11 +180,7 @@ export default function NGEPAdvantages() {
               </p>
             </div>
 
-            <AnimatedList
-              initialDelay={0.2}
-              delayStep={0.2}
-              className='grid grid-cols-1 md:grid-cols-3 gap-8'
-            >
+            <AnimatedList className='grid grid-cols-1 md:grid-cols-3 gap-8'>
               {[
                 {
                   title: 'MITRE ATT&CK框架映射',
@@ -237,7 +229,7 @@ export default function NGEPAdvantages() {
         </AnimatedSection>
 
         {/* 性能对比 */}
-        <AnimatedSection delay={0.3}>
+        <AnimatedSection>
           {/* 性能对比 */}
           <div
             className={cn(

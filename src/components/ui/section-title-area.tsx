@@ -65,8 +65,6 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
       {badge && (
         <AnimatedSection
           direction='up'
-          delay={0}
-          duration={0.6}
           distance={20}
           className={cn(
             'inline-flex items-center gap-2 px-5 py-2.5 rounded-full mb-6',
@@ -87,8 +85,6 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
       <div className='relative'>
         <AnimatedSection
           direction='up'
-          delay={0.1}
-          duration={0.8}
           distance={30}
           className={cn(
             'text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold',
@@ -111,8 +107,6 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
                 {subtitle}
                 <AnimatedSection
                   direction='left'
-                  delay={0.8}
-                  duration={1}
                   distance={0}
                   className={cn(
                     'absolute -bottom-2 left-0 right-0 h-1 rounded-full origin-left',
@@ -130,8 +124,6 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
         {DecorationIcon && (
           <AnimatedSection
             direction='up'
-            delay={0.6}
-            duration={1}
             distance={20}
             className='absolute -top-4 -right-8 w-16 h-16 opacity-20 hidden lg:block'
           >
@@ -145,8 +137,6 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
       {/* 描述文字 */}
       <AnimatedSection
         direction='up'
-        delay={0.3}
-        duration={0.8}
         distance={20}
         className='max-w-4xl mx-auto'
       >
@@ -170,14 +160,10 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
       {stats && stats.length > 0 && (
         <AnimatedSection
           direction='up'
-          delay={0.5}
-          duration={0.8}
           distance={30}
           className='mt-12 max-w-4xl mx-auto'
         >
           <AnimatedList
-            delayStep={0.1}
-            initialDelay={0.3}
             direction='up'
             className='grid grid-cols-1 md:grid-cols-3 gap-6'
           >

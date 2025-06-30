@@ -107,11 +107,7 @@ export default function MeasureFeatures() {
           </AnimatedSection>
 
           {/* 功能网格 */}
-          <AnimatedList
-            initialDelay={0.2}
-            delayStep={0.15}
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20'>
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -183,11 +179,7 @@ export default function MeasureFeatures() {
           </AnimatedSection>
 
           {/* 流程步骤 */}
-          <AnimatedList
-            initialDelay={0.4}
-            delayStep={0.2}
-            className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-20'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-20'>
             {[
               {
                 icon: Target,
@@ -264,11 +256,7 @@ export default function MeasureFeatures() {
           </AnimatedSection>
 
           {/* 优势指标网格 */}
-          <AnimatedList
-            initialDelay={0.8}
-            delayStep={0.2}
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {advantages.map((advantage, index) => (
               <div
                 key={index}

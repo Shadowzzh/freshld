@@ -54,17 +54,17 @@ const contactMethods = [
  */
 export function CompanyLocations() {
   return (
-    <AnimatedSlideIn delay={0.2} direction='left' className='space-y-8'>
+    <AnimatedSlideIn direction='left' className='space-y-8'>
       {/* 办公地址 */}
       <div className='bg-card p-8 rounded-2xl border border-primary/15'>
-        <AnimatedSection delay={0.2}>
+        <AnimatedSection>
           <h3 className='text-2xl font-bold mb-6 flex items-center'>
             <MapPin className='w-6 h-6 text-primary mr-3' />
             办公地址
           </h3>
         </AnimatedSection>
 
-        <AnimatedList initialDelay={0.2} className='space-y-6'>
+        <AnimatedList className='space-y-6'>
           {locations.map((location, index) => (
             <div
               key={index}
@@ -118,15 +118,12 @@ export function CompanyLocations() {
 
       {/* 联系方式 */}
       <div className='bg-card p-8 rounded-2xl border border-primary/15'>
-        <AnimatedSection
-          delay={0.2}
-          className='text-2xl font-bold mb-6 flex items-center'
-        >
+        <AnimatedSection className='text-2xl font-bold mb-6 flex items-center'>
           <MessageCircle className='w-6 h-6 text-primary mr-3' />
           联系方式
         </AnimatedSection>
 
-        <AnimatedList initialDelay={0.3} className='grid sm:grid-cols-1 gap-4'>
+        <AnimatedList className='grid sm:grid-cols-1 gap-4'>
           {contactMethods.map((method, index) => (
             <Link
               key={index}
@@ -161,10 +158,7 @@ export function CompanyLocations() {
       </div>
 
       {/* 服务承诺 */}
-      <AnimatedSection
-        delay={0.5}
-        className='bg-gradient-to-r from-primary/10 to-primary/5 p-6 rounded-xl border border-primary/15'
-      >
+      <AnimatedSection className='bg-gradient-to-r from-primary/10 to-primary/5 p-6 rounded-xl border border-primary/15'>
         <h4 className='font-semibold text-primary mb-2'>服务承诺</h4>
         <p className='text-sm text-muted-foreground leading-relaxed'>
           我们承诺在收到您的咨询后

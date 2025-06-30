@@ -41,7 +41,6 @@ export const HeroCoreCompetency = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
         {/* 毛玻璃容器 */}
         <AnimatedSection
-          delay={0.3}
           className={cn(
             'relative',
             'backdrop-blur-md bg-neutral-900/70',
@@ -52,11 +51,7 @@ export const HeroCoreCompetency = () => {
           )}
         >
           {/* 核心优势网格 */}
-          <AnimatedList
-            delayStep={0.2}
-            initialDelay={0.3}
-            className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
             {coreAdvantages.map((advantage, index) => (
               <div key={index} className={cn('relative group', 'p-4')}>
                 {/* 内容 */}

@@ -47,7 +47,7 @@ export function AboutInfo() {
     <section className='py-24 relative bg-white'>
       <div className='container mx-auto px-4 relative z-10'>
         {/* 公司介绍标题 */}
-        <AnimatedList initialDelay={0.3} className='text-center mb-16'>
+        <AnimatedList className='text-center mb-16'>
           <h2 className='text-3xl lg:text-4xl font-bold mb-4'>
             明焰安全的使命与愿景
           </h2>
@@ -58,10 +58,7 @@ export function AboutInfo() {
         </AnimatedList>
 
         {/* 明焰安全的使命与愿景 */}
-        <AnimatedList
-          initialDelay={0.6}
-          className='grid lg:grid-cols-2 gap-8 mb-20'
-        >
+        <AnimatedList className='grid lg:grid-cols-2 gap-8 mb-20'>
           {missionValues.map((item, index) => (
             <div
               key={index}
@@ -99,8 +96,6 @@ export function AboutInfo() {
         </AnimatedSection>
 
         <AnimatedList
-          delayStep={0.1}
-          initialDelay={0.2}
           className='grid lg:grid-cols-3 gap-6'
           itemClassName='flex-1 items-stretch content-stretch'
         >
@@ -126,7 +121,7 @@ export function AboutInfo() {
         </AnimatedList>
 
         {/* 核心理念 */}
-        <AnimatedSection className='mt-20 text-center' delay={0.4}>
+        <AnimatedSection className='mt-20 text-center'>
           <MetallicShineCard
             shineClassName={cn(
               'bg-gradient-to-r from-transparent via-primary/10 to-transparent',

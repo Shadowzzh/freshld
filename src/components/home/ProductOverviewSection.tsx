@@ -164,7 +164,7 @@ export function ProductOverviewSection() {
   return (
     <SectionBackground variant='default'>
       {/* 节区标题 */}
-      <AnimatedList initialDelay={0} delayStep={0.1} className='mb-12 sm:mb-16'>
+      <AnimatedList className='mb-12 sm:mb-16'>
         <div className='text-center mb-6'>
           <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/15 text-primary text-sm font-medium'>
             <Shield className='w-4 h-4' />
@@ -184,18 +184,14 @@ export function ProductOverviewSection() {
       </AnimatedList>
 
       {/* 产品网格 */}
-      <AnimatedList
-        initialDelay={0.3}
-        delayStep={0.2}
-        className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16'
-      >
+      <AnimatedList className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16'>
         {products.map((product, index) => (
           <ProductCard key={product.href} product={product} index={index} />
         ))}
       </AnimatedList>
 
       {/* 底部行动区域 */}
-      <AnimatedList initialDelay={0.3} delayStep={0.2} className='text-center'>
+      <AnimatedList className='text-center'>
         <div className='mb-6'>
           <div
             className={cn(

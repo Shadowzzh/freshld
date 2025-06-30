@@ -165,7 +165,7 @@ export function TestimonialsSection() {
 
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
         {/* 节区标题 */}
-        <AnimatedSection delay={0.2} className='mb-12 sm:mb-16'>
+        <AnimatedSection className='mb-12 sm:mb-16'>
           <SectionHeader
             title='客户信赖，实力见证'
             description='众多知名企业选择明焰安全，共同构建安全防护体系'
@@ -175,11 +175,7 @@ export function TestimonialsSection() {
 
         {/* 客户评价 */}
         <div className='mb-16 sm:mb-20'>
-          <AnimatedList
-            initialDelay={0.2}
-            delayStep={0.2}
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'>
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -236,11 +232,7 @@ export function TestimonialsSection() {
 
         {/* 合作伙伴Logo墙 */}
         <div className='space-y-8 sm:space-y-12'>
-          <AnimatedList
-            initialDelay={0.3}
-            delayStep={0.1}
-            className='text-center'
-          >
+          <AnimatedList className='text-center'>
             <div className='mb-6'>
               <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/15 text-primary text-sm font-medium'>
                 <Award className='w-4 h-4' />
@@ -258,7 +250,7 @@ export function TestimonialsSection() {
           </AnimatedList>
 
           {/* Logo轮播 */}
-          <AnimatedSection delay={0.4} duration={0.2} className='relative'>
+          <AnimatedSection className='relative'>
             <MarqueeDynamic pauseOnHover className='[--duration:100s]'>
               {partnerLogos.map((partner, index) => (
                 <ClientCard key={index} {...partner} />

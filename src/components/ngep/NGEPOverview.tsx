@@ -71,7 +71,7 @@ export default function NGEPOverview() {
 
         {/* 次要特性 - 不规则网格 */}
         <div className={cn('max-w-7xl mx-auto mb-8')}>
-          <AnimatedSection delay={0.3} className='text-center mb-12'>
+          <AnimatedSection className='text-center mb-12'>
             <h3
               className={cn(
                 'text-2xl md:text-3xl font-bold text-gray-900 mb-4 ',
@@ -87,8 +87,6 @@ export default function NGEPOverview() {
           </AnimatedSection>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
             <AnimatedList
-              initialDelay={0.3}
-              delayStep={0.2}
               direction='up'
               className='md:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6'
             >
@@ -163,7 +161,7 @@ export default function NGEPOverview() {
         </div>
 
         {/* 统一防护架构 - 流程时间线 */}
-        <AnimatedSection delay={1.0}>
+        <AnimatedSection>
           <div className={cn('p-8 md:p-12 rounded-3xl')}>
             <div className='text-center mb-16'>
               <h3
@@ -185,11 +183,7 @@ export default function NGEPOverview() {
                 <div className='absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary via-primary to-primary/20 hidden md:block' />
 
                 {/* 流程步骤 */}
-                <AnimatedList
-                  initialDelay={0.3}
-                  delayStep={0.2}
-                  className='space-y-12'
-                >
+                <AnimatedList className='space-y-12'>
                   {[
                     {
                       icon: Shield,
@@ -266,11 +260,7 @@ export default function NGEPOverview() {
             {/* 核心优势展示 */}
             <div className='max-w-6xl mx-auto'>
               {/* 优势指标网格 */}
-              <AnimatedList
-                initialDelay={0.3}
-                delayStep={0.2}
-                className='mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
-              >
+              <AnimatedList className='mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
                 {[
                   {
                     label: '检测准确率',
