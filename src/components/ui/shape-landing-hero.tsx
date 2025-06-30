@@ -52,9 +52,7 @@ function ElegantShape({
             'absolute inset-0 rounded-full',
             'bg-gradient-to-r to-transparent',
             gradient,
-            'backdrop-blur-[2px] border-2 border-primary/[0.15]',
-            'after:absolute after:inset-0 after:rounded-full',
-            'after:bg-[radial-gradient(circle_at_50%_50%,oklch(0.7893_0.1528_71.86_/_0.2),transparent_70%)]',
+            'border-2 border-primary/[0.15]',
           )}
         />
       </div>
