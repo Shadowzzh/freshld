@@ -34,3 +34,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 部署方式
+
+### 方式一：使用 Docker Compose (推荐)
+
+docker-compose up -d
+
+### 方式二：手动构建和运行
+
+#### 构建镜像
+
+docker build -t freshld-app .
+
+# 运行容器
+
+docker run -p 3000:3000 freshld-app
+
+访问 http://localhost:3000 即可查看应用。
+
+文件说明
+
+- Dockerfile: 多阶段构建，优化镜像大小
+- docker-compose.yml: 简化部署流程
+- .dockerignore: 排除不必要的文件
+- next.config.ts: 添加了 output: 'standalone' 支持 Docker 部署
