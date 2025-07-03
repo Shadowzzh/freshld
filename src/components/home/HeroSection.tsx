@@ -2,6 +2,7 @@ import { Download, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { HeroBackground } from '@/components/home/HeroBackground'
 import { AnimatedList } from '@/components/ui/animated-section'
+import Link from 'next/link'
 
 export const HeroSection = () => {
   return (
@@ -14,7 +15,7 @@ export const HeroSection = () => {
         {/* 内容 */}
         <div
           className={cn(
-            'relative z-30',
+            'relative z-10',
             'max-w-screen-2xl mx-auto h-full',
             'px-8 lg:px-8',
             'flex flex-col md:flex-row md:items-center',
@@ -40,29 +41,33 @@ export const HeroSection = () => {
               奇盾信息技术有限公司致力于利用大数据和人工智能技术，为客户提供划时代的网络信息安全解决方案。我们实时监控并防御各种已知和未知的恶意威胁，让未知威胁无所遁形。
             </p>
             <div className='flex flex-col sm:flex-row lg:flex-row gap-4 pt-4'>
-              <button
-                className={cn(
-                  'cursor-pointer',
-                  'text-white bg-primary hover:bg-white hover:text-black ',
-                  'transition-colors duration-200',
-                  'px-8 py-4 rounded-lg font-semibold space-x-2',
-                  'flex items-center justify-center',
-                  'border-2 border-white',
-                )}
-              >
-                <Download className='w-5 h-5' />
-                <span>获取演示</span>
-              </button>
+              <Link href='/contact'>
+                <button
+                  className={cn(
+                    'cursor-pointer',
+                    'text-white bg-primary hover:bg-white hover:text-black ',
+                    'transition-colors duration-200',
+                    'px-8 py-4 rounded-lg font-semibold space-x-2',
+                    'flex items-center justify-center',
+                    'border-2 border-white',
+                  )}
+                >
+                  <Download className='w-5 h-5' />
+                  <span>获取演示</span>
+                </button>
+              </Link>
 
-              <button
-                className={cn(
-                  'cursor-pointer',
-                  'border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors duration-200 flex items-center justify-center space-x-2',
-                )}
-              >
-                <span>了解更多</span>
-                <ArrowRight className='w-5 h-5' />
-              </button>
+              <Link href='/products/ngep'>
+                <button
+                  className={cn(
+                    'cursor-pointer',
+                    'border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors duration-200 flex items-center justify-center space-x-2',
+                  )}
+                >
+                  <span>了解更多</span>
+                  <ArrowRight className='w-5 h-5' />
+                </button>
+              </Link>
             </div>
           </AnimatedList>
         </div>
