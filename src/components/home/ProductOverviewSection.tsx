@@ -6,6 +6,7 @@ import { AnimatedList } from '@/components/ui/animated-section'
 import { FeatureList } from '@/components/ui/shared/FeatureList'
 import { ActionButton } from '@/components/ui/shared/ActionButton'
 import { SectionBackground } from '@/components/ui/shared/SectionBackground'
+import Link from 'next/link'
 
 // 产品卡片组件
 interface ProductCardProps {
@@ -68,9 +69,11 @@ function ProductCard({ product }: ProductCardProps) {
 
         {/* 标题和描述 */}
         <div className='flex-1 mb-6'>
-          <h3 className='text-lg sm:text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-primary transition-colors duration-300'>
-            {title}
-          </h3>
+          <Link href={href} className='cursor-pointer'>
+            <h3 className='text-lg sm:text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-primary transition-colors duration-300'>
+              {title}
+            </h3>
+          </Link>
 
           <p className='text-gray-600 leading-relaxed text-sm sm:text-base'>
             {description}
