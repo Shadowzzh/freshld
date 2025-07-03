@@ -124,7 +124,7 @@ export function CNAPPScenarios() {
         <AnimatedList
           delayStep={0.2}
           initialDelay={0.2}
-          className={cn('grid grid-cols-1 md:grid-cols-2 gap-8 mb-16')}
+          className={cn('grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16')}
         >
           {cnappScenarios.map((scenario, index) => {
             const IconComponent = scenario.icon
@@ -133,7 +133,7 @@ export function CNAPPScenarios() {
               <div
                 key={index}
                 className={cn(
-                  'group relative p-8 rounded-2xl border border-primary/15 overflow-hidden',
+                  'group relative p-6 sm:p-8 rounded-2xl border border-primary/15 overflow-hidden',
                   'bg-card/50 backdrop-blur-sm',
                   'hover:border-primary/15 hover:bg-card/80',
                   'transition-all duration-300',
@@ -149,10 +149,10 @@ export function CNAPPScenarios() {
                   )}
                 />
 
-                {/* 头部信息 */}
+                {/* 头部信息 - 移动端优化 */}
                 <div className='relative z-10'>
-                  <div className='flex items-start justify-between mb-6'>
-                    <div className='flex items-center space-x-4'>
+                  <div className='flex flex-col sm:flex-row items-center sm:items-start justify-between mb-6 text-center sm:text-left'>
+                    <div className='flex flex-col sm:flex-row items-center sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-0'>
                       <div
                         className={cn(
                           'w-12 h-12 rounded-xl flex items-center justify-center',
@@ -164,7 +164,7 @@ export function CNAPPScenarios() {
                         <IconComponent className='w-6 h-6' />
                       </div>
                       <div>
-                        <h3 className='text-xl font-bold text-foreground mb-1 transition-colors duration-300'>
+                        <h3 className='text-lg sm:text-xl font-bold text-foreground mb-1 transition-colors duration-300'>
                           {scenario.title}
                         </h3>
                         <p className='text-sm text-muted-foreground'>
@@ -172,7 +172,7 @@ export function CNAPPScenarios() {
                         </p>
                       </div>
                     </div>
-                    <div className='text-right'>
+                    <div className='text-center sm:text-right'>
                       <div className='text-sm font-medium text-primary'>
                         {scenario.industry}
                       </div>
@@ -183,41 +183,43 @@ export function CNAPPScenarios() {
                   </div>
 
                   {/* 描述 */}
-                  <p className='text-muted-foreground text-sm leading-relaxed mb-6 group-hover:text-foreground transition-colors duration-300'>
+                  <p className='text-muted-foreground text-sm leading-relaxed mb-6 text-center sm:text-left group-hover:text-foreground transition-colors duration-300'>
                     {scenario.description}
                   </p>
 
                   {/* 解决方案 */}
                   <div className='mb-6'>
-                    <h4 className='text-sm font-semibold text-foreground mb-3'>
+                    <h4 className='text-sm font-semibold text-foreground mb-3 text-center sm:text-left'>
                       解决方案
                     </h4>
                     <ul className='space-y-2'>
                       {scenario.solution.slice(0, 2).map((item, itemIndex) => (
                         <li
                           key={itemIndex}
-                          className='flex items-start space-x-2 text-xs text-muted-foreground'
+                          className='flex items-start justify-center sm:justify-start space-x-2 text-xs text-muted-foreground'
                         >
                           <div className='w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0' />
-                          <span>{item}</span>
+                          <span className='text-center sm:text-left'>
+                            {item}
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* 效果 */}
+                  {/* 效果 - 移动端单列布局 */}
                   <div>
-                    <h4 className='text-sm font-semibold text-foreground mb-3'>
+                    <h4 className='text-sm font-semibold text-foreground mb-3 text-center sm:text-left'>
                       实施效果
                     </h4>
-                    <div className='grid grid-cols-2 gap-2'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
                       {scenario.results
                         .slice(0, 2)
                         .map((result, resultIndex) => (
                           <div
                             key={resultIndex}
                             className={cn(
-                              'text-xs p-2 rounded-lg',
+                              'text-xs p-2 rounded-lg text-center sm:text-left',
                               'bg-primary/5 text-primary/80',
                               'group-hover:bg-primary/10 transition-colors duration-300',
                             )}

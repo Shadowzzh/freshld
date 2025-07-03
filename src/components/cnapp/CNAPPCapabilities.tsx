@@ -148,7 +148,9 @@ export function CNAPPCapabilities() {
         <AnimatedList
           delayStep={0.2}
           initialDelay={0.2}
-          className={cn('grid grid-cols-1 lg:grid-cols-2 gap-8')}
+          className={cn(
+            'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 md:gap-8',
+          )}
         >
           {cnappCapabilities.map((capability, index) => {
             const IconComponent = capability.icon
@@ -157,7 +159,7 @@ export function CNAPPCapabilities() {
               <div
                 key={index}
                 className={cn(
-                  'group p-8 rounded-2xl border border-primary/15',
+                  'group p-6 sm:p-8 rounded-2xl border border-primary/15',
                   'bg-card/50 backdrop-blur-sm',
                   'hover:border-primary/15 hover:bg-card/80',
                   'transition-all duration-300',
@@ -175,9 +177,9 @@ export function CNAPPCapabilities() {
 
                 {/* 内容 */}
                 <div className='relative z-10'>
-                  {/* 头部信息 */}
-                  <div className='flex items-start justify-between mb-6'>
-                    <div className='flex items-center space-x-4'>
+                  {/* 头部信息 - 移动端居中布局 */}
+                  <div className='flex flex-col sm:flex-row items-center sm:items-start justify-between mb-6'>
+                    <div className='flex flex-col sm:flex-row items-center sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 text-center sm:text-left'>
                       <div
                         className={cn(
                           'w-12 h-12 rounded-xl flex items-center justify-center',
@@ -189,7 +191,7 @@ export function CNAPPCapabilities() {
                         <IconComponent className='w-6 h-6' />
                       </div>
                       <div>
-                        <h3 className='text-xl font-bold text-foreground mb-2 transition-colors duration-300'>
+                        <h3 className='text-lg sm:text-xl font-bold text-foreground mb-2 transition-colors duration-300'>
                           {capability.title}
                         </h3>
                       </div>
@@ -197,22 +199,22 @@ export function CNAPPCapabilities() {
                   </div>
 
                   {/* 描述 */}
-                  <p className='text-muted-foreground text-sm leading-relaxed mb-6  transition-colors duration-300'>
+                  <p className='text-muted-foreground text-sm leading-relaxed mb-6 text-center sm:text-left transition-colors duration-300'>
                     {capability.description}
                   </p>
 
-                  {/* 功能特性 */}
-                  <div className='grid grid-cols-2 gap-3'>
+                  {/* 功能特性 - 移动端优化为单列 */}
+                  <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
                     {capability.features.map((feature, featureIndex) => (
                       <div
                         key={featureIndex}
                         className={cn(
-                          'flex items-center space-x-2 text-sm',
+                          'flex items-center justify-center sm:justify-start space-x-2 text-sm',
                           'p-2 rounded-lg bg-primary/5',
                           'group-hover:bg-primary/10 transition-colors duration-300',
                         )}
                       >
-                        <div className='w-1.5 h-1.5 rounded-full bg-primary' />
+                        <div className='w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0' />
                         <span className='text-muted-foreground transition-colors duration-300'>
                           {feature}
                         </span>

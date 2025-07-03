@@ -44,21 +44,23 @@ const cnapppAdvantages = [
 
 export function CNAPPAdvantages() {
   return (
-    <section className={cn('py-20 bg-background')}>
-      <div className={cn('max-w-7xl mx-auto px-4 sm:px-6 lg:px-8')}>
+    <section className={cn('py-16 md:py-20 lg:py-24 bg-background')}>
+      <div className={cn('max-w-7xl mx-auto px-6 md:px-8 lg:px-12')}>
         {/* 标题部分 */}
-        <div className={cn('text-center mb-16')}>
-          <div className='inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6'>
+        <div className={cn('text-center mb-16 md:mb-20')}>
+          <div className='inline-flex items-center px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-primary/10 text-primary font-semibold text-sm md:text-base mb-6 md:mb-8'>
             产品优势
           </div>
           <h2
-            className={cn('text-3xl md:text-4xl font-bold text-primary mb-6')}
+            className={cn(
+              'text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-8',
+            )}
           >
             产品优势
           </h2>
           <p
             className={cn(
-              'text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed',
+              'text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 md:px-0',
             )}
           >
             明焰CNAPP凭借先进的技术架构和创新的安全理念，为云原生环境提供卓越的安全防护能力
@@ -67,7 +69,9 @@ export function CNAPPAdvantages() {
 
         {/* 优势列表 */}
         <div
-          className={cn('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8')}
+          className={cn(
+            'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8',
+          )}
         >
           {cnapppAdvantages.map((advantage, index) => {
             const IconComponent = advantage.icon
@@ -76,11 +80,12 @@ export function CNAPPAdvantages() {
               <div
                 key={index}
                 className={cn(
-                  'group relative p-8 rounded-2xl',
+                  'group relative p-6 md:p-8 rounded-2xl',
                   'bg-card/50 border border-primary/15',
                   'hover:border-primary/15 hover:bg-card/80',
                   'transition-all duration-300',
                   'hover:scale-105',
+                  'text-center md:text-left',
                 )}
               >
                 {/* 悬停光效 */}
@@ -97,19 +102,20 @@ export function CNAPPAdvantages() {
                   {/* 图标 */}
                   <div
                     className={cn(
-                      'w-16 h-16 rounded-2xl flex items-center justify-center mb-6',
+                      'w-16 h-16 md:w-16 md:h-16 lg:w-18 lg:h-18 rounded-2xl flex items-center justify-center mb-6',
                       'bg-primary/10 text-primary',
                       'group-hover:bg-primary/20 group-hover:scale-110',
                       'transition-all duration-300',
+                      'mx-auto md:mx-0',
                     )}
                   >
-                    <IconComponent className='w-8 h-8' />
+                    <IconComponent className='w-8 h-8 md:w-8 md:h-8 lg:w-9 lg:h-9' />
                   </div>
 
                   {/* 标题 */}
                   <h3
                     className={cn(
-                      'text-xl font-bold text-foreground mb-4',
+                      'text-xl md:text-xl lg:text-2xl font-bold text-foreground mb-4',
                       'transition-colors duration-300',
                     )}
                   >
@@ -119,7 +125,7 @@ export function CNAPPAdvantages() {
                   {/* 描述 */}
                   <p
                     className={cn(
-                      'text-muted-foreground text-sm leading-relaxed mb-6',
+                      'text-muted-foreground text-base md:text-base leading-relaxed mb-6',
                       'group-hover:text-foreground transition-colors duration-300',
                     )}
                   >
@@ -127,18 +133,19 @@ export function CNAPPAdvantages() {
                   </p>
 
                   {/* 特性列表 */}
-                  <ul className='space-y-3'>
+                  <ul className={cn('text-left', 'grid grid-cols-2 gap-2')}>
                     {advantage.features.map((feature, featureIndex) => (
                       <li
                         key={featureIndex}
                         className={cn(
-                          'flex items-center space-x-3 text-sm',
+                          'flex items-center space-x-3 text-sm md:text-sm',
                           'group-hover:transform group-hover:translate-x-2',
                           'transition-all duration-300',
+                          'justify-center md:justify-start',
                         )}
                         style={{ transitionDelay: `${featureIndex * 50}ms` }}
                       >
-                        <div className='w-1.5 h-1.5 rounded-full bg-primary' />
+                        <div className='w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0' />
                         <span
                           className={cn(
                             'text-muted-foreground',
@@ -166,16 +173,16 @@ export function CNAPPAdvantages() {
         </div>
 
         {/* 底部总结 */}
-        <div className={cn('mt-20 text-center')}>
+        <div className={cn('mt-16 md:mt-20 lg:mt-24 text-center')}>
           <div
             className={cn(
-              'p-8 rounded-2xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/15',
+              'p-8 md:p-10 lg:p-12 rounded-3xl bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/15',
             )}
           >
-            <h3 className='text-2xl font-bold text-foreground mb-4'>
+            <h3 className='text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6'>
               领先的云原生安全技术
             </h3>
-            <p className='text-muted-foreground max-w-4xl mx-auto leading-relaxed'>
+            <p className='text-base md:text-lg lg:text-xl text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4 md:px-0'>
               通过创新的技术架构和智能化的安全策略，明焰CNAPP为云原生环境提供了前所未有的安全防护能力，
               让您的云原生应用在享受敏捷性和可扩展性的同时，获得企业级的安全保障。
             </p>

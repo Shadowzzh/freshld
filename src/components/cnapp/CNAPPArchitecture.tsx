@@ -193,7 +193,7 @@ export function CNAPPArchitecture() {
             delayStep={0.2}
             initialDelay={0.3}
             className={cn(
-              'space-y-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8',
+              'space-y-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8',
             )}
           >
             {architectureLayers.map((layer, index) => {
@@ -221,7 +221,9 @@ export function CNAPPArchitecture() {
                   />
 
                   <div
-                    className={cn('relative z-10 flex items-start space-x-6')}
+                    className={cn(
+                      'relative z-10 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 text-center sm:text-left',
+                    )}
                   >
                     {/* 图标 */}
                     <div
@@ -239,7 +241,7 @@ export function CNAPPArchitecture() {
                     <div className={cn('flex-1')}>
                       <h4
                         className={cn(
-                          'text-xl font-bold text-foreground mb-3',
+                          'text-lg sm:text-xl font-bold text-foreground mb-3',
                           'transition-colors duration-300',
                         )}
                       >
@@ -253,7 +255,11 @@ export function CNAPPArchitecture() {
                       >
                         {layer.description}
                       </p>
-                      <div className={cn('flex flex-wrap gap-2')}>
+                      <div
+                        className={cn(
+                          'flex flex-wrap gap-2 justify-center sm:justify-start',
+                        )}
+                      >
                         {layer.components.map((component, componentIndex) => (
                           <span
                             key={componentIndex}
@@ -294,101 +300,106 @@ export function CNAPPArchitecture() {
           >
             灵活的部署方式
           </h3>
-          <AnimatedList
-            delayStep={0.2}
-            initialDelay={0.6}
-            className={cn('grid grid-cols-1 lg:grid-cols-2 gap-8')}
-          >
-            {deploymentFeatures.map((feature, index) => {
-              const IconComponent = feature.icon
+          <div className={cn('max-w-5xl mx-auto')}>
+            <AnimatedList
+              delayStep={0.2}
+              initialDelay={0.6}
+              className={cn('grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8')}
+            >
+              {deploymentFeatures.map((feature, index) => {
+                const IconComponent = feature.icon
 
-              return (
-                <div
-                  key={index}
-                  className={cn(
-                    'group p-8 rounded-2xl border relative overflow-hidden',
-                    'bg-card/50 border-primary/15',
-                    'hover:border-primary/15 hover:bg-card/80',
-                    'hover:bg-primary/5 hover:border-primary/30',
-                    'transition-all duration-300',
-                    'transform hover:scale-105',
-                    'cursor-pointer',
-                  )}
-                >
-                  {/* 悬停光效 */}
+                return (
                   <div
+                    key={index}
                     className={cn(
-                      'absolute inset-0 opacity-0 group-hover:opacity-10',
-                      'bg-gradient-to-br from-primary/10 via-transparent to-primary/10',
-                      'transition-opacity duration-300',
+                      'group p-6 lg:p-8 rounded-2xl border relative overflow-hidden',
+                      'bg-card/50 border-primary/15',
+                      'hover:border-primary/15 hover:bg-card/80',
+                      'hover:bg-primary/5 hover:border-primary/30',
+                      'transition-all duration-300',
+                      'transform hover:scale-105',
+                      'cursor-pointer',
+                      'flex flex-col',
                     )}
-                  />
+                  >
+                    {/* 悬停光效 */}
+                    <div
+                      className={cn(
+                        'absolute inset-0 opacity-0 group-hover:opacity-10',
+                        'bg-gradient-to-br from-primary/10 via-transparent to-primary/10',
+                        'transition-opacity duration-300',
+                      )}
+                    />
 
-                  <div className={cn('relative z-10')}>
-                    <div className={cn('flex items-center mb-6')}>
-                      <div
-                        className={cn(
-                          'w-12 h-12 rounded-xl flex items-center justify-center mr-4',
-                          'bg-primary/10 text-primary',
-                          'group-hover:bg-primary/20 group-hover:scale-110',
-                          'transition-all duration-300',
-                        )}
-                      >
-                        <IconComponent className={cn('w-6 h-6')} />
+                    <div className={cn('relative z-10 flex-1 flex flex-col')}>
+                      <div className={cn('flex items-start space-x-4 mb-6')}>
+                        <div
+                          className={cn(
+                            'w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0',
+                            'bg-primary/10 text-primary',
+                            'group-hover:bg-primary/20 group-hover:scale-110',
+                            'transition-all duration-300',
+                          )}
+                        >
+                          <IconComponent className={cn('w-7 h-7')} />
+                        </div>
+                        <div className='flex-1'>
+                          <h4
+                            className={cn(
+                              'text-xl font-bold text-foreground mb-2 transition-colors duration-300',
+                            )}
+                          >
+                            {feature.title}
+                          </h4>
+                          <p
+                            className={cn(
+                              'text-muted-foreground text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300',
+                            )}
+                          >
+                            {feature.description}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h4
-                          className={cn(
-                            'text-xl font-bold text-foreground transition-colors duration-300',
-                          )}
-                        >
-                          {feature.title}
-                        </h4>
-                        <p
-                          className={cn(
-                            'text-muted-foreground text-sm group-hover:text-foreground transition-colors duration-300',
-                          )}
-                        >
-                          {feature.description}
-                        </p>
+
+                      <div className='flex-1'>
+                        <ul className={cn('grid grid-cols-2  gap-2')}>
+                          {feature.features.map((item, itemIndex) => (
+                            <li
+                              key={itemIndex}
+                              className={cn('flex items-start space-x-3')}
+                            >
+                              <CheckCircle
+                                className={cn(
+                                  'w-4 h-4 text-primary mt-0.5 flex-shrink-0',
+                                )}
+                              />
+                              <span
+                                className={cn(
+                                  'text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 leading-relaxed',
+                                )}
+                              >
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
 
-                    <ul className={cn('space-y-3')}>
-                      {feature.features.map((item, itemIndex) => (
-                        <li
-                          key={itemIndex}
-                          className={cn('flex items-start space-x-3')}
-                        >
-                          <CheckCircle
-                            className={cn(
-                              'w-4 h-4 text-primary mt-0.5 flex-shrink-0',
-                            )}
-                          />
-                          <span
-                            className={cn(
-                              'text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300',
-                            )}
-                          >
-                            {item}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* 装饰性边框 */}
+                    <div
+                      className={cn(
+                        'absolute top-0 left-0 w-full h-px',
+                        'bg-gradient-to-r from-transparent via-primary/30 to-transparent',
+                        'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
+                      )}
+                    />
                   </div>
-
-                  {/* 装饰性边框 */}
-                  <div
-                    className={cn(
-                      'absolute top-0 left-0 w-full h-px',
-                      'bg-gradient-to-r from-transparent via-primary/30 to-transparent',
-                      'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                    )}
-                  />
-                </div>
-              )
-            })}
-          </AnimatedList>
+                )
+              })}
+            </AnimatedList>
+          </div>
         </AnimatedSection>
 
         {/* 兼容性支持 */}
@@ -404,7 +415,7 @@ export function CNAPPArchitecture() {
             delayStep={0.1}
             initialDelay={0.8}
             className={cn(
-              'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8',
+              'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8',
             )}
           >
             {compatibilityData.map((category, index) => {
@@ -443,12 +454,12 @@ export function CNAPPArchitecture() {
                     </div>
                     <h4
                       className={cn(
-                        'text-lg font-bold text-foreground mb-4  transition-colors duration-300',
+                        'text-lg font-bold text-foreground mb-4 transition-colors duration-300',
                       )}
                     >
                       {category.category}
                     </h4>
-                    <div className={cn('space-y-2')}>
+                    <div className={cn('space-y-2', 'grid grid-cols-2  gap-2')}>
                       {category.items.map((item, itemIndex) => (
                         <div
                           key={itemIndex}

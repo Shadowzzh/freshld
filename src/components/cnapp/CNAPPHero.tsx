@@ -65,7 +65,7 @@ export function CNAPPHero() {
         'relative min-h-[calc(100vh-4rem)]',
         'bg-gradient-to-br from-slate-800 via-blue-600 to-slate-700',
         'overflow-hidden',
-        'py-12'
+        'py-12',
       )}
     >
       <VortexDynamic rangeY={700} particleCount={100} baseHue={200} />

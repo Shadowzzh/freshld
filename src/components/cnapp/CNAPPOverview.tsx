@@ -217,14 +217,16 @@ export function CNAPPOverview() {
         {/* 挑战与解决方案 */}
         <AnimatedSection
           delay={0.4}
-          className={cn('grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24')}
+          className={cn(
+            'grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16 lg:mb-24',
+          )}
         >
           {/* 挑战 */}
           <AnimatedSection
             direction='left'
             delay={0.6}
             className={cn(
-              'relative p-8 rounded-2xl bg-card/60',
+              'relative p-4 sm:p-6 lg:p-8 rounded-2xl bg-card/60',
               'backdrop-blur-sm border border-primary/15',
               'overflow-hidden',
             )}
@@ -240,12 +242,13 @@ export function CNAPPOverview() {
             />
             <h3
               className={cn(
-                'text-2xl font-bold text-foreground mb-8 flex items-center',
+                'text-xl sm:text-2xl font-bold text-foreground mb-6 lg:mb-8',
+                'flex flex-col sm:flex-row items-center text-center sm:text-left gap-2 sm:gap-0',
               )}
             >
               <div
                 className={cn(
-                  'p-2 rounded-xl bg-primary/10 mr-4',
+                  'p-2 rounded-xl bg-primary/10 sm:mr-4 mb-2 sm:mb-0',
                   'ring-2 ring-primary/20',
                 )}
               >
@@ -313,7 +316,7 @@ export function CNAPPOverview() {
             direction='right'
             delay={0.8}
             className={cn(
-              'relative p-8 rounded-2xl bg-card/60',
+              'relative p-4 sm:p-6 lg:p-8 rounded-2xl bg-card/60',
               'backdrop-blur-sm border border-primary/15',
               'overflow-hidden',
             )}
@@ -329,12 +332,13 @@ export function CNAPPOverview() {
             />
             <h3
               className={cn(
-                'text-2xl font-bold text-foreground mb-8 flex items-center',
+                'text-xl sm:text-2xl font-bold text-foreground mb-6 lg:mb-8',
+                'flex flex-col sm:flex-row items-center text-center sm:text-left gap-2 sm:gap-0',
               )}
             >
               <div
                 className={cn(
-                  'p-2 rounded-xl bg-primary/10 mr-4',
+                  'p-2 rounded-xl bg-primary/10 sm:mr-4 mb-2 sm:mb-0',
                   'ring-2 ring-primary/20',
                 )}
               >
@@ -504,7 +508,7 @@ export function CNAPPOverview() {
             delayStep={0.1}
             initialDelay={0.8}
             className={cn(
-              'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8',
+              'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8',
             )}
           >
             {cnappArchitectureLayers.map((layer, index) => {
@@ -513,30 +517,30 @@ export function CNAPPOverview() {
                 <div
                   key={index}
                   className={cn(
-                    'group relative  p-8 px-16 lg:px-8 rounded-2xl',
+                    'group relative p-4 sm:p-6 lg:p-8 rounded-2xl',
                     'bg-card/60 backdrop-blur-sm',
                     'border border-primary/15',
                     'hover:border-primary/15',
                     'transition-all duration-300',
                     'hover:scale-105',
-                    'overflow-hidden',
+                    'overflow-hidden text-center',
                   )}
                 >
                   <div
                     className={cn(
-                      'w-16 h-16 mx-auto mb-6 rounded-2xl',
+                      'w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mx-auto mb-3 sm:mb-4 lg:mb-6 rounded-2xl',
                       'bg-primary/10 flex items-center justify-center',
                       'group-hover:bg-primary/20 transition-all duration-300',
                       'group-hover:scale-110 group-hover:rotate-6',
                     )}
                   >
-                    <IconComponent className='w-8 h-8 text-primary' />
+                    <IconComponent className='w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-primary' />
                   </div>
 
                   <h4
                     className={cn(
                       'text-center',
-                      'text-lg font-bold text-foreground mb-3',
+                      'text-sm sm:text-base lg:text-lg font-bold text-foreground mb-2 sm:mb-3',
                       'group-hover:text-primary transition-colors duration-300',
                     )}
                   >
@@ -546,22 +550,22 @@ export function CNAPPOverview() {
                   <p
                     className={cn(
                       'text-center',
-                      'text-base text-muted-foreground leading-relaxed mb-4',
+                      'text-xs sm:text-sm lg:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4',
                       'group-hover:text-foreground transition-colors duration-300',
                     )}
                   >
                     {layer.description}
                   </p>
 
-                  <div className='grid grid-cols-2 lg:grid-cols-1 gap-1'>
+                  <div className='grid grid-cols-1 gap-1'>
                     {layer.features.map((feature, featureIndex) => (
                       <div
                         key={featureIndex}
                         className={cn(
-                          'lg:text-left text-center',
-                          'text-sm text-muted-foreground/80 px-2',
+                          'text-center',
+                          'text-xs sm:text-sm text-muted-foreground/80 px-1 sm:px-2',
                           'transition-all duration-300',
-                          'before:content-["•"] before:text-primary before:mr-2 before:text-base',
+                          'before:content-["•"] before:text-primary before:mr-1 sm:before:mr-2 before:text-sm sm:before:text-base',
                         )}
                       >
                         {feature}
@@ -595,7 +599,9 @@ export function CNAPPOverview() {
           <AnimatedList
             delayStep={0.2}
             initialDelay={1.0}
-            className={cn('grid grid-cols-1 lg:grid-cols-2 gap-16')}
+            className={cn(
+              'grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16',
+            )}
           >
             {cnappDeploymentArchitecture.map((deployment, index) => {
               const IconComponent = deployment.icon
@@ -603,7 +609,7 @@ export function CNAPPOverview() {
                 <div
                   key={index}
                   className={cn(
-                    'group relative p-10 rounded-2xl overflow-hidden',
+                    'group relative p-4 sm:p-6 lg:p-8 xl:p-10 rounded-2xl overflow-hidden',
                     'bg-card/60 backdrop-blur-sm',
                     'border border-primary/15',
                     'hover:border-primary/15',
@@ -627,20 +633,20 @@ export function CNAPPOverview() {
                     )}
                   />
                   <div className='relative z-10'>
-                    <div className='flex items-center gap-4 mb-6'>
+                    <div className='flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 mb-4 sm:mb-6 text-center sm:text-left'>
                       <div
                         className={cn(
-                          'w-16 h-16 rounded-2xl flex items-center justify-center',
+                          'w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 rounded-2xl flex items-center justify-center',
                           'bg-primary/10 ',
                           'transition-all duration-300 ',
                         )}
                       >
-                        <IconComponent className='w-8 h-8 text-primary' />
+                        <IconComponent className='w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-primary' />
                       </div>
                       <div>
                         <h4
                           className={cn(
-                            'text-2xl font-bold text-foreground mb-2',
+                            'text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-foreground mb-2',
                             'transition-colors duration-300',
                           )}
                         >
@@ -648,7 +654,7 @@ export function CNAPPOverview() {
                         </h4>
                         <p
                           className={cn(
-                            'text-muted-foreground',
+                            'text-xs sm:text-sm lg:text-base text-muted-foreground',
                             'transition-colors duration-300',
                           )}
                         >
@@ -658,18 +664,17 @@ export function CNAPPOverview() {
                     </div>
                     <ul
                       className={cn(
-                        'grid grid-cols-2 lg:grid-cols-1 gap-1',
-                        'space-y-4 relative z-10',
-                        'md:text-left text-center'
+                        'grid grid-cols-2 gap-3 sm:gap-4 relative z-10',
+                        'text-center sm:text-left',
                       )}
                     >
                       {deployment.features.map((feature, featureIndex) => (
                         <li
                           key={featureIndex}
                           className={cn(
-                            'flex items-start gap-3 text-muted-foreground',
+                            'flex items-center sm:items-start gap-2 sm:gap-3 text-muted-foreground',
                             'transition-colors duration-300',
-                            'md:justify-start justify-center'
+                            'justify-center sm:justify-start',
                           )}
                         >
                           <div
@@ -680,7 +685,9 @@ export function CNAPPOverview() {
                           >
                             <CheckCircle className='w-4 h-4 text-primary' />
                           </div>
-                          <span className='font-medium'>{feature}</span>
+                          <span className='font-medium text-xs sm:text-sm lg:text-base'>
+                            {feature}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -695,7 +702,7 @@ export function CNAPPOverview() {
         <AnimatedSection
           delay={1.2}
           className={cn(
-            'relative p-12 rounded-2xl overflow-hidden',
+            'relative p-4 sm:p-6 lg:p-8 xl:p-12 rounded-2xl overflow-hidden',
             'border border-primary/15',
           )}
         >
@@ -706,7 +713,10 @@ export function CNAPPOverview() {
               'from-transparent via-primary/30 to-transparent',
             )}
           />
-          <AnimatedSection delay={1.3} className='mb-12 relative z-10'>
+          <AnimatedSection
+            delay={1.3}
+            className='mb-8 sm:mb-10 lg:mb-12 relative z-10'
+          >
             <h3
               className={cn(
                 'text-center ',
@@ -729,7 +739,7 @@ export function CNAPPOverview() {
           <AnimatedList
             delayStep={0.1}
             className={cn(
-              'grid grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto',
+              'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto',
             )}
           >
             {cnappCompatibility.map((compat, index) => {
@@ -737,7 +747,7 @@ export function CNAPPOverview() {
                 <div
                   key={index}
                   className={cn(
-                    'group relative  p-8 rounded-2xl overflow-hidden',
+                    'group relative p-4 sm:p-6 lg:p-8 rounded-2xl overflow-hidden text-center',
                     'bg-card/40 backdrop-blur-sm',
                     'border border-primary/15',
                     'hover:border-primary/15',
@@ -762,30 +772,30 @@ export function CNAPPOverview() {
                   />
                   <div
                     className={cn(
-                      'w-12 h-12 mx-auto mb-4 rounded-xl',
+                      'w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto mb-2 sm:mb-3 lg:mb-4 rounded-xl',
                       'bg-primary/10 flex items-center justify-center',
                     )}
                   >
-                    <compat.icon className='w-6 h-6 text-primary' />
+                    <compat.icon className='w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-primary' />
                   </div>
                   <h4
                     className={cn(
                       'text-center',
-                      'text-lg font-bold text-foreground mb-4',
+                      'text-sm sm:text-base lg:text-lg font-bold text-foreground mb-2 sm:mb-3 lg:mb-4',
                       'transition-colors duration-300',
                     )}
                   >
                     {compat.category}
                   </h4>
-                  <div className='space-y-1'>
+                  <div className='space-y-0.5 sm:space-y-1'>
                     {compat.items.map((item, itemIndex) => (
                       <div
                         key={itemIndex}
                         className={cn(
-                          'text-center ',
-                          'before:content-["•"] before:text-primary before:mr-2 before:text-base',
-                          'text-sm text-muted-foreground px-3 ',
-                          'ransition-all duration-300',
+                          'text-center',
+                          'before:content-["•"] before:text-primary before:mr-1 sm:before:mr-2 before:text-sm sm:before:text-base',
+                          'text-xs sm:text-sm text-muted-foreground px-1 sm:px-2 lg:px-3',
+                          'transition-all duration-300',
                         )}
                       >
                         {item}
