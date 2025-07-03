@@ -245,7 +245,9 @@ export function TestimonialsSection() {
               </span>
             </h3>
             <p className='text-gray-600 text-base sm:text-lg max-w-2xl mx-auto'>
-              覆盖金融、医疗、运营商、云计算等多个行业领域，为各行业提供专业的安全解决方案
+              覆盖金融、医疗、运营商、云计算等多个行业领域。
+              <br />
+              为各行业提供专业的安全解决方案。
             </p>
           </AnimatedList>
 
