@@ -499,6 +499,7 @@ export function CNAPPOverview() {
               从数据到应用的全方位防护体系
             </p>
           </AnimatedSection>
+
           <AnimatedList
             delayStep={0.1}
             initialDelay={0.8}
@@ -512,7 +513,7 @@ export function CNAPPOverview() {
                 <div
                   key={index}
                   className={cn(
-                    'group relative text-center p-8 rounded-2xl',
+                    'group relative  p-8 px-16 lg:px-8 rounded-2xl',
                     'bg-card/60 backdrop-blur-sm',
                     'border border-primary/15',
                     'hover:border-primary/15',
@@ -523,23 +524,6 @@ export function CNAPPOverview() {
                 >
                   <div
                     className={cn(
-                      'absolute inset-0 opacity-0 group-hover:opacity-20',
-                      'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20',
-                      'transition-all duration-300 rounded-2xl',
-                    )}
-                  />
-                  {/* 装饰性背景 */}
-                  <div className='absolute top-0 right-0 w-16 h-16 bg-primary/10 rounded-full blur-xl opacity-50' />
-                  <div className='absolute -bottom-2 -left-2 w-12 h-12 bg-primary/20 rounded-full blur-lg opacity-30' />
-                  <div
-                    className={cn(
-                      'absolute top-0 left-0 w-full h-px',
-                      'bg-gradient-to-r from-transparent via-primary/30 to-transparent',
-                      'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                    )}
-                  />
-                  <div
-                    className={cn(
                       'w-16 h-16 mx-auto mb-6 rounded-2xl',
                       'bg-primary/10 flex items-center justify-center',
                       'group-hover:bg-primary/20 transition-all duration-300',
@@ -548,30 +532,36 @@ export function CNAPPOverview() {
                   >
                     <IconComponent className='w-8 h-8 text-primary' />
                   </div>
+
                   <h4
                     className={cn(
+                      'text-center',
                       'text-lg font-bold text-foreground mb-3',
                       'group-hover:text-primary transition-colors duration-300',
                     )}
                   >
                     {layer.title}
                   </h4>
+
                   <p
                     className={cn(
-                      'text-sm text-muted-foreground leading-relaxed mb-4',
+                      'text-center',
+                      'text-base text-muted-foreground leading-relaxed mb-4',
                       'group-hover:text-foreground transition-colors duration-300',
                     )}
                   >
                     {layer.description}
                   </p>
-                  <div className='space-y-1'>
+
+                  <div className='grid grid-cols-2 lg:grid-cols-1 gap-1'>
                     {layer.features.map((feature, featureIndex) => (
                       <div
                         key={featureIndex}
                         className={cn(
-                          'text-xs text-muted-foreground/80 px-2 py-1 rounded',
-                          'bg-primary/5 group-hover:bg-primary/10',
-                          'group-hover:text-primary/80 transition-all duration-300',
+                          'lg:text-left text-center',
+                          'text-sm text-muted-foreground/80 px-2',
+                          'transition-all duration-300',
+                          'before:content-["•"] before:text-primary before:mr-2 before:text-base',
                         )}
                       >
                         {feature}
@@ -601,6 +591,7 @@ export function CNAPPOverview() {
               适应不同规模和需求的部署方案
             </p>
           </AnimatedSection>
+
           <AnimatedList
             delayStep={0.2}
             initialDelay={1.0}
@@ -622,19 +613,17 @@ export function CNAPPOverview() {
                 >
                   <div
                     className={cn(
-                      'absolute inset-0 opacity-0 group-hover:opacity-10',
+                      'absolute inset-0 opacity-0',
                       'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20',
                       'transition-all duration-300 rounded-2xl',
                     )}
                   />
-                  {/* 装饰性背景 */}
-                  <div className='absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-2xl' />
                   <div className='absolute -bottom-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-xl' />
                   <div
                     className={cn(
                       'absolute top-0 left-0 w-full h-px',
                       'bg-gradient-to-r from-transparent via-primary/30 to-transparent',
-                      'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
+                      'opacity-0  transition-opacity duration-500',
                     )}
                   />
                   <div className='relative z-10'>
@@ -642,8 +631,8 @@ export function CNAPPOverview() {
                       <div
                         className={cn(
                           'w-16 h-16 rounded-2xl flex items-center justify-center',
-                          'bg-primary/10 group-hover:bg-primary/20',
-                          'transition-all duration-300 group-hover:scale-110',
+                          'bg-primary/10 ',
+                          'transition-all duration-300 ',
                         )}
                       >
                         <IconComponent className='w-8 h-8 text-primary' />
@@ -652,7 +641,7 @@ export function CNAPPOverview() {
                         <h4
                           className={cn(
                             'text-2xl font-bold text-foreground mb-2',
-                            'group-hover:text-primary transition-colors duration-300',
+                            'transition-colors duration-300',
                           )}
                         >
                           {deployment.component}
@@ -660,21 +649,27 @@ export function CNAPPOverview() {
                         <p
                           className={cn(
                             'text-muted-foreground',
-                            'group-hover:text-foreground transition-colors duration-300',
+                            'transition-colors duration-300',
                           )}
                         >
                           {deployment.description}
                         </p>
                       </div>
                     </div>
-                    <ul className='space-y-4 relative z-10'>
+                    <ul
+                      className={cn(
+                        'grid grid-cols-2 lg:grid-cols-1 gap-1',
+                        'space-y-4 relative z-10',
+                        'md:text-left text-center'
+                      )}
+                    >
                       {deployment.features.map((feature, featureIndex) => (
                         <li
                           key={featureIndex}
                           className={cn(
                             'flex items-start gap-3 text-muted-foreground',
-                            'group-hover:text-foreground',
                             'transition-colors duration-300',
+                            'md:justify-start justify-center'
                           )}
                         >
                           <div
@@ -711,12 +706,10 @@ export function CNAPPOverview() {
               'from-transparent via-primary/30 to-transparent',
             )}
           />
-          <AnimatedSection
-            delay={1.3}
-            className='text-center mb-12 relative z-10'
-          >
+          <AnimatedSection delay={1.3} className='mb-12 relative z-10'>
             <h3
               className={cn(
+                'text-center ',
                 'text-3xl md:text-4xl font-bold mb-4',
                 'text-primary',
               )}
@@ -724,14 +717,17 @@ export function CNAPPOverview() {
               广泛的兼容性支持
             </h3>
             <p
-              className={cn('text-lg text-muted-foreground max-w-2xl mx-auto')}
+              className={cn(
+                'text-lg text-muted-foreground max-w-2xl mx-auto',
+                'text-center ',
+              )}
             >
               无缝集成主流技术栈和云原生生态
             </p>
           </AnimatedSection>
+
           <AnimatedList
             delayStep={0.1}
-            initialDelay={1.4}
             className={cn(
               'grid grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto',
             )}
@@ -741,7 +737,7 @@ export function CNAPPOverview() {
                 <div
                   key={index}
                   className={cn(
-                    'group relative text-center p-8 rounded-2xl overflow-hidden',
+                    'group relative  p-8 rounded-2xl overflow-hidden',
                     'bg-card/40 backdrop-blur-sm',
                     'border border-primary/15',
                     'hover:border-primary/15',
@@ -768,27 +764,27 @@ export function CNAPPOverview() {
                     className={cn(
                       'w-12 h-12 mx-auto mb-4 rounded-xl',
                       'bg-primary/10 flex items-center justify-center',
-                      'group-hover:bg-primary/20 transition-all duration-300',
-                      'group-hover:scale-110',
                     )}
                   >
                     <compat.icon className='w-6 h-6 text-primary' />
                   </div>
                   <h4
                     className={cn(
+                      'text-center',
                       'text-lg font-bold text-foreground mb-4',
                       'transition-colors duration-300',
                     )}
                   >
                     {compat.category}
                   </h4>
-                  <div className='space-y-2'>
+                  <div className='space-y-1'>
                     {compat.items.map((item, itemIndex) => (
                       <div
                         key={itemIndex}
                         className={cn(
-                          'text-sm text-muted-foreground px-3 py-1 rounded-full',
-                          'bg-primary/5 group-hover:bg-primary/10',
+                          'text-center ',
+                          'before:content-["•"] before:text-primary before:mr-2 before:text-base',
+                          'text-sm text-muted-foreground px-3 ',
                           'ransition-all duration-300',
                         )}
                       >
