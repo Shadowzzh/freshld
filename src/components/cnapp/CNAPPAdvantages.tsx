@@ -183,7 +183,8 @@ export function CNAPPAdvantages() {
               领先的云原生安全技术
             </h3>
             <p className='text-base md:text-lg lg:text-xl text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4 md:px-0'>
-              通过创新的技术架构和智能化的安全策略，明焰CNAPP为云原生环境提供了前所未有的安全防护能力，
+              通过创新的技术架构和智能化的安全策略，明焰CNAPP为云原生环境提供了前所未有的安全防护能力
+              <br />
               让您的云原生应用在享受敏捷性和可扩展性的同时，获得企业级的安全保障。
             </p>
           </div>

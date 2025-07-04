@@ -88,74 +88,80 @@ export function CDGArchitecture() {
           />
 
           {/* 架构层级图 */}
-          <div className='relative'>
-            {/* 连接线 */}
-            <div className='absolute inset-0 flex flex-col justify-between py-8'>
-              {Array.from({ length: 4 }).map((_, index) => (
-                <div
-                  key={index}
-                  className='h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent'
-                />
-              ))}
-            </div>
-
-            {/* 架构层级 */}
-            <AnimatedList
-              className={cn('relative space-y-8')}
-              delayStep={0.2}
-              direction='up'
-            >
+          <div className='relative max-w-4xl mx-auto'>
+            {/* 架构层级 - 垂直流程图布局 */}
+            <AnimatedList className='space-y-6' delayStep={0.15} direction='up'>
               {systemLayers.map((layer, index) => (
-                <div
-                  key={layer.id}
-                  className={cn(
-                    'flex',
-                    index % 2 === 0 ? 'justify-start' : 'justify-end',
+                <div key={layer.id} className='relative'>
+                  {/* 连接箭头 */}
+                  {index < systemLayers.length - 1 && (
+                    <div className='absolute left-1/2 -bottom-3 transform -translate-x-1/2 z-10'>
+                      <div className='w-6 h-6 bg-white border-2 border-primary/30 rounded-full flex items-center justify-center'>
+                        <div className='w-0 h-0 border-l-2 border-r-2 border-t-4 border-transparent border-t-primary'></div>
+                      </div>
+                    </div>
                   )}
-                >
-                  <div
+
+                  {/* 架构层卡片 */}
+                  <Card
                     className={cn(
-                      'max-w-2xl p-6 bg-white border rounded-2xl',
-                      'border-primary/15 hover:border-primary/30',
-                      'transition-all duration-300 group hover:scale-105',
+                      'lg:min-h-32 p-6 transition-all duration-300 group hover:scale-[1.02]',
+                      'border-primary/15 hover:border-primary/30 ',
+                      'bg-white relative overflow-hidden',
                     )}
                   >
-                    <div className='flex items-start gap-6'>
-                      {/* 图标 */}
-                      <div
-                        className={cn(
-                          'w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 ',
-                          'bg-gradient-to-br from-primary to-primary/80',
-                          'group-hover:scale-105 transition-transform duration-300',
-                        )}
-                      >
-                        <layer.icon className='w-8 h-8 text-white' />
+                    {/* 悬停效果 */}
+                    <div
+                      className={cn(
+                        'absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent',
+                        'opacity-0 group-hover:opacity-100 transition-opacity duration-300',
+                      )}
+                    />
+
+                    <div className='relative z-10 h-full flex flex-col lg:flex-row lg:items-center gap-6'>
+                      {/* 上部/左侧：图标和描述 */}
+                      <div className='flex items-center gap-4 flex-shrink-0 min-w-0 lg:flex-1'>
+                        <div
+                          className={cn(
+                            'w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0',
+                            'bg-gradient-to-br from-primary to-primary/80',
+                            'group-hover:scale-110 transition-transform duration-300',
+                          )}
+                        >
+                          <layer.icon className='w-7 h-7 text-white' />
+                        </div>
+                        <div className='min-w-0 flex-1'>
+                          <h3 className='text-xl font-bold text-gray-900 mb-1'>
+                            {layer.title}
+                          </h3>
+                          <p className='text-sm text-gray-600 leading-relaxed'>
+                            {layer.description}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* 内容 */}
-                      <div className='flex-1'>
-                        <h3 className='text-xl font-bold text-gray-900 mb-2'>
-                          {layer.title}
-                        </h3>
-                        <p className='text-gray-600 mb-4 leading-relaxed'>
-                          {layer.description}
-                        </p>
-
-                        {/* 功能特性 */}
-                        <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
+                      {/* 下部/右侧：功能标签 */}
+                      <div className='flex-shrink-0 min-w-0 lg:flex-1'>
+                        <h4 className='text-xs font-semibold text-gray-500 mb-3 uppercase tracking-wider'>
+                          核心功能
+                        </h4>
+                        <div className='flex flex-wrap gap-2'>
                           {layer.features.map((feature, featureIndex) => (
-                            <div
+                            <span
                               key={featureIndex}
-                              className='flex items-center gap-2 text-sm text-gray-700'
+                              className={cn(
+                                'px-3 py-1.5 text-xs font-medium rounded-full',
+                                'bg-primary/10 text-primary border border-primary/20',
+                                'hover:bg-primary/15 transition-colors duration-200',
+                              )}
                             >
-                              <div className='w-1.5 h-1.5 rounded-full bg-primary' />
                               {feature}
-                            </div>
+                            </span>
                           ))}
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Card>
                 </div>
               ))}
             </AnimatedList>

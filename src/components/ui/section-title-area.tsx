@@ -23,7 +23,7 @@ interface SectionTitleAreaProps {
   /** 副标题 */
   subtitle?: string
   /** 描述 */
-  description: string
+  description: string | React.ReactNode
   /** 次要描述 */
   secondaryDescription?: string
   /** 统计数据 */

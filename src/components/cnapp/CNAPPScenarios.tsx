@@ -256,6 +256,7 @@ export function CNAPPScenarios() {
             </h3>
             <p className='text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6'>
               从政府机构到企业集团，从云服务商到通信设备制造商，明焰CNAPP在各个行业都展现出了卓越的适应性和实用性。
+              <br />
               无论您的组织规模大小，我们都能为您提供量身定制的云原生安全解决方案。
             </p>
           </div>

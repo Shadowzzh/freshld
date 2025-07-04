@@ -459,12 +459,12 @@ export function CNAPPArchitecture() {
                     >
                       {category.category}
                     </h4>
-                    <div className={cn('space-y-2', 'grid grid-cols-2  gap-2')}>
+                    <div className={cn('grid grid-cols-2  gap-2')}>
                       {category.items.map((item, itemIndex) => (
                         <div
                           key={itemIndex}
                           className={cn(
-                            'text-sm text-muted-foreground px-3 py-1 rounded-full',
+                            'text-sm text-muted-foreground px-3 py-2 rounded-full',
                             'bg-primary/5 group-hover:bg-primary/10',
                             'transition-all duration-300',
                           )}
@@ -494,7 +494,10 @@ export function CNAPPArchitecture() {
               企业级云原生安全架构
             </h3>
             <p className={cn('text-muted-foreground mb-6 max-w-2xl mx-auto')}>
-              明焰CNAPP通过科学的分层架构设计和灵活的部署方式，为企业提供了一套完整、可靠、易于管理的云原生安全解决方案。
+              明焰CNAPP通过科学的分层架构设计和灵活的部署方式。
+              <br />
+              为企业提供了一套完整、可靠、易于管理的云原生安全解决方案。
+              <br />
               无论您使用何种技术栈，我们都能为您提供无缝的安全防护体验。
             </p>
 

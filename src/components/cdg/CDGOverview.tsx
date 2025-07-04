@@ -68,8 +68,15 @@ export function CDGOverview() {
               badge='产品概述'
               title='重新定义'
               subtitle='勒索防护新标准'
-              description='明焰CDG是新一代防勒索系统，采用双模型检测技术和全生命周期防护理念，为企业数据安全提供滴水不漏的全面防护。'
-              secondaryDescription='从事前预防到事后恢复，构建立体化防御体系，确保业务持续稳定运行。'
+              description={
+                <div>
+                  明焰CDG是新一代防勒索系统，采用双模型检测技术和全生命周期防护理念。
+                  <br />
+                  为企业数据安全提供滴水不漏的全面防护。
+                  <br />
+                  从事前预防到事后恢复，构建立体化防御体系，确保业务持续稳定运行。
+                </div>
+              }
               stats={[
                 {
                   value: (
@@ -105,8 +112,24 @@ export function CDGOverview() {
 
           <SectionHeader
             badge='威胁态势'
-            title='勒索威胁日益严峻，数据安全刻不容缓'
-            description='在数字化高速发展的今天，勒索病毒攻击事件持续走高，已成为企业面临的严峻安全挑战。从厄瓜多尔电信运营商到美国成品油管道，勒索攻击的全球性和破坏力不容忽视。'
+            title={
+              <div className='leading-tight'>
+                勒索威胁日益严峻
+                <br />
+                数据安全刻不容缓
+              </div>
+            }
+            description={
+              <div>
+                在数字化高速发展的今天，勒索病毒攻击事件持续走高，
+                <br />
+                已成为企业面临的严峻安全挑战。
+                <br />
+                从厄瓜多尔电信运营商到美国成品油管道，勒索攻击的全球性和破坏力不容忽视
+                <br />
+                数据安全刻不容缓。
+              </div>
+            }
             className={cn('mb-16')}
           />
 
@@ -198,7 +221,13 @@ export function CDGOverview() {
           <SectionHeader
             badge='核心理念'
             title='全生命周期防护，构建立体防御体系'
-            description='明焰CDG秉承全生命周期防护理念，基于大数据分析的精准判断和双模型检测技术，为企业提供创新的勒索解决方案。'
+            description={
+              <div>
+                明焰CDG秉承全生命周期防护理念，基于大数据分析的精准判断和双模型检测技术。
+                <br />
+                为企业提供创新的勒索解决方案。
+              </div>
+            }
             className={cn('mb-16')}
           />
 
@@ -213,15 +242,15 @@ export function CDGOverview() {
                 <div
                   key={value.title}
                   className={cn(
-                    'h-full p-8 rounded-2xl bg-white border border-primary/15',
+                    'h-full p-8 px-14 rounded-2xl bg-white border border-primary/15',
                     'transition-all duration-300 hover:border-primary/30',
-                    'hover:scale-105 group',
+                    'hover:scale-105 group text-center',
                   )}
                 >
                   {/* 图标 */}
                   <div
                     className={cn(
-                      'w-16 h-16 mb-6 rounded-xl',
+                      'w-16 h-16 mb-6 rounded-xl mx-auto',
                       'bg-gradient-to-br from-primary/10 to-primary/20',
                       'flex items-center justify-center',
                       'group-hover:scale-110 transition-transform duration-300',
@@ -241,16 +270,20 @@ export function CDGOverview() {
                   </p>
 
                   {/* 特性列表 */}
-                  <ul className={cn('space-y-2')}>
+                  <ul
+                    className={cn(
+                      'grid grid-cols-1 sm:grid-cols-2 gap-2 text-center',
+                    )}
+                  >
                     {value.features.map((feature, index) => (
                       <li
                         key={index}
                         className={cn(
-                          'flex items-center text-sm text-gray-700',
-                          'before:content-["•"] before:text-primary before:mr-3 before:text-lg',
+                          'flex items-center justify-center text-sm text-gray-700',
+                          'before:content-["•"] before:text-primary before:mr-2 before:text-lg before:flex-shrink-0',
                         )}
                       >
-                        {feature}
+                        <span className={cn('truncate')}>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -289,7 +322,7 @@ export function CDGOverview() {
 
             <div className={cn('relative z-10')}>
               <h3 className={cn('text-3xl font-bold text-gray-700 mb-6')}>
-                成为您企业数据的贴身保镖
+                智能守护企业数据资产，7×24小时全天候防护
               </h3>
               <p className={cn('text-lg text-gray-500 leading-relaxed')}>
                 明焰CDG致力于打造以&ldquo;资产多维度监控&rdquo;、&ldquo;双模型多维度精准检测&rdquo;、
