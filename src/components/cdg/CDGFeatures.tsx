@@ -181,6 +181,7 @@ export function CDGFeatures() {
         'bg-white/80 backdrop-blur-sm h-full flex flex-col',
         'hover:border-primary/30 hover:bg-white hover:scale-105',
         'transition-all duration-300',
+        'text-center md:text-left', // 手机端居中，中等屏幕及以上左对齐
       )}
     >
       {/* 图标 */}
@@ -189,6 +190,7 @@ export function CDGFeatures() {
           'w-12 h-12 rounded-xl flex items-center justify-center mb-4',
           'transition-all duration-300 group-hover:scale-105',
           'bg-primary/10 text-primary',
+          'mx-auto md:mx-0', // 手机端居中，中等屏幕及以上左对齐
         )}
       >
         <feature.icon className='w-6 h-6' />
@@ -208,12 +210,12 @@ export function CDGFeatures() {
           {feature.features.map((item, idx) => (
             <div
               key={idx}
-              className='flex items-center space-x-2 p-2 rounded-lg bg-white/80 border border-gray-100 hover:bg-gray-50/50 transition-colors duration-300'
+              className='flex items-center space-x-2 p-2 rounded-lg bg-white/80 border border-gray-100 hover:bg-gray-50/50 transition-colors duration-300 justify-center sm:justify-start'
             >
               <div className='w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 bg-primary/10'>
                 <CheckCircle className='w-2.5 h-2.5 text-primary' />
               </div>
-              <span className='text-xs font-medium text-gray-700 flex-1'>
+              <span className='text-xs font-medium text-gray-700 flex-1 text-center sm:text-left'>
                 {item}
               </span>
             </div>
@@ -240,7 +242,7 @@ export function CDGFeatures() {
   ) => {
     const Icon = icon
     return (
-      <div className='flex items-center gap-3 mb-8'>
+      <div className='flex items-center justify-center gap-3 mb-8'>
         <div className='w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center'>
           <Icon className='w-6 h-6 text-primary' />
         </div>

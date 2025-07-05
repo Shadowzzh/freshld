@@ -173,7 +173,12 @@ export function CDGArchitecture() {
           <SectionHeader
             badge='部署架构'
             title='集中管理，分布式部署'
-            description='采用集中管理、分布式部署的方式，安全管控中心独立部署，客户端分布在总部、分支机构及云端，形成一体化安全防护体系。'
+            description={
+              <>
+                采用集中管理、分布式部署的方式，安全管控中心独立部署。<br />
+                客户端分布在总部、分支机构及云端，形成一体化安全防护体系。
+              </>
+            }
             className='mb-16'
           />
 
