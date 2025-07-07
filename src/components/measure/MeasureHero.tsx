@@ -7,6 +7,7 @@ import { NumberTicker } from '@/components/ui/number-ticker'
 import { MetallicShineCard } from '@/components/ui/metallic-shine'
 import { ScrollIndicator } from '@/components/ui/scroll-indicator'
 import { VortexDynamic } from '@/components/ui/vortex-dynamic'
+import Link from 'next/link'
 
 const stats = [
   { value: 1000, label: '攻击场景', suffix: '+' },
@@ -152,43 +153,49 @@ export default function MeasureHero() {
             'space-y-4 sm:space-y-0 sm:space-x-6',
           )}
         >
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
-            whileTap={{ scale: 0.95, transition: { duration: 0.3 } }}
-            viewport={{ once: true }}
-            className={cn(
-              'group px-8 py-4 rounded-lg',
-              'bg-primary hover:bg-primary/90',
-              'text-white font-semibold text-lg',
-              'flex items-center space-x-2',
-              'shadow-lg',
-            )}
-          >
-            <span>免费试用</span>
-            <ArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
-          </motion.button>
+          <Link href='/contact'>
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+              whileTap={{ scale: 0.95, transition: { duration: 0.3 } }}
+              viewport={{ once: true }}
+              className={cn(
+                'cursor-pointer',
+                'group px-8 py-4 rounded-lg',
+                'bg-primary hover:bg-primary/90',
+                'text-white font-semibold text-lg',
+                'flex items-center space-x-2',
+                'shadow-lg',
+              )}
+            >
+              <span>免费试用</span>
+              <ArrowRight className='w-5 h-5 group-hover:translate-x-1 transition-transform' />
+            </motion.button>
+          </Link>
 
-          <motion.button
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            viewport={{ once: true }}
-            className={cn(
-              'group px-8 py-4 rounded-lg',
-              'border-2 border-white/30 hover:border-white/50',
-              'text-white font-semibold text-lg',
-              'flex items-center space-x-2',
-              'backdrop-blur-sm hover:bg-white/5',
-            )}
-          >
-            <Play className='w-5 h-5' />
-            <span>观看演示</span>
-          </motion.button>
+          <Link href='/contact'>
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 1.2 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              viewport={{ once: true }}
+              className={cn(
+                'cursor-pointer',
+                'group px-8 py-4 rounded-lg',
+                'border-2 border-white/30 hover:border-white/50',
+                'text-white font-semibold text-lg',
+                'flex items-center space-x-2',
+                'backdrop-blur-sm hover:bg-white/5',
+              )}
+            >
+              <Play className='w-5 h-5' />
+              <span>观看演示</span>
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* 性能指标 */}
