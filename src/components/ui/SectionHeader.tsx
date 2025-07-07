@@ -41,9 +41,9 @@ export function SectionHeader({
 
       {description && (
         <motion.div {...descriptionAnimation} className='max-w-3xl mx-auto'>
-          <p className='text-lg sm:text-xl text-gray-600 leading-relaxed'>
+          <div className='text-lg sm:text-xl text-gray-600 leading-relaxed'>
             {description}
-          </p>
+          </div>
         </motion.div>
       )}
     </div>

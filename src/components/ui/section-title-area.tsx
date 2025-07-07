@@ -140,7 +140,7 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
         distance={20}
         className='max-w-4xl mx-auto'
       >
-        <p
+        <div
           className={cn(
             'text-lg md:text-xl leading-relaxed mb-6',
             'text-gray-600',
@@ -148,11 +148,11 @@ export function SectionTitleArea(props: SectionTitleAreaProps) {
           )}
         >
           {description}
-        </p>
+        </div>
         {secondaryDescription && (
-          <p className='text-base text-gray-500 leading-relaxed'>
+          <div className='text-base text-gray-500 leading-relaxed'>
             {secondaryDescription}
-          </p>
+          </div>
         )}
       </AnimatedSection>
 
