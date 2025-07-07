@@ -6,7 +6,9 @@ import Link from 'next/link'
 
 export const HeroSection = () => {
   return (
-    <section className='relative md:h-[calc(100vh)] h-auto overflow-hidden'>
+    <section
+      className={cn('relative md:h-[calc(100vh)] h-auto overflow-hidden')}
+    >
       {/* Background with gradient */}
       <HeroBackground />
 
@@ -30,16 +32,33 @@ export const HeroSection = () => {
               'mb-[10%]',
             )}
           >
-            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight'>
+            <h1
+              className={cn(
+                'text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight',
+              )}
+            >
               网络空间的守护者
             </h1>
-            <h2 className='text-lg sm:text-xl lg:text-2xl font-medium opacity-90'>
+            <h2
+              className={cn(
+                'text-lg sm:text-xl lg:text-2xl font-medium opacity-90',
+              )}
+            >
               网络空间主机与容器的贴身保镖。
             </h2>
-            <p className='text-base sm:text-lg lg:text-xl opacity-80 max-w-2xl leading-relaxed'>
+            <p
+              className={cn(
+                'text-base sm:text-lg lg:text-xl opacity-80 max-w-2xl leading-relaxed',
+              )}
+            >
               奇盾信息技术有限公司致力于利用大数据和人工智能技术，为客户提供划时代的网络信息安全解决方案。我们实时监控并防御各种已知和未知的恶意威胁，让未知威胁无所遁形。
             </p>
-            <div className='flex flex-col sm:flex-row lg:flex-row gap-4 pt-4'>
+            <div
+              className={cn(
+                'flex md:flex-col md:items-start md:justify-start lg:flex-row gap-4 pt-4',
+                ' items-center',
+              )}
+            >
               <Link href='/contact'>
                 <button
                   className={cn(
@@ -51,7 +70,7 @@ export const HeroSection = () => {
                     'border-2 border-white',
                   )}
                 >
-                  <Download className='w-5 h-5' />
+                  <Download className={cn('w-5 h-5')} />
                   <span>获取演示</span>
                 </button>
               </Link>
@@ -64,7 +83,7 @@ export const HeroSection = () => {
                   )}
                 >
                   <span>了解更多</span>
-                  <ArrowRight className='w-5 h-5' />
+                  <ArrowRight className={cn('w-5 h-5')} />
                 </button>
               </Link>
             </div>

@@ -73,24 +73,16 @@ export default function Home() {
         {/* 主要内容区域 */}
         <main role='main' aria-label='首页主要内容'>
           {/* 英雄区域 */}
-          <section aria-labelledby='hero-heading'>
-            <HeroSection />
-          </section>
+          <HeroSection />
 
           {/* 核心竞争力展示 */}
-          <section aria-labelledby='core-competency-heading'>
-            <HeroCoreCompetency />
-          </section>
+          <HeroCoreCompetency />
 
           {/* 产品概览 */}
-          <section aria-labelledby='products-heading'>
-            <ProductOverviewSection />
-          </section>
+          <ProductOverviewSection />
 
           {/* 客户证言与合作伙伴 */}
-          <section aria-labelledby='testimonials-heading'>
-            <TestimonialsSection />
-          </section>
+          <TestimonialsSection />
         </main>
 
         {/* 页脚 */}

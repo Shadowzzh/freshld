@@ -34,7 +34,8 @@ export const HeroCoreCompetency = () => {
         'md:-translate-y-[110%] translate-y-0 ',
         'md:absolute  left-0 right-0 z-20',
         'md:bg-transparent bg-black',
-        'md:pb-0 pb-6 md:rounded-none rounded-b-2xl',
+        'md:pt-0 pt-4',
+        'md:pb-0 pb-4 md:rounded-none rounded-b-2xl',
       )}
     >
       {/* 背景图片或渐变 */}

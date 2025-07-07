@@ -2,21 +2,13 @@
 
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useIsMobile } from '@/hooks/useIsMobile'
 
-/** 背景 */
-export const HeroBackground = () => {
+const RenderPc = () => {
   const [imageLoaded, setImageLoaded] = useState(false)
-
   return (
-    <div
-      className={cn(
-        'transition-opacity duration-300',
-        'absolute left-0 top-0',
-        'min-h-[100vh] w-full',
-        'bg-black',
-      )}
-    >
+    <>
       <Image
         src='/images/black-bg.png'
         alt='Background'
@@ -35,7 +27,7 @@ export const HeroBackground = () => {
         quality={100}
         sizes='100vw'
       />
-      {/* 视频 */}
+
       <div
         className={cn(
           imageLoaded ? 'opacity-100' : 'opacity-0',
@@ -61,6 +53,36 @@ export const HeroBackground = () => {
           playsInline
         />
       </div>
+    </>
+  )
+}
+
+const RenderMobile = () => {
+  return <></>
+}
+
+/** 背景 */
+export const HeroBackground = () => {
+  const { isMobile } = useIsMobile(1024) // 使用 1024px 作为桌面设备断点
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  return (
+    <div
+      aria-label='hero-bg'
+      className={cn(
+        'transition-opacity duration-300',
+        'absolute left-0 top-0',
+        'min-h-[100vh] w-full',
+        'bg-black',
+      )}
+    >
+      {isMobile ? <RenderMobile /> : <RenderPc />}
     </div>
   )
 }
