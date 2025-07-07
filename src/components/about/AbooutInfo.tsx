@@ -137,6 +137,7 @@ export function AboutInfo() {
             </h3>
             <p className='text-lg text-foreground leading-relaxed'>
               明焰安全始终秉持&ldquo;以技术为主实战纵深防御&rdquo;的理念，为企业构建从端到云的全栈安全体系。
+              <br />
               我们相信，通过领先的AI技术，监控操作系统中所有进程行为，能够让黑客无所遁形。
             </p>
           </MetallicShineCard>

@@ -35,7 +35,9 @@ export function AboutHero() {
             <p className={cn('text-xl text-neutral-600 mb-8 leading-relaxed')}>
               明焰安全（FYRESHLD
               NGEP）是广州奇盾信息技术有限公司旗下的核心品牌。
-              奇盾信息与浙江大学实验室紧密合作，在产学研方面取得了丰硕成果，
+              <br />
+              奇盾信息与浙江大学实验室紧密合作，在产学研方面取得了丰硕成果。
+              <br />
               并成功打造了明焰系列安全产品。
             </p>
           </AnimatedSection>

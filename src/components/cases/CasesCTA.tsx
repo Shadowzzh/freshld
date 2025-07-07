@@ -17,7 +17,9 @@ export function CasesCTA() {
                 成为我们的下一个成功案例
               </h3>
               <p className='text-muted-foreground mb-6 max-w-2xl mx-auto'>
-                加入众多知名企业的行列，选择明焰安全的专业网络安全解决方案，为您的业务提供全方位的安全防护
+                加入众多知名企业的行列，选择明焰安全的专业网络安全解决方案。
+                <br />
+                为您的业务提供全方位的安全防护。
               </p>
 
               <Link href={`/contact`}>
