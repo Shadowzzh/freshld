@@ -39,11 +39,7 @@ export function WhyChooseUs() {
         </AnimatedList>
 
         {/* 核心优势 */}
-        <AnimatedList
-          initialDelay={0.4}
-          delayStep={0.2}
-          className='grid lg:grid-cols-2 gap-8'
-        >
+        <AnimatedList className='grid lg:grid-cols-2 gap-8'>
           {advantages.map((advantage, index) => (
             <div
               key={index}
@@ -81,7 +77,6 @@ export function WhyChooseUs() {
                   <div className='text-3xl font-bold text-primary mb-1'>
                     <NumberTicker
                       value={advantage.stats.value}
-                      delay={0.5 + index * 0.2}
                       decimalPlaces={advantage.stats.value < 10 ? 1 : 0}
                     />
                     {advantage.stats.suffix}

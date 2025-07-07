@@ -22,7 +22,6 @@ export const HeroSection = () => {
           )}
         >
           <AnimatedList
-            delayStep={0.2}
             className={cn(
               'space-y-6 text-white',
               'max-w-3xl',

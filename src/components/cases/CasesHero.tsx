@@ -40,11 +40,7 @@ export function CasesHero() {
       {/* 内容区 */}
       <div className='container mx-auto px-4 relative z-10'>
         <div className='max-w-5xl mx-auto text-center'>
-          <AnimatedList
-            initialDelay={0.1}
-            delayStep={0.1}
-            className='space-y-6'
-          >
+          <AnimatedList className='space-y-6'>
             {/* 标签 */}
             <div className='mb-6'>
               <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/15 text-primary text-sm font-medium'>
@@ -61,20 +57,16 @@ export function CasesHero() {
             </h1>
 
             {/* 副标题 */}
-            <p className='text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed'>
+            <div className='text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed'>
               从金融巨头到科技先锋，探索明焰安全如何助力各行业领军企业
               <span className='text-primary font-semibold'>
                 构建坚不可摧的安全防线
               </span>
-            </p>
+            </div>
 
             {/* 统计数据 */}
             <div className='grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-12'>
-              <AnimatedList
-                initialDelay={0.3}
-                delayStep={0.1}
-                className='contents'
-              >
+              <AnimatedList className='contents'>
                 {statsData.map((stat, index) => {
                   const IconComponent = stat.icon
                   return (
@@ -85,7 +77,6 @@ export function CasesHero() {
                       <div className='text-3xl font-bold text-foreground'>
                         <NumberTicker
                           value={stat.value}
-                          delay={stat.delay}
                           decimalPlaces={stat.decimalPlaces || 0}
                           className='text-3xl font-bold text-foreground'
                         />
@@ -106,7 +97,6 @@ export function CasesHero() {
       <div className='absolute bottom-0 left-0 right-0 z-10 m-auto'>
         {/* 滚动指示器 */}
         <ScrollIndicator
-          delay={0.8}
           borderColor='border-primary/30'
           dotColor='bg-primary/60'
           containerClassName='mt-8'

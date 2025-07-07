@@ -146,8 +146,6 @@ export function CNAPPCapabilities() {
 
         {/* 功能列表 */}
         <AnimatedList
-          delayStep={0.2}
-          initialDelay={0.2}
           className={cn(
             'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 md:gap-8',
           )}

@@ -127,7 +127,7 @@ export function AboutTimeline() {
         </AnimatedList>
       </div>
 
-      <AnimatedSection delay={0.2} direction='up'>
+      <AnimatedSection direction='up'>
         <div className='relative z-10'>
           <Timeline data={timelineData} />
         </div>

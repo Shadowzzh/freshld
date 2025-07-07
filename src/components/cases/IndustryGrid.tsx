@@ -86,11 +86,7 @@ export function IndustryGrid() {
           </AnimatedSection>
 
           {/* 行业网格 */}
-          <AnimatedList
-            initialDelay={0.2}
-            delayStep={0.1}
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {industries.map(industry => (
               <Card
                 key={industry.id}
@@ -150,7 +146,7 @@ export function IndustryGrid() {
           </AnimatedList>
 
           {/* 底部说明 */}
-          <AnimatedSection delay={0.8} className='mt-12 text-center'>
+          <AnimatedSection className='mt-12 text-center'>
             <p className='text-muted-foreground'>
               以上仅展示部分行业案例，更多行业解决方案请联系我们获取详细资料
             </p>

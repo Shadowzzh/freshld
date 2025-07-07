@@ -216,7 +216,6 @@ export function CNAPPOverview() {
 
         {/* 挑战与解决方案 */}
         <AnimatedSection
-          delay={0.4}
           className={cn(
             'grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16 lg:mb-24',
           )}
@@ -224,7 +223,6 @@ export function CNAPPOverview() {
           {/* 挑战 */}
           <AnimatedSection
             direction='left'
-            delay={0.6}
             className={cn(
               'relative p-4 sm:p-6 lg:p-8 rounded-2xl bg-card/60',
               'backdrop-blur-sm border border-primary/15',
@@ -256,11 +254,7 @@ export function CNAPPOverview() {
               </div>
               云原生安全挑战
             </h3>
-            <AnimatedList
-              delayStep={0.1}
-              initialDelay={0.8}
-              className={cn('space-y-6')}
-            >
+            <AnimatedList className={cn('space-y-6')}>
               {cnappSecurityChallenges.map((challenge, index) => (
                 <div
                   key={index}
@@ -314,7 +308,6 @@ export function CNAPPOverview() {
           {/* 解决方案 */}
           <AnimatedSection
             direction='right'
-            delay={0.8}
             className={cn(
               'relative p-4 sm:p-6 lg:p-8 rounded-2xl bg-card/60',
               'backdrop-blur-sm border border-primary/15',
@@ -487,8 +480,8 @@ export function CNAPPOverview() {
         </AnimatedSection>
 
         {/* 产品架构 */}
-        <AnimatedSection delay={0.6} className={cn('mb-24')}>
-          <AnimatedSection delay={0.7} className={cn('text-center mb-16')}>
+        <AnimatedSection className={cn('mb-24')}>
+          <AnimatedSection className={cn('text-center mb-16')}>
             <h3
               className={cn(
                 'text-3xl md:text-4xl font-bold mb-4',
@@ -505,8 +498,6 @@ export function CNAPPOverview() {
           </AnimatedSection>
 
           <AnimatedList
-            delayStep={0.1}
-            initialDelay={0.8}
             className={cn(
               'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8',
             )}
@@ -579,8 +570,8 @@ export function CNAPPOverview() {
         </AnimatedSection>
 
         {/* 灵活的部署架构 */}
-        <AnimatedSection delay={0.8} className={cn('mb-24')}>
-          <AnimatedSection delay={0.9} className={cn('text-center mb-16')}>
+        <AnimatedSection className={cn('mb-24')}>
+          <AnimatedSection className={cn('text-center mb-16')}>
             <h3
               className={cn(
                 'text-3xl md:text-4xl font-bold mb-4',
@@ -597,8 +588,6 @@ export function CNAPPOverview() {
           </AnimatedSection>
 
           <AnimatedList
-            delayStep={0.2}
-            initialDelay={1.0}
             className={cn(
               'grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16',
             )}
@@ -700,7 +689,6 @@ export function CNAPPOverview() {
 
         {/* 兼容性 */}
         <AnimatedSection
-          delay={1.2}
           className={cn(
             'relative p-4 sm:p-6 lg:p-8 xl:p-12 rounded-2xl overflow-hidden',
             'border border-primary/15',
@@ -713,10 +701,7 @@ export function CNAPPOverview() {
               'from-transparent via-primary/30 to-transparent',
             )}
           />
-          <AnimatedSection
-            delay={1.3}
-            className='mb-8 sm:mb-10 lg:mb-12 relative z-10'
-          >
+          <AnimatedSection className='mb-8 sm:mb-10 lg:mb-12 relative z-10'>
             <h3
               className={cn(
                 'text-center ',
@@ -737,7 +722,6 @@ export function CNAPPOverview() {
           </AnimatedSection>
 
           <AnimatedList
-            delayStep={0.1}
             className={cn(
               'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto',
             )}

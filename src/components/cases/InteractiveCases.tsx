@@ -108,7 +108,7 @@ export function InteractiveCases() {
         </AnimatedSection>
 
         {/* 筛选器 */}
-        <AnimatedSection delay={0.2} className='mb-12'>
+        <AnimatedSection className='mb-12'>
           <div className='flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-card border border-primary/15 '>
             <div className='flex items-center gap-3'>
               <Filter className='w-5 h-5 text-primary' />

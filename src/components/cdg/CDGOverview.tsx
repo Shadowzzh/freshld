@@ -137,9 +137,8 @@ export function CDGOverview() {
           <AnimatedList
             className={cn('grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16')}
             direction='up'
-            delayStep={0.1}
           >
-            {threatStats.map((stat, index) => (
+            {threatStats.map(stat => (
               <div key={stat.label} className={cn('text-center group')}>
                 <div
                   className={cn(
@@ -163,7 +162,6 @@ export function CDGOverview() {
                   <div className={cn('text-4xl font-bold text-primary mb-2')}>
                     <NumberTicker
                       value={stat.value}
-                      delay={0.5 + index * 0.2}
                       className={cn('text-primary')}
                     />
                     <span className={cn('text-2xl ml-1')}>{stat.label}</span>
@@ -232,10 +230,7 @@ export function CDGOverview() {
           />
 
           {/* 核心价值 */}
-          <AnimatedList
-            initialDelay={0.3}
-            className={cn('grid grid-cols-1 lg:grid-cols-3 gap-8')}
-          >
+          <AnimatedList className={cn('grid grid-cols-1 lg:grid-cols-3 gap-8')}>
             {coreValues.map(value => {
               const IconComponent = value.icon
               return (

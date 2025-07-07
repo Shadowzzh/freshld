@@ -73,7 +73,6 @@ export function CasesTimeline() {
             {timelineData.map((item, index) => (
               <AnimatedSection
                 key={index}
-                delay={0.1 * index}
                 direction={index % 2 === 0 ? 'left' : 'right'}
               >
                 <div
@@ -163,7 +162,7 @@ export function CasesTimeline() {
         </div>
 
         {/* 底部说明 */}
-        <AnimatedSection delay={0.8} className='mt-16 text-center'>
+        <AnimatedSection className='mt-16 text-center'>
           <div className='max-w-3xl mx-auto'>
             <h3 className='text-xl font-semibold text-foreground mb-4'>
               与客户共创未来

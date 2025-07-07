@@ -181,7 +181,7 @@ export function CNAPPArchitecture() {
         </AnimatedSection>
 
         {/* 架构层级 */}
-        <AnimatedSection delay={0.2} className={cn('mb-20')}>
+        <AnimatedSection className={cn('mb-20')}>
           <h3
             className={cn(
               'text-2xl font-bold text-foreground text-center mb-12',
@@ -190,8 +190,6 @@ export function CNAPPArchitecture() {
             5层架构体系
           </h3>
           <AnimatedList
-            delayStep={0.2}
-            initialDelay={0.3}
             className={cn(
               'space-y-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8',
             )}
@@ -292,7 +290,7 @@ export function CNAPPArchitecture() {
         </AnimatedSection>
 
         {/* 部署方式 */}
-        <AnimatedSection delay={0.4} className={cn('mb-20')}>
+        <AnimatedSection className={cn('mb-20')}>
           <h3
             className={cn(
               'text-2xl font-bold text-foreground text-center mb-12',
@@ -302,8 +300,6 @@ export function CNAPPArchitecture() {
           </h3>
           <div className={cn('max-w-5xl mx-auto')}>
             <AnimatedList
-              delayStep={0.2}
-              initialDelay={0.6}
               className={cn('grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8')}
             >
               {deploymentFeatures.map((feature, index) => {
@@ -403,7 +399,7 @@ export function CNAPPArchitecture() {
         </AnimatedSection>
 
         {/* 兼容性支持 */}
-        <AnimatedSection delay={0.6} className={cn('mb-20')}>
+        <AnimatedSection className={cn('mb-20')}>
           <h3
             className={cn(
               'text-2xl font-bold text-foreground text-center mb-12',
@@ -412,8 +408,6 @@ export function CNAPPArchitecture() {
             广泛的兼容性支持
           </h3>
           <AnimatedList
-            delayStep={0.1}
-            initialDelay={0.8}
             className={cn(
               'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8',
             )}
@@ -481,7 +475,7 @@ export function CNAPPArchitecture() {
         </AnimatedSection>
 
         {/* 底部总结 */}
-        <AnimatedSection delay={1.0} className={cn('text-center')}>
+        <AnimatedSection className={cn('text-center')}>
           <div
             className={cn(
               'relative p-8 rounded-2xl border border-primary/15 bg-card/50 backdrop-blur-sm',

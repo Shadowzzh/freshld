@@ -122,8 +122,6 @@ export function CNAPPScenarios() {
 
         {/* 场景列表 */}
         <AnimatedList
-          delayStep={0.2}
-          initialDelay={0.2}
           className={cn('grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16')}
         >
           {cnappScenarios.map((scenario, index) => {
@@ -245,7 +243,7 @@ export function CNAPPScenarios() {
         </AnimatedList>
 
         {/* 底部CTA */}
-        <AnimatedSection delay={0.8} className={cn('mt-16 text-center')}>
+        <AnimatedSection className={cn('mt-16 text-center')}>
           <div
             className={cn(
               'p-8 rounded-2xl bg-primary/5 border border-primary/15',

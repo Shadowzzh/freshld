@@ -17,7 +17,7 @@ export function AboutHero() {
 
       <div className={cn('max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative')}>
         <div className={cn('text-center max-w-4xl mx-auto')}>
-          <AnimatedSection delay={0} direction='up'>
+          <AnimatedSection direction='up'>
             <h1
               className={cn(
                 'text-4xl lg:text-6xl font-bold mb-6',
@@ -31,7 +31,7 @@ export function AboutHero() {
             </h1>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.2} direction='up'>
+          <AnimatedSection direction='up'>
             <p className={cn('text-xl text-neutral-600 mb-8 leading-relaxed')}>
               明焰安全（FYRESHLD
               NGEP）是广州奇盾信息技术有限公司旗下的核心品牌。
@@ -41,7 +41,6 @@ export function AboutHero() {
           </AnimatedSection>
 
           <AnimatedList
-            initialDelay={0.4}
             direction='up'
             className={cn(
               'flex flex-wrap justify-center gap-6 text-sm text-neutral-500',

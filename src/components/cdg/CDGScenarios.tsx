@@ -198,7 +198,6 @@ export function CDGScenarios() {
               <AnimatedList
                 className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
                 direction='up'
-                delayStep={0.2}
                 itemClassName='relative'
               >
                 {scenarioSteps.map((step, index) => (
@@ -286,7 +285,6 @@ export function CDGScenarios() {
             <AnimatedList
               className='grid grid-cols-1 lg:grid-cols-2 gap-8'
               direction='up'
-              delayStep={0.2}
             >
               {customerCases.map(caseItem => (
                 <Card
@@ -393,7 +391,6 @@ export function CDGScenarios() {
             <AnimatedList
               className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8'
               direction='up'
-              delayStep={0.1}
               itemClassName='text-center'
             >
               {benefits.map(benefit => (

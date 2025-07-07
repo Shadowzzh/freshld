@@ -90,7 +90,7 @@ export function CDGArchitecture() {
           {/* 架构层级图 */}
           <div className='relative max-w-4xl mx-auto'>
             {/* 架构层级 - 垂直流程图布局 */}
-            <AnimatedList className='space-y-6' delayStep={0.15} direction='up'>
+            <AnimatedList className='space-y-6' direction='up'>
               {systemLayers.map((layer, index) => (
                 <div key={layer.id} className='relative'>
                   {/* 连接箭头 */}
@@ -175,7 +175,8 @@ export function CDGArchitecture() {
             title='集中管理，分布式部署'
             description={
               <>
-                采用集中管理、分布式部署的方式，安全管控中心独立部署。<br />
+                采用集中管理、分布式部署的方式，安全管控中心独立部署。
+                <br />
                 客户端分布在总部、分支机构及云端，形成一体化安全防护体系。
               </>
             }
@@ -185,8 +186,6 @@ export function CDGArchitecture() {
           {/* 架构优势 */}
           <AnimatedList
             direction='up'
-            initialDelay={0.3}
-            delayStep={0.2}
             className='mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
           >
             {[

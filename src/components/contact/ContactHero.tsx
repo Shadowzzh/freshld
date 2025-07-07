@@ -18,11 +18,7 @@ export function ContactHero() {
       </div>
 
       <div className='container mx-auto px-4 relative z-10'>
-        <AnimatedList
-          className={cn('max-w-4xl mx-auto text-center')}
-          initialDelay={0}
-          delayStep={0.1}
-        >
+        <AnimatedList className={cn('max-w-4xl mx-auto text-center')}>
           {/* 主标题 */}
           <div className='text-4xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent mb-6'>
             联系我们

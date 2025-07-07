@@ -230,7 +230,6 @@ export default function NGEPHero() {
                   <NumberTicker
                     className='text-2xl sm:text-3xl font-bold text-primary'
                     value={stat.value}
-                    delay={1.5 + index * 0.2}
                     decimalPlaces={stat.label === '检测准确率' ? 1 : 0}
                   />
                   {stat.value2 && (
@@ -239,7 +238,6 @@ export default function NGEPHero() {
                       <NumberTicker
                         className='text-2xl sm:text-3xl font-bold text-primary'
                         value={stat.value2}
-                        delay={1.5 + index * 0.2}
                       />
                     </>
                   )}
@@ -256,7 +254,6 @@ export default function NGEPHero() {
         <ScrollIndicator
           borderColor='border-white/30'
           dotColor='bg-white/50'
-          delay={1.5}
           size='md'
         />
       </motion.div>

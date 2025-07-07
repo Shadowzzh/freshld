@@ -184,7 +184,6 @@ export function CDGTechnology() {
           <AnimatedList
             className={cn('space-y-16 mb-20')}
             direction='up'
-            delayStep={0.2}
             duration={0.3}
           >
             {coreTechnologies.map((tech, index) => (
@@ -225,8 +224,6 @@ export function CDGTechnology() {
                         'grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6',
                       )}
                       direction='right'
-                      delayStep={0.05}
-                      initialDelay={0.1}
                       itemClassName={cn(
                         'flex items-center gap-3 p-3 rounded-lg',
                         'bg-gray-50 hover:bg-gray-100',
@@ -293,7 +290,6 @@ export function CDGTechnology() {
                   <AnimatedSection
                     direction='up'
                     duration={0.8}
-                    delay={0.2}
                     className={cn('relative')}
                   >
                     <div
@@ -376,7 +372,6 @@ export function CDGTechnology() {
                 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8',
               )}
               direction='up'
-              delayStep={0.1}
             >
               {technicalAdvantages.map(advantage => (
                 <Card
@@ -448,7 +443,6 @@ export function CDGTechnology() {
                 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8',
               )}
               direction='up'
-              delayStep={0.1}
               itemClassName={cn('text-center group')}
             >
               {performanceMetrics.map((metric, index) => (

@@ -310,11 +310,7 @@ export function CDGFeatures() {
                     '事前预防',
                     '构建第一道防线，防患于未然',
                   )}
-                  <AnimatedList
-                    initialDelay={0.2}
-                    delayStep={0.2}
-                    className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-                  >
+                  <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {preventionFeatures.map(renderFeatureCard)}
                   </AnimatedList>
                 </div>
@@ -326,11 +322,7 @@ export function CDGFeatures() {
                     '事中阻断',
                     '实时监测威胁，精准阻断攻击',
                   )}
-                  <AnimatedList
-                    initialDelay={0.2}
-                    delayStep={0.1}
-                    className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-                  >
+                  <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {detectionFeatures.map(renderFeatureCard)}
                   </AnimatedList>
                 </div>
@@ -342,11 +334,7 @@ export function CDGFeatures() {
                     '事后恢复',
                     '快速恢复数据，溯源攻击路径',
                   )}
-                  <AnimatedList
-                    initialDelay={0.3}
-                    delayStep={0.1}
-                    className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-                  >
+                  <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {recoveryFeatures.map(renderFeatureCard)}
                   </AnimatedList>
                 </div>
@@ -354,31 +342,19 @@ export function CDGFeatures() {
 
               {/* 单独标签页 */}
               <TabsContent value='prevention'>
-                <AnimatedList
-                  initialDelay={0.1}
-                  delayStep={0.1}
-                  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-                >
+                <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                   {preventionFeatures.map(renderFeatureCard)}
                 </AnimatedList>
               </TabsContent>
 
               <TabsContent value='detection'>
-                <AnimatedList
-                  initialDelay={0.1}
-                  delayStep={0.1}
-                  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-                >
+                <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                   {detectionFeatures.map(renderFeatureCard)}
                 </AnimatedList>
               </TabsContent>
 
               <TabsContent value='recovery'>
-                <AnimatedList
-                  initialDelay={0.1}
-                  delayStep={0.1}
-                  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-                >
+                <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                   {recoveryFeatures.map(renderFeatureCard)}
                 </AnimatedList>
               </TabsContent>
@@ -400,11 +376,7 @@ export function CDGFeatures() {
             </p>
           </AnimatedSection>
 
-          <AnimatedList
-            initialDelay={0.4}
-            delayStep={0.1}
-            className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
-          >
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {[
               {
                 icon: Lock,

@@ -38,7 +38,7 @@ export function AnimatedList(props: AnimatedListProps) {
     initialDelay = 0,
     itemClassName,
     direction = 'up',
-    duration = 0.3,
+    duration = 0.5,
   } = props
 
   return (
@@ -81,10 +81,10 @@ export function AnimatedSection(props: AnimatedSectionProps) {
   const {
     children,
     className,
-    delay = 0,
+    delay = 0.1,
     direction = 'up',
     distance = 20,
-    duration = 0.3,
+    duration = 0.5,
     once = true,
   } = props
 

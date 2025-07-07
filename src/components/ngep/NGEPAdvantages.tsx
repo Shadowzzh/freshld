@@ -2,7 +2,6 @@
 
 import { cn } from '@/lib/utils'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
-import { StatCard } from '../ui/StatCard'
 import { NumberTicker } from '@/components/ui/number-ticker'
 import {
   BarChart3,
@@ -13,6 +12,7 @@ import {
   Database,
   Network,
 } from 'lucide-react'
+import { MetallicShineCard } from '../ui/metallic-shine'
 
 // NGEP 产品优势数据
 const ngepAdvantages = [
@@ -245,16 +245,21 @@ export default function NGEPAdvantages() {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6'>
               {ngepComparisonStats.map((stat, index) => (
-                <StatCard
+                <MetallicShineCard
                   key={index}
-                  value={
-                    <div className='flex items-center justify-center'>
-                      <NumberTicker value={stat.value} />
-                      <span>{stat.suffix}</span>
-                    </div>
-                  }
-                  label={stat.label}
-                />
+                  className='flex items-center justify-center'
+                >
+                  <div className='mb-2 text-3xl font-bold text-primary'>
+                    <NumberTicker
+                      value={stat.value}
+                      className='text-3xl font-bold text-primary'
+                    />
+                    <span>{stat.suffix}</span>
+                  </div>
+                  <div className='text-sm text-blue-200'>
+                    {stat.description}
+                  </div>
+                </MetallicShineCard>
               ))}
             </div>
           </div>

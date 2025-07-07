@@ -10,7 +10,7 @@ export function CasesCTA() {
     <section className='relative bg-background pb-20'>
       <div className='container mx-auto px-4'>
         <div className='relative z-10 max-w-4xl mx-auto'>
-          <AnimatedSection delay={0.4} className='text-center'>
+          <AnimatedSection className='text-center'>
             <div className='relative p-8 rounded-2xl border border-primary/15 bg-card/50 backdrop-blur-sm'>
               <CheckCircle className='w-12 h-12 text-primary mx-auto mb-4' />
               <h3 className='text-2xl font-bold text-foreground mb-4'>
