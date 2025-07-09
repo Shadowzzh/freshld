@@ -5,7 +5,6 @@ import {
   CheckCircle,
   AlertTriangle,
   Sparkles,
-  ArrowRight,
   Shield,
   Zap,
   Globe,
@@ -25,44 +24,40 @@ import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
 // CNAPP 云原生安全挑战数据
 const cnappSecurityChallenges = [
   {
-    challenge: '东西向流量防护需求增加',
-    solution: '云原生网络安全防护',
-    description: '传统防火墙主要防护南北向流量，但在云原生环境中，东西向流量（即内部微服务之间的通信）更多，传统防火墙不适用',
-  },
-  {
-    challenge: '传统防病毒网关失效',
-    solution: '容器集群内部安全防护',
-    description: '云原生架构内部的病毒传播不会经过外部网关，导致传统的防病毒网关无法发挥作用',
-  },
-  {
     challenge: '资产管理动态性高',
     solution: '自动化资产发现与跟踪',
-    description: '云原生架构下的资产快速迭代与动态更新，使得传统的静态资产管理产品难以适应',
+    description:
+      '云原生架构下的资产快速迭代与动态更新，使得传统的静态资产管理产品难以适应',
   },
   {
     challenge: '缺少容器镜像漏洞扫描',
     solution: '全面镜像安全扫描',
-    description: '传统漏洞扫描主要针对应用和操作系统，但缺少对容器镜像的漏洞扫描能力',
+    description:
+      '传统漏洞扫描主要针对应用和操作系统，但缺少对容器镜像的漏洞扫描能力',
   },
   {
-    challenge: 'NIDS无法检测容器数据包',
-    solution: '云原生网络入侵检测',
-    description: '由于网络入侵检测系统（NIDS）在网络架构中的位置限制，无法检测到容器的数据包',
-  },
-  {
-    challenge: 'WEB防火墙防护不足',
-    solution: '云原生应用防护',
-    description: '传统的WEB防火墙仅针对7层流量的语义分析，无法防护内部微服务和API，不满足云原生整体攻防要求',
+    challenge: '东西向流量防护需求增加',
+    solution: '云原生网络安全防护',
+    description:
+      '传统防火墙主要防护南北向流量，但在云原生环境中，东西向流量（即内部微服务之间的通信）更多，传统防火墙不适用',
   },
   {
     challenge: '容器引擎漏洞导致逃逸风险',
     solution: '容器运行时安全防护',
-    description: 'Docker等容器引擎作为轻量级隔离，与虚拟机不同，容器间共享宿主机Linux内核，隔离程度更低，更容易被攻击者突破并逃逸至宿主机',
+    description:
+      'Docker等容器引擎作为轻量级隔离，与虚拟机不同，容器间共享宿主机Linux内核，隔离程度更低，更容易被攻击者突破并逃逸至宿主机',
   },
   {
-    challenge: '攻击载荷横向移动便利性增加',
-    solution: '零信任网络架构',
-    description: '容器集群管理系统优化了工作负载之间以及与主机和控制节点的互访能力，服务发现等组件简化了应用对集群内部的探索，为攻击者在集群内的横向移动提供了极大便利',
+    challenge: '传统防病毒网关失效',
+    solution: '容器集群内部安全防护',
+    description:
+      '云原生架构内部的病毒传播不会经过外部网关，导致传统的防病毒网关无法发挥作用',
+  },
+  {
+    challenge: 'NIDS无法检测容器数据包',
+    solution: '云原生网络入侵检测',
+    description:
+      '由于网络入侵检测系统（NIDS）在网络架构中的位置限制，无法检测到容器的数据包',
   },
 ]
 
@@ -183,32 +178,34 @@ const cnappCompatibility = [
 const cnappSolutions = [
   {
     title: '资产盘点与安全总览',
-    description: '自动盘点容器、镜像、集群、主机等资产，消除暗资产，实时更新资产状态，实现资产管理的精细化'
+    description:
+      '自动盘点容器、镜像、集群、主机等资产，消除暗资产，实时更新资产状态，实现资产管理的精细化',
   },
   {
     title: '镜像风险一键扫描',
-    description: '提前发现容器镜像中存在的漏洞、木马病毒、敏感信息和弱密码等危险因素，对危险镜像的启动进行有效的策略控制'
-  },
-  {
-    title: '基线合规检查',
-    description: '提供自动化检测，满足监管政策与合规性要求，支持CIS发布的各版本基线标准，针对每项标准提供基线检测方法与修复建议'
+    description:
+      '提前发现容器镜像中存在的漏洞、木马病毒、敏感信息和弱密码等危险因素，对危险镜像的启动进行有效的策略控制',
   },
   {
     title: '微隔离策略',
-    description: '支持自动和手动配置网络策略，实现Pod粒度的网络微隔离，通过自动化分析建立网络连接关系，生成并部署符合最小权限要求的微隔离策略'
-  },
-  {
-    title: '网络访问关系可视化',
-    description: '提供可视化的网络雷达图，支持从集群开始下钻，展示各层级对象之间的流通情况，归集集群风险，统一汇总漏洞、配置、基线问题'
-  },
-  {
-    title: '容器风险监听与行为感知',
-    description: '对容器逃逸、反弹Shell、非法提权、恶意挖矿等常见风险行为进行监听和阻断，利用低资源多源点行为数据无损采集技术，实现基于命名空间感知的容器行为识别'
+    description:
+      '支持自动和手动配置网络策略，实现Pod粒度的网络微隔离，通过自动化分析建立网络连接关系，生成并部署符合最小权限要求的微隔离策略',
   },
   {
     title: '容器逃逸检测',
-    description: '使用大语言模型对海量容器逃逸攻击路径进行分析，实现基于文件挂载错误和命令执行的容器逃逸检测，基于行为模型与特征校验实现容器逃逸的检测与溯源分析'
-  }
+    description:
+      '使用大语言模型对海量容器逃逸攻击路径进行分析，实现基于文件挂载错误和命令执行的容器逃逸检测，基于行为模型与特征校验实现容器逃逸的检测与溯源分析',
+  },
+  {
+    title: '容器风险监听与行为感知',
+    description:
+      '对容器逃逸、反弹Shell、非法提权、恶意挖矿等常见风险行为进行监听和阻断，利用低资源多源点行为数据无损采集技术，实现基于命名空间感知的容器行为识别',
+  },
+  {
+    title: '基线合规检查',
+    description:
+      '提供自动化检测，满足监管政策与合规性要求，支持CIS发布的各版本基线标准，针对每项标准提供基线检测方法与修复建议',
+  },
 ]
 
 export function CNAPPOverview() {
@@ -315,20 +312,6 @@ export function CNAPPOverview() {
                     'overflow-hidden',
                   )}
                 >
-                  <div
-                    className={cn(
-                      'absolute inset-0 opacity-0 group-hover:opacity-30',
-                      'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20',
-                      'transition-all duration-300',
-                    )}
-                  />
-                  <div
-                    className={cn(
-                      'absolute top-0 left-0 w-full h-px',
-                      'bg-gradient-to-r from-transparent via-primary/40 to-transparent',
-                      'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                    )}
-                  />
                   <h4
                     className={cn(
                       'font-bold text-foreground mb-3 relative z-10',

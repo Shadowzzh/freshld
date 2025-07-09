@@ -135,7 +135,7 @@ export function InteractiveCases() {
                     key={solution}
                     onClick={() => setSelectedSolution(solution)}
                     className={cn(
-                      "cursor-pointer",
+                      'cursor-pointer',
                       'px-4 py-2 rounded-lg text-sm font-medium transition-all',
                       selectedSolution === solution
                         ? 'bg-primary text-primary-foreground'

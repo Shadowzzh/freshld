@@ -3,7 +3,7 @@
 import { AnimatedList } from '@/components/ui/animated-section'
 import { NumberTicker } from '@/components/ui/number-ticker'
 import { ScrollIndicator } from '@/components/ui/scroll-indicator'
-import { Users, Shield, Trophy, Sparkles } from 'lucide-react'
+import { Users, Trophy, Sparkles } from 'lucide-react'
 import { ShapeLandingHeroDynamic } from '../ui/shape-landing-hero-dynamic'
 
 export function CasesHero() {
@@ -15,14 +15,6 @@ export function CasesHero() {
       suffix: '+',
       label: '知名企业',
       delay: 0.3,
-    },
-    {
-      icon: Shield,
-      value: 99.9,
-      suffix: '%',
-      label: '防护成功率',
-      delay: 0.4,
-      decimalPlaces: 1,
     },
     {
       icon: Trophy,
@@ -65,19 +57,18 @@ export function CasesHero() {
             </div>
 
             {/* 统计数据 */}
-            <div className='grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-12'>
+            <div className='grid grid-cols-2 gap-8 max-w-xs mx-auto mb-12'>
               <AnimatedList className='contents'>
                 {statsData.map((stat, index) => {
                   const IconComponent = stat.icon
                   return (
                     <div key={index} className='text-center'>
                       <div className='inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-3'>
-                        <IconComponent className='w-6 h-6' />
+                        <IconComponent className='size-6' />
                       </div>
                       <div className='text-3xl font-bold text-foreground'>
                         <NumberTicker
                           value={stat.value}
-                          decimalPlaces={stat.decimalPlaces || 0}
                           className='text-3xl font-bold text-foreground'
                         />
                         {stat.suffix}

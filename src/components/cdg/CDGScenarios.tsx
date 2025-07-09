@@ -118,21 +118,6 @@ const customerCases = [
 
 const benefits = [
   {
-    icon: Shield,
-    title: '全面防护',
-    description: '覆盖事前、事中、事后的完整防护体系',
-    stats: (
-      <>
-        <NumberTicker
-          className='font-bold text-primary'
-          decimalPlaces={1}
-          value={99.9}
-        />
-        % 防护成功率
-      </>
-    ),
-  },
-  {
     icon: Zap,
     title: '快速响应',
     description: '毫秒级威胁检测，秒级应急响应',
