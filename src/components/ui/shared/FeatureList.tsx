@@ -21,7 +21,6 @@ export function FeatureList({
   className,
 }: FeatureListProps) {
   const visibleFeatures = features.slice(0, maxVisible)
-  const hiddenCount = features.length - maxVisible
 
   const iconStyleConfig = {
     primary: 'bg-primary/10 text-primary',
@@ -76,13 +75,6 @@ export function FeatureList({
           </div>
         ))}
       </div>
-
-      {/* 更多特性提示 */}
-      {hiddenCount > 0 && (
-        <div className='mt-3 text-xs text-primary/70 font-medium'>
-          +{hiddenCount} 更多特性
-        </div>
-      )}
     </div>
   )
 }

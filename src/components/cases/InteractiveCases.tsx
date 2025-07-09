@@ -1,14 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import {
-  Building2,
-  Shield,
-  Server,
-  Cloud,
-  ChevronRight,
-  Filter,
-} from 'lucide-react'
+import { Building2, Shield, Server, Cloud, Filter } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { AnimatedSection } from '@/components/ui/animated-section'
@@ -112,13 +105,11 @@ export function InteractiveCases() {
           <div className='flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-card border border-primary/15 '>
             <div className='flex items-center gap-3'>
               <Filter className='w-5 h-5 text-primary' />
-              <span className='font-semibold text-foreground'>筛选条件</span>
             </div>
 
             {/* 行业筛选 */}
-            <div className='flex-1'>
-              <div className='text-sm text-muted-foreground mb-2'>行业</div>
-              <div className='flex flex-wrap gap-2'>
+            <div>
+              <div className='flex  gap-2'>
                 {industries.map(industry => (
                   <button
                     key={industry}
@@ -137,14 +128,14 @@ export function InteractiveCases() {
             </div>
 
             {/* 解决方案筛选 */}
-            <div className='flex-1'>
-              <div className='text-sm text-muted-foreground mb-2'>解决方案</div>
+            <div>
               <div className='flex flex-wrap gap-2'>
                 {solutions.map(solution => (
                   <button
                     key={solution}
                     onClick={() => setSelectedSolution(solution)}
                     className={cn(
+                      "cursor-pointer",
                       'px-4 py-2 rounded-lg text-sm font-medium transition-all',
                       selectedSolution === solution
                         ? 'bg-primary text-primary-foreground'
@@ -204,12 +195,12 @@ export function InteractiveCases() {
                   </div>
 
                   {/* 描述 */}
-                  <p className='text-sm text-muted-foreground mb-4 line-clamp-2'>
+                  <p className='text-sm text-muted-foreground mb-4 line-clamp-4'>
                     {case_.description}
                   </p>
 
                   {/* 标签 */}
-                  <div className='flex flex-wrap gap-2 mb-4'>
+                  <div className='flex flex-wrap gap-2'>
                     {case_.tags.map((tag, index) => (
                       <span
                         key={index}
@@ -218,26 +209,6 @@ export function InteractiveCases() {
                         {tag}
                       </span>
                     ))}
-                  </div>
-
-                  {/* 成果 */}
-                  <div className='pt-4 border-t border-primary/15 '>
-                    <div className='flex items-center justify-between'>
-                      <div>
-                        <p className='text-xs text-muted-foreground'>
-                          关键成果
-                        </p>
-                        <p className='text-sm font-medium text-primary'>
-                          {case_.results}
-                        </p>
-                      </div>
-                      <ChevronRight
-                        className={cn(
-                          'w-4 h-4 text-primary transition-transform',
-                          hoveredCase === case_.id && 'translate-x-1',
-                        )}
-                      />
-                    </div>
                   </div>
 
                   {/* 悬停效果 */}

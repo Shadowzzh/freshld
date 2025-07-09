@@ -3,7 +3,7 @@
 import { NumberTicker } from '@/components/ui/number-ticker'
 import { cn } from '@/lib/utils'
 import { AnimatedList, AnimatedSection } from '@/components/ui/animated-section'
-import { TrendingUp, Shield, Building2, Globe } from 'lucide-react'
+import { TrendingUp, Building2, Globe } from 'lucide-react'
 
 // 指标数据
 const metrics = [
@@ -14,14 +14,6 @@ const metrics = [
     label: '服务客户',
     description: '知名企业选择明焰安全',
     variant: 'primary',
-  },
-  {
-    icon: Shield,
-    value: 99.9,
-    suffix: '%',
-    label: '防护成功率',
-    description: '有效抵御各类网络威胁',
-    variant: 'secondary',
   },
   {
     icon: Globe,
@@ -57,7 +49,7 @@ export function CasesMetrics() {
           </AnimatedSection>
 
           {/* 指标网格 */}
-          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {metrics.map((metric, index) => (
               <div
                 key={index}
