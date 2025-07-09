@@ -25,29 +25,44 @@ import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
 // CNAPP 云原生安全挑战数据
 const cnappSecurityChallenges = [
   {
-    challenge: '资产可视化困难',
-    solution: '自动化资产发现与盘点',
-    description: '容器、镜像、集群资产动态变化，传统方式难以全面掌握',
+    challenge: '东西向流量防护需求增加',
+    solution: '云原生网络安全防护',
+    description: '传统防火墙主要防护南北向流量，但在云原生环境中，东西向流量（即内部微服务之间的通信）更多，传统防火墙不适用',
   },
   {
-    challenge: '镜像安全风险',
+    challenge: '传统防病毒网关失效',
+    solution: '容器集群内部安全防护',
+    description: '云原生架构内部的病毒传播不会经过外部网关，导致传统的防病毒网关无法发挥作用',
+  },
+  {
+    challenge: '资产管理动态性高',
+    solution: '自动化资产发现与跟踪',
+    description: '云原生架构下的资产快速迭代与动态更新，使得传统的静态资产管理产品难以适应',
+  },
+  {
+    challenge: '缺少容器镜像漏洞扫描',
     solution: '全面镜像安全扫描',
-    description: '镜像包含大量开源组件，存在已知漏洞和恶意代码风险',
+    description: '传统漏洞扫描主要针对应用和操作系统，但缺少对容器镜像的漏洞扫描能力',
   },
   {
-    challenge: '配置安全复杂',
-    solution: '基线合规自动检查',
-    description: 'Kubernetes配置复杂，安全配置错误导致安全风险',
+    challenge: 'NIDS无法检测容器数据包',
+    solution: '云原生网络入侵检测',
+    description: '由于网络入侵检测系统（NIDS）在网络架构中的位置限制，无法检测到容器的数据包',
   },
   {
-    challenge: '网络边界模糊',
+    challenge: 'WEB防火墙防护不足',
+    solution: '云原生应用防护',
+    description: '传统的WEB防火墙仅针对7层流量的语义分析，无法防护内部微服务和API，不满足云原生整体攻防要求',
+  },
+  {
+    challenge: '容器引擎漏洞导致逃逸风险',
+    solution: '容器运行时安全防护',
+    description: 'Docker等容器引擎作为轻量级隔离，与虚拟机不同，容器间共享宿主机Linux内核，隔离程度更低，更容易被攻击者突破并逃逸至宿主机',
+  },
+  {
+    challenge: '攻击载荷横向移动便利性增加',
     solution: '零信任网络架构',
-    description: '微服务间通信复杂，传统网络边界防护失效',
-  },
-  {
-    challenge: '运行时威胁检测',
-    solution: '智能行为分析引擎',
-    description: '容器运行时行为复杂，难以识别异常和威胁行为',
+    description: '容器集群管理系统优化了工作负载之间以及与主机和控制节点的互访能力，服务发现等组件简化了应用对集群内部的探索，为攻击者在集群内的横向移动提供了极大便利',
   },
 ]
 
@@ -164,6 +179,38 @@ const cnappCompatibility = [
   },
 ]
 
+// CNAPP 解决方案数据
+const cnappSolutions = [
+  {
+    title: '资产盘点与安全总览',
+    description: '自动盘点容器、镜像、集群、主机等资产，消除暗资产，实时更新资产状态，实现资产管理的精细化'
+  },
+  {
+    title: '镜像风险一键扫描',
+    description: '提前发现容器镜像中存在的漏洞、木马病毒、敏感信息和弱密码等危险因素，对危险镜像的启动进行有效的策略控制'
+  },
+  {
+    title: '基线合规检查',
+    description: '提供自动化检测，满足监管政策与合规性要求，支持CIS发布的各版本基线标准，针对每项标准提供基线检测方法与修复建议'
+  },
+  {
+    title: '微隔离策略',
+    description: '支持自动和手动配置网络策略，实现Pod粒度的网络微隔离，通过自动化分析建立网络连接关系，生成并部署符合最小权限要求的微隔离策略'
+  },
+  {
+    title: '网络访问关系可视化',
+    description: '提供可视化的网络雷达图，支持从集群开始下钻，展示各层级对象之间的流通情况，归集集群风险，统一汇总漏洞、配置、基线问题'
+  },
+  {
+    title: '容器风险监听与行为感知',
+    description: '对容器逃逸、反弹Shell、非法提权、恶意挖矿等常见风险行为进行监听和阻断，利用低资源多源点行为数据无损采集技术，实现基于命名空间感知的容器行为识别'
+  },
+  {
+    title: '容器逃逸检测',
+    description: '使用大语言模型对海量容器逃逸攻击路径进行分析，实现基于文件挂载错误和命令执行的容器逃逸检测，基于行为模型与特征校验实现容器逃逸的检测与溯源分析'
+  }
+]
+
 export function CNAPPOverview() {
   return (
     <section className={cn('relative py-24 bg-background', 'overflow-hidden')}>
@@ -265,7 +312,7 @@ export function CNAPPOverview() {
                     'hover:border-primary/15',
                     'transition-all duration-300',
                     'hover:scale-105',
-                    'cursor-pointer overflow-hidden',
+                    'overflow-hidden',
                   )}
                 >
                   <div
@@ -285,7 +332,7 @@ export function CNAPPOverview() {
                   <h4
                     className={cn(
                       'font-bold text-foreground mb-3 relative z-10',
-                      'text-lg group-hover:text-primary',
+                      'text-lg',
                       'transition-colors duration-300',
                     )}
                   >
@@ -339,143 +386,41 @@ export function CNAPPOverview() {
               </div>
               明焰CNAPP解决方案
             </h3>
-            <div className={cn('space-y-6')}>
-              <div
-                className={cn(
-                  'group relative p-6 rounded-xl',
-                  'bg-gradient-to-br from-primary/5 to-primary/10',
-                  'border border-primary/15',
-                  'hover:border-primary/15',
-                  'transition-all duration-300',
-                  'hover:scale-105',
-                  'cursor-pointer overflow-hidden',
-                )}
-              >
+            <AnimatedList className={cn('space-y-4')}>
+              {cnappSolutions.map((solution, index) => (
                 <div
+                  key={index}
                   className={cn(
-                    'absolute inset-0 opacity-0 group-hover:opacity-30',
-                    'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20',
+                    'group relative p-6 rounded-xl',
+                    'bg-gradient-to-br from-primary/5 to-primary/10',
+                    'border border-primary/15',
+                    'hover:border-primary/15',
                     'transition-all duration-300',
-                  )}
-                />
-                <div
-                  className={cn(
-                    'absolute top-0 left-0 w-full h-px',
-                    'bg-gradient-to-r from-transparent via-primary/40 to-transparent',
-                    'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                  )}
-                />
-                <h4
-                  className={cn(
-                    'font-bold text-foreground mb-3 relative z-10',
-                    'text-lg group-hover:text-primary',
-                    'transition-colors duration-300 flex items-center gap-2',
+                    'hover:scale-105',
+                    'overflow-hidden',
                   )}
                 >
-                  全栈覆盖
-                  <ArrowRight className='w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1' />
-                </h4>
-                <p
-                  className={cn(
-                    'text-muted-foreground relative z-10 leading-relaxed',
-                    'group-hover:text-foreground',
-                    'transition-colors duration-300',
-                  )}
-                >
-                  从主机、容器、镜像到K8s集群、服务网格及微服务，提供多层次立体纵深防御
-                </p>
-              </div>
-              <div
-                className={cn(
-                  'group relative p-6 rounded-xl',
-                  'bg-gradient-to-br from-primary/5 to-primary/10',
-                  'border border-primary/15',
-                  'hover:border-primary/15',
-                  'transition-all duration-300',
-                  'hover:scale-105',
-                  'cursor-pointer overflow-hidden',
-                )}
-              >
-                <div
-                  className={cn(
-                    'absolute inset-0 opacity-0 group-hover:opacity-30',
-                    'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20',
-                    'transition-all duration-300',
-                  )}
-                />
-                <div
-                  className={cn(
-                    'absolute top-0 left-0 w-full h-px',
-                    'bg-gradient-to-r from-transparent via-primary/40 to-transparent',
-                    'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                  )}
-                />
-                <h4
-                  className={cn(
-                    'font-bold text-foreground mb-3 relative z-10',
-                    'text-lg group-hover:text-primary',
-                    'transition-colors duration-300 flex items-center gap-2',
-                  )}
-                >
-                  行为驱动
-                  <ArrowRight className='w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1' />
-                </h4>
-                <p
-                  className={cn(
-                    'text-muted-foreground relative z-10 leading-relaxed',
-                    'group-hover:text-foreground',
-                    'transition-colors duration-300',
-                  )}
-                >
-                  面向业务、基于行为、面向威胁，实现精准检测与响应
-                </p>
-              </div>
-              <div
-                className={cn(
-                  'group relative p-6 rounded-xl',
-                  'bg-gradient-to-br from-primary/5 to-primary/10',
-                  'border border-primary/15',
-                  'hover:border-primary/15',
-                  'transition-all duration-300',
-                  'hover:scale-105',
-                  'cursor-pointer overflow-hidden',
-                )}
-              >
-                <div
-                  className={cn(
-                    'absolute inset-0 opacity-0 group-hover:opacity-30',
-                    'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20',
-                    'transition-all duration-300',
-                  )}
-                />
-                <div
-                  className={cn(
-                    'absolute top-0 left-0 w-full h-px',
-                    'bg-gradient-to-r from-transparent via-primary/40 to-transparent',
-                    'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                  )}
-                />
-                <h4
-                  className={cn(
-                    'font-bold text-foreground mb-3 relative z-10',
-                    'text-lg group-hover:text-primary',
-                    'transition-colors duration-300 flex items-center gap-2',
-                  )}
-                >
-                  智能分析
-                  <ArrowRight className='w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1' />
-                </h4>
-                <p
-                  className={cn(
-                    'text-muted-foreground relative z-10 leading-relaxed',
-                    'group-hover:text-foreground',
-                    'transition-colors duration-300',
-                  )}
-                >
-                  结合大数据分析与人工智能技术，实现可感知、可分析、可响应、可取证的安全能力
-                </p>
-              </div>
-            </div>
+                  <h4
+                    className={cn(
+                      'font-bold text-foreground mb-3 relative z-10',
+                      'text-lg',
+                      'transition-colors duration-300 flex items-center gap-2',
+                    )}
+                  >
+                    {solution.title}
+                  </h4>
+                  <p
+                    className={cn(
+                      'text-muted-foreground relative z-10 leading-relaxed',
+                      'group-hover:text-foreground',
+                      'transition-colors duration-300',
+                    )}
+                  >
+                    {solution.description}
+                  </p>
+                </div>
+              ))}
+            </AnimatedList>
           </AnimatedSection>
         </AnimatedSection>
 
