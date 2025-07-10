@@ -124,7 +124,7 @@ export function CNAPPArchitecture() {
   const compatibilityData = [
     {
       category: 'CPU架构',
-      items: ['Intel X86', 'Kunpeng Processor', 'ARM', '飞腾'],
+      items: ['Intel X86', 'Kunpeng Processor', '飞腾'],
       icon: Cpu,
     },
     {
@@ -134,7 +134,7 @@ export function CNAPPArchitecture() {
     },
     {
       category: '容器运行时',
-      items: ['Docker', 'Containerd', 'CRI-O', 'Podman'],
+      items: ['Docker', 'Containerd', 'Podman'],
       icon: Container,
     },
     {

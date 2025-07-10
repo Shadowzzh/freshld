@@ -11,7 +11,6 @@ const cnappScenarios = [
     title: '浙江省体育局',
     subtitle: '政务云容器安全防护',
     industry: '政府',
-    scale: '500+容器',
     description:
       '为浙江省体育局政务云平台提供全面的容器安全防护，确保政务数据安全',
     solution: [
@@ -34,7 +33,6 @@ const cnappScenarios = [
     title: '湖南创发集团',
     subtitle: '云上资产安全管理',
     industry: '制造',
-    scale: '1000+容器',
     description: '为湖南创发集团云原生应用提供全生命周期安全管理',
     solution: [
       '建立云原生资产清单，实现资产全面可视化',
@@ -56,7 +54,6 @@ const cnappScenarios = [
     title: '道客云安全',
     subtitle: '云原生管理平台安全赋能',
     industry: '科技',
-    scale: '2000+容器',
     description: '为道客云安全管理平台提供云原生安全能力集成',
     solution: [
       '集成CNAPP API，增强平台安全检测能力',
@@ -78,7 +75,6 @@ const cnappScenarios = [
     title: '中兴通讯',
     subtitle: '微服务访问控制策略自动化',
     industry: '通信',
-    scale: '5000+容器',
     description: '为中兴通讯大规模微服务架构提供自动化安全策略管理',
     solution: [
       '部署智能策略引擎，自动分析服务依赖关系',
@@ -135,7 +131,6 @@ export function CNAPPScenarios() {
                   'bg-card/50 backdrop-blur-sm',
                   'hover:border-primary/15 hover:bg-card/80',
                   'transition-all duration-300',
-                  'transform hover:scale-105',
                 )}
               >
                 {/* 悬停光效 */}
@@ -155,7 +150,6 @@ export function CNAPPScenarios() {
                         className={cn(
                           'w-12 h-12 rounded-xl flex items-center justify-center',
                           'bg-primary/10 text-primary',
-                          'group-hover:bg-primary/20 group-hover:scale-105',
                           'transition-all duration-300',
                         )}
                       >
@@ -174,9 +168,7 @@ export function CNAPPScenarios() {
                       <div className='text-sm font-medium text-primary'>
                         {scenario.industry}
                       </div>
-                      <div className='text-xs text-muted-foreground'>
-                        {scenario.scale}
-                      </div>
+                      <div className='text-xs text-muted-foreground'></div>
                     </div>
                   </div>
 
@@ -186,7 +178,7 @@ export function CNAPPScenarios() {
                   </p>
 
                   {/* 解决方案 */}
-                  <div className='mb-6'>
+                  <div>
                     <h4 className='text-sm font-semibold text-foreground mb-3 text-center sm:text-left'>
                       解决方案
                     </h4>
@@ -203,29 +195,6 @@ export function CNAPPScenarios() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-
-                  {/* 效果 - 移动端单列布局 */}
-                  <div>
-                    <h4 className='text-sm font-semibold text-foreground mb-3 text-center sm:text-left'>
-                      实施效果
-                    </h4>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
-                      {scenario.results
-                        .slice(0, 2)
-                        .map((result, resultIndex) => (
-                          <div
-                            key={resultIndex}
-                            className={cn(
-                              'text-xs p-2 rounded-lg text-center sm:text-left',
-                              'bg-primary/5 text-primary/80',
-                              'group-hover:bg-primary/10 transition-colors duration-300',
-                            )}
-                          >
-                            {result}
-                          </div>
-                        ))}
-                    </div>
                   </div>
                 </div>
 

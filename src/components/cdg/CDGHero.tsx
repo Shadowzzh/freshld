@@ -3,18 +3,10 @@
 import { cn } from '@/lib/utils'
 import { motion } from 'motion/react'
 import { Target, ArrowRight, Play } from 'lucide-react'
-import { NumberTicker } from '@/components/ui/number-ticker'
 import { MetallicShineCard } from '@/components/ui/metallic-shine'
 import { ScrollIndicator } from '@/components/ui/scroll-indicator'
 import { VortexDynamic } from '@/components/ui/vortex-dynamic'
 import Link from 'next/link'
-
-const stats = [
-  { value: 99.9, label: '威胁检测准确率', suffix: '%' },
-  { value: 1, label: 'CPU占用率', suffix: '%', prefix: '<' },
-  { value: 24, label: '全天候防护', suffix: '小时' },
-  { value: 0, label: '误报率', suffix: '%', prefix: '≈' },
-]
 
 const features = [
   {
@@ -203,48 +195,6 @@ export function CDGHero() {
               <span>观看演示</span>
             </motion.button>
           </Link>
-        </motion.div>
-
-        {/* 性能指标 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className={cn(
-            'mt-16 pt-8 border-t border-white/10',
-            'grid grid-cols-2 md:grid-cols-4 gap-8',
-            'max-w-3xl mx-auto',
-          )}
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-              viewport={{ once: true }}
-              className='text-center'
-            >
-              <div className='text-3xl font-bold text-primary mb-2'>
-                {stat.prefix && (
-                  <span className='text-3xl font-bold text-primary mr-1'>
-                    {stat.prefix}
-                  </span>
-                )}
-                <NumberTicker
-                  className='text-3xl font-bold text-primary'
-                  value={stat.value}
-                  delay={0.8 + index * 0.2}
-                  decimalPlaces={stat.value % 1 !== 0 ? 1 : 0}
-                />
-                <span className='text-3xl font-bold text-primary ml-1'>
-                  {stat.suffix}
-                </span>
-              </div>
-              <div className='text-sm text-blue-200'>{stat.label}</div>
-            </motion.div>
-          ))}
         </motion.div>
 
         <ScrollIndicator

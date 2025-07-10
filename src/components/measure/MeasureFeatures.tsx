@@ -66,13 +66,6 @@ const advantages = [
     description: '覆盖最新威胁场景',
   },
   {
-    icon: Shield,
-    value: 99.9,
-    suffix: '%',
-    label: '模拟准确率',
-    description: '精确还原真实攻击',
-  },
-  {
     icon: RefreshCw,
     value: 24,
     suffix: '/7',
@@ -256,7 +249,7 @@ export default function MeasureFeatures() {
           </AnimatedSection>
 
           {/* 优势指标网格 */}
-          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6'>
             {advantages.map((advantage, index) => (
               <div
                 key={index}

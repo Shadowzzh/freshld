@@ -71,11 +71,7 @@ export default function NGEPArchitecture() {
       title: '快速部署',
       description: '5分钟完成安装配置，支持批量部署管理',
     },
-    {
-      icon: Server,
-      title: '超低负载',
-      description: 'CPU<1%，内存<50M，对业务系统零影响',
-    },
+
     {
       icon: Cloud,
       title: '服务端轻量',
@@ -84,7 +80,7 @@ export default function NGEPArchitecture() {
     {
       icon: CheckCircle,
       title: '兼容性强',
-      description: '支持Windows/Linux/Mac，兼容老化系统',
+      description: '支持Windows/Linux，兼容老化系统',
     },
   ]
 

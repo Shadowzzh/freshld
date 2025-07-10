@@ -11,9 +11,7 @@ import Link from 'next/link'
 
 const stats = [
   { value: 1, label: 'CPU占用', suffix: '%' },
-  { value: 50, label: '内存占用', suffix: 'M' },
-  { value: 99.9, label: '检测准确率', suffix: '%' },
-  { value: 24, label: '实时防护', suffix: '/7', value2: 7 },
+  { value: 100000, label: '保护终端设备', suffix: '+' },
 ]
 
 const features = [
@@ -34,6 +32,7 @@ export default function NGEPHero() {
         'relative min-h-[calc(100vh-4rem)]',
         'bg-gradient-to-br from-slate-800 via-blue-600 to-slate-700',
         'overflow-hidden',
+        'py-12',
       )}
     >
       <VortexDynamic rangeY={700} particleCount={100} baseHue={200} />
@@ -78,7 +77,7 @@ export default function NGEPHero() {
             'px-2 sm:px-0',
           )}
         >
-          下一代端点防护系统
+          主机安全防护系统
         </motion.h1>
 
         {/* 副标题 */}
@@ -212,11 +211,11 @@ export default function NGEPHero() {
           viewport={{ once: true }}
           className={cn(
             'mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10',
-            'max-w-3xl mx-auto',
+            'max-w-xl mx-auto',
             'px-2 sm:px-0',
           )}
         >
-          <div className='grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8'>
+          <div className='grid grid-cols-2 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8'>
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -232,15 +231,6 @@ export default function NGEPHero() {
                     value={stat.value}
                     decimalPlaces={stat.label === '检测准确率' ? 1 : 0}
                   />
-                  {stat.value2 && (
-                    <>
-                      /
-                      <NumberTicker
-                        className='text-2xl sm:text-3xl font-bold text-primary'
-                        value={stat.value2}
-                      />
-                    </>
-                  )}
                   {stat.suffix}
                 </div>
                 <div className='text-xs sm:text-sm text-blue-200'>

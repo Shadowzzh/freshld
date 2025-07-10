@@ -64,13 +64,7 @@ const metrics = [
     label: '攻击场景',
     description: '覆盖最新威胁场景',
   },
-  {
-    icon: Shield,
-    value: 99.9,
-    suffix: '%',
-    label: '模拟准确率',
-    description: '精确还原真实攻击',
-  },
+
   {
     icon: RefreshCw,
     value: 24,
@@ -183,7 +177,7 @@ export default function MeasureCapabilities() {
           </AnimatedSection>
 
           {/* 统计指标网格 */}
-          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6'>
             {metrics.map((metric, index) => (
               <div
                 key={index}

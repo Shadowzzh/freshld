@@ -1,16 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import {
-  Shield,
-  Eye,
-  Zap,
-  Target,
-  Users,
-  Globe,
-  CheckCircle,
-} from 'lucide-react'
-import { NumberTicker } from '@/components/ui/number-ticker'
+import { Shield, Eye, Zap, Target, Users, Globe } from 'lucide-react'
 import { SectionTitleArea } from '@/components/ui/section-title-area'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
 
@@ -36,35 +27,7 @@ export default function NGEPOverview() {
             subtitle='端点安全防护'
             description='明焰NGEP是新一代端点防护系统，采用云原生架构和AI驱动的威胁检测技术'
             secondaryDescription='为企业提供全方位、智能化的端点安全解决方案'
-            stats={[
-              {
-                value: (
-                  <div>
-                    <NumberTicker value={99.9} decimalPlaces={1} />%
-                  </div>
-                ),
-                label: '威胁检测准确率',
-                icon: Shield,
-              },
-              {
-                value: (
-                  <div>
-                    <NumberTicker value={30} />s
-                  </div>
-                ),
-                label: '平均响应时间',
-                icon: Zap,
-              },
-              {
-                value: (
-                  <div>
-                    <NumberTicker value={100000} />+
-                  </div>
-                ),
-                label: '保护终端设备',
-                icon: Globe,
-              },
-            ]}
+            stats={[]}
             decorationIcon={Shield}
           />
         </AnimatedSection>
@@ -94,7 +57,7 @@ export default function NGEPOverview() {
                 {
                   icon: Target,
                   title: '精准识别',
-                  description: '基于AI和机器学习的威胁识别，99.9%检测准确率',
+                  description: '基于AI和机器学习的威胁识别',
                 },
                 {
                   icon: Users,
@@ -114,7 +77,7 @@ export default function NGEPOverview() {
                     'border border-primary/15 backdrop-blur-sm',
                     'hover:border-primary/30 hover:-translate-y-1',
                     'transition-all duration-300',
-                    'group ',
+                    'group  h-full',
                   )}
                 >
                   {/* 背景装饰 */}
@@ -255,98 +218,6 @@ export default function NGEPOverview() {
                   ))}
                 </AnimatedList>
               </div>
-            </div>
-
-            {/* 核心优势展示 */}
-            <div className='max-w-6xl mx-auto'>
-              {/* 优势指标网格 */}
-              <AnimatedList className='mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
-                {[
-                  {
-                    label: '检测准确率',
-                    value: 99.9,
-                    suffix: '%',
-                    icon: CheckCircle,
-                    description: '行业领先的检测精度',
-                  },
-                  {
-                    label: '响应速度',
-                    value: 30,
-                    suffix: 's',
-                    icon: Zap,
-                    description: '毫秒级威胁响应',
-                  },
-                  {
-                    label: '误报率',
-                    value: 0.1,
-                    suffix: '%',
-                    icon: Shield,
-                    description: '极低的误报干扰',
-                  },
-                  {
-                    label: '部署效率',
-                    value: 95,
-                    suffix: '%',
-                    icon: CheckCircle,
-                    description: '快速部署实施',
-                  },
-                ].map((advantage, index) => (
-                  <div
-                    key={index}
-                    className={cn(
-                      'group relative p-6 rounded-2xl border border-primary/15',
-                      'bg-white/80 backdrop-blur-sm',
-                      'hover:border-primary/30 hover:bg-white hover:scale-105',
-                      'transition-all duration-300',
-                    )}
-                  >
-                    {/* 内容 */}
-                    <div className='relative text-center'>
-                      {/* 图标 */}
-                      <div
-                        className={cn(
-                          'w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4',
-                          'transition-all duration-300 group-hover:scale-110',
-                          'bg-primary/10 text-primary',
-                        )}
-                      >
-                        <advantage.icon className='w-6 h-6' />
-                      </div>
-
-                      {/* 数值 */}
-                      <div className='mb-2'>
-                        <span className='text-3xl font-bold text-primary'>
-                          <NumberTicker
-                            value={advantage.value}
-                            decimalPlaces={advantage.value === 99.9 ? 1 : 0}
-                          />
-                          {advantage.suffix}
-                        </span>
-                      </div>
-
-                      {/* 标签 */}
-                      <h4 className='text-lg font-semibold text-gray-900 mb-1'>
-                        {advantage.label}
-                      </h4>
-
-                      {/* 描述 */}
-                      <p className='text-sm text-gray-600'>
-                        {advantage.description}
-                      </p>
-                    </div>
-
-                    {/* 悬停效果边框 */}
-                    <div
-                      className={cn(
-                        'absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100',
-                        'transition-opacity duration-300',
-                        'bg-gradient-to-br from-primary/10 via-transparent to-primary/5',
-                        'pointer-events-none',
-                      )}
-                    />
-                  </div>
-                ))}
-              </AnimatedList>
             </div>
           </div>
         </AnimatedSection>

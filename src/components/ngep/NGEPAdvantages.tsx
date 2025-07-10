@@ -2,27 +2,10 @@
 
 import { cn } from '@/lib/utils'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
-import { NumberTicker } from '@/components/ui/number-ticker'
-import {
-  BarChart3,
-  Shield,
-  Zap,
-  Cpu,
-  Brain,
-  Database,
-  Network,
-} from 'lucide-react'
-import { MetallicShineCard } from '../ui/metallic-shine'
+import { BarChart3, Shield, Zap, Brain, Database, Network } from 'lucide-react'
 
 // NGEP 产品优势数据
 const ngepAdvantages = [
-  {
-    icon: Cpu,
-    title: '轻量级全能客户端',
-    description: 'CPU占用<1%，内存占用<50M，对系统性能影响极小',
-    features: ['超低资源占用', '快速部署安装', '支持老化系统', '静默后台运行'],
-    theme: 'blue' as const,
-  },
   {
     icon: Brain,
     title: '复合式智能防御引擎',
@@ -43,34 +26,6 @@ const ngepAdvantages = [
     description: '独有的攻击路径追踪技术，完整还原攻击过程',
     features: ['攻击链重构', '时间线分析', '证据链完整', '可视化展示'],
     theme: 'orange' as const,
-  },
-]
-
-// NGEP 对比数据
-const ngepComparisonStats = [
-  {
-    label: '检测速度提升',
-    value: 10,
-    suffix: 'x',
-    description: '相比传统方案',
-  },
-  {
-    label: '资源占用降低',
-    value: 90,
-    suffix: '%',
-    description: 'CPU和内存优化',
-  },
-  {
-    label: '误报率降低',
-    value: 99,
-    suffix: '%',
-    description: '智能算法优化',
-  },
-  {
-    label: '部署时间',
-    value: 5,
-    suffix: 'min',
-    description: '快速安装配置',
   },
 ]
 
@@ -225,43 +180,6 @@ export default function NGEPAdvantages() {
                 </div>
               ))}
             </AnimatedList>
-          </div>
-        </AnimatedSection>
-
-        {/* 性能对比 */}
-        <AnimatedSection>
-          {/* 性能对比 */}
-          <div
-            className={cn(
-              'p-12 rounded-2xl',
-              'bg-gradient-to-r from-gray-800 to-blue-700',
-              'text-white text-center',
-            )}
-          >
-            <div className='text-center mb-8'>
-              <h3 className='text-2xl font-bold mb-4'>性能优势对比</h3>
-              <p className='text-blue-200'>与传统端点防护产品相比的显著优势</p>
-            </div>
-
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6'>
-              {ngepComparisonStats.map((stat, index) => (
-                <MetallicShineCard
-                  key={index}
-                  className='flex items-center justify-center'
-                >
-                  <div className='mb-2 text-3xl font-bold text-primary'>
-                    <NumberTicker
-                      value={stat.value}
-                      className='text-3xl font-bold text-primary'
-                    />
-                    <span>{stat.suffix}</span>
-                  </div>
-                  <div className='text-sm text-blue-200'>
-                    {stat.description}
-                  </div>
-                </MetallicShineCard>
-              ))}
-            </div>
           </div>
         </AnimatedSection>
       </div>

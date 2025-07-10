@@ -3,7 +3,6 @@
 import {
   Brain,
   Target,
-  TrendingUp,
   Filter,
   Cpu,
   Database,
@@ -14,7 +13,6 @@ import {
 } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Card } from '@/components/ui/card'
-import { NumberTicker } from '@/components/ui/number-ticker'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
 import { cn } from '@/lib/utils'
 
@@ -34,10 +32,6 @@ const coreTechnologies = [
       '有效防范加密威胁',
     ],
     color: 'from-primary to-primary/80',
-    stats: [
-      { value: 99.9, label: '检测准确率', suffix: '%' },
-      { value: 0.1, label: '误报率', suffix: '%', prefix: '<' },
-    ],
   },
   {
     id: 'accuracy',
@@ -53,10 +47,6 @@ const coreTechnologies = [
       '智能行为分析',
     ],
     color: 'from-primary to-primary/80',
-    stats: [
-      { value: 95, label: '特征识别率', suffix: '%' },
-      { value: 10, label: '检测维度', suffix: '个', prefix: '>' },
-    ],
   },
   {
     id: 'noise-reduction',
@@ -72,10 +62,6 @@ const coreTechnologies = [
       '误报率持续降低',
     ],
     color: 'from-primary to-primary/80',
-    stats: [
-      { value: 90, label: '误报降低', suffix: '%' },
-      { value: 1000, label: '内置规则', suffix: '+' },
-    ],
   },
 ]
 
@@ -131,40 +117,6 @@ const technicalAdvantages = [
       '应急响应流程',
       '恢复机制完善',
     ],
-  },
-]
-
-const performanceMetrics = [
-  {
-    icon: TrendingUp,
-    value: 99.9,
-    label: '威胁检测准确率',
-    suffix: '%',
-    description: '基于双模型检测技术实现的高精度威胁识别',
-  },
-  {
-    icon: Zap,
-    value: 1,
-    label: 'CPU占用率',
-    suffix: '%',
-    prefix: '<',
-    description: '轻量级设计，对系统性能影响极小',
-  },
-  {
-    icon: Filter,
-    value: 0.1,
-    label: '误报率',
-    suffix: '%',
-    prefix: '<',
-    description: '智能学习算法有效降低误报干扰',
-  },
-  {
-    icon: Activity,
-    value: 100,
-    label: '毫秒响应时间',
-    suffix: 'ms',
-    prefix: '<',
-    description: '实时监控，毫秒级威胁响应能力',
   },
 ]
 
@@ -243,45 +195,6 @@ export function CDGTechnology() {
                         </div>
                       ))}
                     </AnimatedList>
-
-                    {/* 性能指标 */}
-                    <div className={cn('grid grid-cols-2 gap-4')}>
-                      {tech.stats.map((stat, statIndex) => (
-                        <div
-                          key={statIndex}
-                          className={cn(
-                            'text-center p-4 rounded-xl',
-                            'bg-gradient-to-br from-gray-50 to-gray-100',
-                          )}
-                        >
-                          <div
-                            className={cn(
-                              'text-2xl font-bold text-gray-900 mb-1',
-                            )}
-                          >
-                            {stat.prefix && (
-                              <span className={cn('text-lg text-primary mr-1')}>
-                                {stat.prefix}
-                              </span>
-                            )}
-                            <NumberTicker
-                              value={stat.value}
-                              delay={0.5 + index * 0.3 + statIndex * 0.1}
-                              decimalPlaces={stat.value % 1 !== 0 ? 1 : 0}
-                              className={cn('text-primary')}
-                            />
-                            <span className={cn('text-lg text-primary ml-1')}>
-                              {stat.suffix}
-                            </span>
-                          </div>
-                          <p
-                            className={cn('text-xs text-gray-600 font-medium')}
-                          >
-                            {stat.label}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
                   </Card>
                 </div>
 
@@ -437,62 +350,6 @@ export function CDGTechnology() {
                 通过持续的技术创新和优化，实现了业界领先的性能表现
               </p>
             </div>
-
-            <AnimatedList
-              className={cn(
-                'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8',
-              )}
-              direction='up'
-              itemClassName={cn('text-center group')}
-            >
-              {performanceMetrics.map((metric, index) => (
-                <div
-                  key={metric.label}
-                  className={cn(
-                    'relative p-6 rounded-2xl border',
-                    'bg-white/80 backdrop-blur-sm',
-                    'border-gray-200/50 hover:border-primary/30',
-                    'transition-all duration-300',
-                    'hover:-translate-y-2',
-                    'h-full',
-                  )}
-                >
-                  <div
-                    className={cn(
-                      'w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center',
-                      'bg-gradient-to-br from-primary/20 to-primary/10',
-                      'group-hover:scale-110 transition-transform duration-300',
-                    )}
-                  >
-                    <metric.icon className={cn('w-6 h-6 text-primary')} />
-                  </div>
-
-                  <div className={cn('text-3xl font-bold text-gray-900 mb-2')}>
-                    {metric.prefix && (
-                      <span className={cn('text-2xl text-primary mr-1')}>
-                        {metric.prefix}
-                      </span>
-                    )}
-                    <NumberTicker
-                      value={metric.value}
-                      delay={0.8 + index * 0.2}
-                      decimalPlaces={metric.value % 1 !== 0 ? 1 : 0}
-                      className={cn('text-primary')}
-                    />
-                    <span className={cn('text-2xl text-primary ml-1')}>
-                      {metric.suffix}
-                    </span>
-                  </div>
-
-                  <h4 className={cn('font-bold text-gray-900 mb-2')}>
-                    {metric.label}
-                  </h4>
-                  <p className={cn('text-xs text-gray-600 leading-relaxed')}>
-                    {metric.description}
-                  </p>
-                </div>
-              ))}
-            </AnimatedList>
           </AnimatedSection>
         </div>
       </div>

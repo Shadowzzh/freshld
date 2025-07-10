@@ -16,8 +16,6 @@ import {
   Zap,
 } from 'lucide-react'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
-import { MetallicShineCard } from '../ui/metallic-shine'
-import { NumberTicker } from '@/components/ui/number-ticker'
 const capabilities = [
   {
     phase: '事前预警与评估',
@@ -228,57 +226,6 @@ export default function NGEPCapabilities() {
             </div>
           ))}
         </AnimatedList>
-
-        {/* 统计数据 */}
-        <AnimatedSection>
-          <div
-            className={cn(
-              'mt-20 p-12 rounded-2xl',
-              'bg-gradient-to-r from-gray-800 to-blue-700',
-              'text-white text-center',
-            )}
-          >
-            <h3 className='text-2xl font-bold mb-8'>防护效果统计</h3>
-            <AnimatedList className='grid grid-cols-2 md:grid-cols-4 gap-8'>
-              <MetallicShineCard>
-                <div className='mb-2'>
-                  <NumberTicker
-                    value={12}
-                    className='text-3xl font-bold text-primary'
-                  />
-                </div>
-                <div className='text-sm text-blue-200'>核心防护功能</div>
-              </MetallicShineCard>
-              <MetallicShineCard>
-                <div className='mb-2 text-3xl font-bold text-primary'>
-                  <NumberTicker
-                    value={99.9}
-                    decimalPlaces={1}
-                    className='text-3xl font-bold text-primary'
-                  />
-                  %
-                </div>
-                <div className='text-sm text-blue-200'>威胁检测率</div>
-              </MetallicShineCard>
-              <MetallicShineCard>
-                <div className='mb-2 text-3xl font-bold text-primary'>
-                  <NumberTicker
-                    value={1}
-                    className='text-3xl font-bold text-primary'
-                  />
-                  s
-                </div>
-                <div className='text-sm text-blue-200'>响应时间</div>
-              </MetallicShineCard>
-              <MetallicShineCard>
-                <div className='mb-2 text-3xl font-bold text-primary'>
-                  0.01 %
-                </div>
-                <div className='text-sm text-blue-200'>误报率</div>
-              </MetallicShineCard>
-            </AnimatedList>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   )

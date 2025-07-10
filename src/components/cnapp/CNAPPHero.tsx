@@ -2,48 +2,11 @@
 
 import { cn } from '@/lib/utils'
 import { motion } from 'motion/react'
-import {
-  Cloud,
-  ArrowRight,
-  Play,
-  Layers,
-  Shield,
-  Zap,
-  CheckCircle,
-} from 'lucide-react'
-import { NumberTicker } from '@/components/ui/number-ticker'
+import { Cloud, ArrowRight, Play } from 'lucide-react'
 import { MetallicShineCard } from '@/components/ui/metallic-shine'
 import { ScrollIndicator } from '@/components/ui/scroll-indicator'
 import { VortexDynamic } from '../ui/vortex-dynamic'
 import Link from 'next/link'
-
-// CNAPP 性能指标数据
-const cnappPerformanceStats = [
-  {
-    label: '立体防御',
-    value: 5,
-    suffix: '层',
-    icon: Layers,
-  },
-  {
-    label: '威胁检测率',
-    value: 99,
-    suffix: '%',
-    icon: Shield,
-  },
-  {
-    label: '响应时间',
-    value: 30,
-    suffix: 's',
-    icon: Zap,
-  },
-  {
-    label: '兼容性',
-    value: 100,
-    suffix: '%',
-    icon: CheckCircle,
-  },
-]
 
 // CNAPP 支持的云原生平台
 const cnappSupportedPlatforms = [
@@ -240,41 +203,6 @@ export function CNAPPHero() {
               <span>观看演示</span>
             </motion.button>
           </Link>
-        </motion.div>
-
-        {/* 性能指标 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className={cn(
-            'mt-16 pt-8 border-t border-white/10',
-            'grid grid-cols-2 md:grid-cols-4 gap-8',
-            'max-w-3xl mx-auto',
-          )}
-        >
-          {cnappPerformanceStats.map((stat, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
-              viewport={{ once: true }}
-              className={cn('text-center')}
-            >
-              <div className={cn('text-3xl font-bold text-primary mb-2')}>
-                <NumberTicker
-                  className={cn('text-3xl font-bold text-primary')}
-                  value={stat.value}
-                  delay={0.8 + index * 0.2}
-                  decimalPlaces={stat.label === '威胁检测准确率' ? 1 : 0}
-                />
-                {stat.suffix}
-              </div>
-              <div className={cn('text-sm text-blue-200')}>{stat.label}</div>
-            </motion.div>
-          ))}
         </motion.div>
 
         {/* 支持的平台 */}

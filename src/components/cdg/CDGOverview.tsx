@@ -1,16 +1,8 @@
 'use client'
 
-import {
-  TrendingUp,
-  AlertTriangle,
-  Shield,
-  Target,
-  Database,
-  Clock,
-} from 'lucide-react'
+import { TrendingUp, AlertTriangle, Shield, Target } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { NumberTicker } from '@/components/ui/number-ticker'
-import { SectionTitleArea } from '@/components/ui/section-title-area'
 import { cn } from '@/lib/utils'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
 
@@ -37,7 +29,7 @@ const coreValues = [
     icon: Shield,
     title: '事前预防',
     description: '通过资产清点、文件备份、病毒查杀等手段，构建第一道防线',
-    features: ['自动化资产清点', '触发式文件备份', '第三方杀毒引擎'],
+    features: ['自动化资产清点', '第三方杀毒引擎'],
     theme: 'primary' as const,
   },
   {
@@ -62,54 +54,6 @@ export function CDGOverview() {
       <div className={cn('container mx-auto px-4 lg:px-8')}>
         {/* 威胁背景 */}
         <div className={cn('max-w-6xl mx-auto mb-20')}>
-          {/* CDG 产品概述标题区域 */}
-          <div className={cn('max-w-7xl mx-auto mb-20')}>
-            <SectionTitleArea
-              badge='产品概述'
-              title='重新定义'
-              subtitle='勒索防护新标准'
-              description={
-                <div>
-                  明焰CDG是新一代防勒索系统，采用双模型检测技术和全生命周期防护理念。
-                  <br />
-                  为企业数据安全提供滴水不漏的全面防护。
-                  <br />
-                  从事前预防到事后恢复，构建立体化防御体系，确保业务持续稳定运行。
-                </div>
-              }
-              stats={[
-                {
-                  value: (
-                    <div>
-                      <NumberTicker value={99.8} decimalPlaces={1} />%
-                    </div>
-                  ),
-                  label: '勒索检测准确率',
-                  icon: Shield,
-                },
-                {
-                  value: (
-                    <div>
-                      <NumberTicker value={10} />s
-                    </div>
-                  ),
-                  label: '文件恢复时间',
-                  icon: Clock,
-                },
-                {
-                  value: (
-                    <div>
-                      <NumberTicker value={10000} />+
-                    </div>
-                  ),
-                  label: '保护企业数据',
-                  icon: Database,
-                },
-              ]}
-              decorationIcon={Shield}
-            />
-          </div>
-
           <SectionHeader
             badge='威胁态势'
             title={

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Building2, Shield, Server, Cloud, Filter } from 'lucide-react'
+import { Building2, Shield, Server, Cloud } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
 import { AnimatedSection } from '@/components/ui/animated-section'
@@ -15,19 +15,10 @@ const casesData = [
     industry: '金融',
     solution: 'NGEP',
     icon: Building2,
-    description: '为中国银联信息总中心提供端点防护解决方案，保障支付系统安全。',
-    tags: ['端点防护', '勒索防护', '资产清点'],
-    results: '99.9%威胁拦截率',
-  },
-  {
-    id: 'antgroup',
-    company: '蚂蚁金服',
-    industry: '金融科技',
-    solution: 'NGEP',
-    icon: Cloud,
-    description: '云上主机安全防护，实时监控和威胁追踪。',
-    tags: ['云安全', '威胁追踪', '基线检查'],
-    results: '100%威胁可见性',
+    description:
+      '国家金融信息处理关键枢纽，拥有强大信息安全防护体系，保障支付系统业务连续性和数据安全。',
+    tags: ['资产清点', '防御勒索软件', '实时监控', '统一化管理'],
+    results: '几分钟内快速定位威胁',
   },
   {
     id: 'xinjiang8',
@@ -35,51 +26,70 @@ const casesData = [
     industry: '医疗',
     solution: 'CDG',
     icon: Shield,
-    description: '医疗系统勒索防护，保障医院信息系统安全稳定运行。',
-    tags: ['勒索防护', '数据备份', '快速恢复'],
-    results: '0数据丢失',
+    description:
+      '乌鲁木齐地区最大医院，提供自动化资产梳理、勒索病毒防护和系统清洁备份恢复。',
+    tags: ['自动化资产梳理', '勒索病毒告警', '威胁追踪', '清洁备份恢复'],
+    results: '大幅减少人力资源投入',
   },
   {
-    id: 'zheshang',
-    company: '浙商银行',
-    industry: '金融',
+    id: 'antgroup',
+    company: '蚂蚁金服',
+    industry: '金融科技',
+    solution: 'NGEP',
+    icon: Cloud,
+    description:
+      '世界领先的互联网开放平台，提供系统基线检查、恶意威胁防护和资产数据全量采集。',
+    tags: ['系统基线检查', '恶意威胁告警', '威胁实时监控', '攻击溯源'],
+    results: '大幅减少威胁分析时间',
+  },
+  {
+    id: 'zhejiang_sports',
+    company: '浙江省体育局',
+    industry: '政府',
     solution: 'CNAPP',
     icon: Server,
-    description: '容器化应用全生命周期安全防护。',
-    tags: ['容器安全', 'DevSecOps', '合规检查'],
-    results: '提升80%部署效率',
+    description:
+      '政务云容器技术安全防护，提供运行时安全、容器行为监控和镜像安全扫描。',
+    tags: ['运行时安全', '容器行为监控', '镜像安全扫描', '微服务访问控制'],
+    results: '解决容器业务安全难题',
   },
   {
-    id: 'cmcc',
-    company: '中国移动',
-    industry: '电信',
-    solution: 'NGEP',
+    id: 'hunan_chuangfa',
+    company: '湖南创发集团',
+    industry: '制造业',
+    solution: 'CNAPP',
     icon: Building2,
-    description: '大规模终端安全管理和威胁防护。',
-    tags: ['终端管理', '威胁情报', '自动响应'],
-    results: '减少90%响应时间',
+    description: '解决云上资产管理无序问题，提供资产清点、基线合规和入侵检测。',
+    tags: ['资产清点', '基线合规', '镜像扫描', '集群扫描', '入侵检测'],
+    results: '让攻击入侵无所遁形',
   },
   {
-    id: 'alibaba',
-    company: '阿里云',
+    id: 'daoke_cloud',
+    company: '道客云安全',
     industry: '云服务',
     solution: 'CNAPP',
     icon: Cloud,
-    description: '云原生应用安全防护平台。',
-    tags: ['云原生', '镜像扫描', '运行时防护'],
-    results: '100%镜像安全',
+    description:
+      '云原生管理平台供应商，提供从镜像安全到容器运行时安全的全阶段赋能。',
+    tags: ['安全扫描', '基线合规', '入侵检测', '攻击溯源'],
+    results: '提高平台附加价值',
+  },
+  {
+    id: 'zte',
+    company: '中兴通讯',
+    industry: '通信',
+    solution: 'CNAPP',
+    icon: Server,
+    description:
+      '频繁利用微服务架构的通信企业，实现微服务间访问控制策略自动化。',
+    tags: ['微服务访问控制', '策略自动化', '静态分析', '服务网格'],
+    results: '自动生成访问控制策略',
   },
 ]
 
-// 行业筛选选项
-const industries = ['全部', '金融', '金融科技', '医疗', '电信', '云服务']
-
-// 解决方案筛选选项
-const solutions = ['全部', 'NGEP', 'CDG', 'CNAPP']
-
 export function InteractiveCases() {
-  const [selectedIndustry, setSelectedIndustry] = useState('全部')
-  const [selectedSolution, setSelectedSolution] = useState('全部')
+  const [selectedIndustry] = useState('全部')
+  const [selectedSolution] = useState('全部')
   const [hoveredCase, setHoveredCase] = useState<string | null>(null)
 
   // 筛选案例
@@ -95,59 +105,6 @@ export function InteractiveCases() {
         {/* 标题 */}
         <AnimatedSection className='text-center mb-16'>
           <h2 className='text-3xl lg:text-4xl font-bold mb-4'>探索成功案例</h2>
-          <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-            通过交互式界面，快速了解不同行业和解决方案的成功实践
-          </p>
-        </AnimatedSection>
-
-        {/* 筛选器 */}
-        <AnimatedSection className='mb-12'>
-          <div className='flex flex-col lg:flex-row gap-6 p-6 rounded-2xl bg-card border border-primary/15 '>
-            <div className='flex items-center gap-3'>
-              <Filter className='w-5 h-5 text-primary' />
-            </div>
-
-            {/* 行业筛选 */}
-            <div>
-              <div className='flex  gap-2'>
-                {industries.map(industry => (
-                  <button
-                    key={industry}
-                    onClick={() => setSelectedIndustry(industry)}
-                    className={cn(
-                      'px-4 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer',
-                      selectedIndustry === industry
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-background hover:bg-primary/10 text-foreground',
-                    )}
-                  >
-                    {industry}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* 解决方案筛选 */}
-            <div>
-              <div className='flex flex-wrap gap-2'>
-                {solutions.map(solution => (
-                  <button
-                    key={solution}
-                    onClick={() => setSelectedSolution(solution)}
-                    className={cn(
-                      'cursor-pointer',
-                      'px-4 py-2 rounded-lg text-sm font-medium transition-all',
-                      selectedSolution === solution
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-background hover:bg-primary/10 text-foreground',
-                    )}
-                  >
-                    {solution}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
         </AnimatedSection>
 
         {/* 案例网格 */}

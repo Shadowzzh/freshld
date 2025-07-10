@@ -5,21 +5,16 @@ import {
   CheckCircle,
   AlertTriangle,
   Sparkles,
-  Shield,
-  Zap,
   Globe,
-  Cloud,
   Container,
   Workflow,
   Server,
   Database,
-  BarChart3,
   MonitorSpeaker,
   Search,
 } from 'lucide-react'
-import { NumberTicker } from '@/components/ui/number-ticker'
-import { SectionTitleArea } from '@/components/ui/section-title-area'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
+import { motion } from 'motion/react'
 
 // CNAPP 云原生安全挑战数据
 const cnappSecurityChallenges = [
@@ -140,40 +135,6 @@ const cnappDeploymentArchitecture = [
   },
 ]
 
-// CNAPP 兼容性支持数据
-const cnappCompatibility = [
-  {
-    category: '容器运行时',
-    items: ['Docker', 'Containerd', 'CRI-O', 'Podman', 'rkt'],
-    icon: Container,
-  },
-  {
-    category: '编排平台',
-    items: ['Kubernetes', 'OpenShift', 'Rancher', 'Docker Swarm', 'Nomad'],
-    icon: Workflow,
-  },
-  {
-    category: '云服务商',
-    items: ['AWS EKS', 'Azure AKS', 'Google GKE', '阿里云ACK', '腾讯云TKE'],
-    icon: Cloud,
-  },
-  {
-    category: '操作系统',
-    items: ['Ubuntu', 'CentOS', 'RHEL', 'SUSE', 'CoreOS'],
-    icon: Server,
-  },
-  {
-    category: '镜像仓库',
-    items: ['Docker Hub', 'Harbor', 'Quay', 'ECR', 'ACR'],
-    icon: Database,
-  },
-  {
-    category: '监控工具',
-    items: ['Prometheus', 'Grafana', 'ELK Stack', 'Jaeger', 'Istio'],
-    icon: BarChart3,
-  },
-]
-
 // CNAPP 解决方案数据
 const cnappSolutions = [
   {
@@ -219,44 +180,60 @@ export function CNAPPOverview() {
       />
       <div className={cn('max-w-7xl mx-auto px-4 sm:px-6 lg:px-8')}>
         {/* CNAPP 产品概述标题区域 */}
-        <SectionTitleArea
-          badge='云原生安全领域的创新突破'
-          badgeIcon={Sparkles}
-          title='云原生安全'
-          subtitle='新时代'
-          description='在数字化转型的浪潮中，云原生技术以其弹性、可扩展性和敏捷性，正成为企业应用部署的核心。'
-          secondaryDescription='明焰CNAPP应运而生，旨在提供一套全面的、一体化的云原生安全解决方案。'
-          stats={[
-            {
-              value: (
-                <div>
-                  <NumberTicker value={99.9} decimalPlaces={1} />%
-                </div>
-              ),
-              label: '云原生安全覆盖率',
-              icon: Shield,
-            },
-            {
-              value: (
-                <div>
-                  <NumberTicker value={30} />s
-                </div>
-              ),
-              label: '威胁响应时间',
-              icon: Zap,
-            },
-            {
-              value: (
-                <div>
-                  <NumberTicker value={1000} />+
-                </div>
-              ),
-              label: '保护云原生应用',
-              icon: Globe,
-            },
-          ]}
-          decorationIcon={Shield}
-        />
+        <AnimatedSection className={cn('text-center mb-16 lg:mb-24')}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className={cn(
+              'inline-flex items-center gap-2 px-4 py-2 rounded-full',
+              'bg-primary/10 border border-primary/20 mb-8',
+            )}
+          >
+            <Sparkles className={cn('w-4 h-4 text-primary')} />
+            <span className={cn('text-sm font-semibold text-primary')}>
+              云原生安全领域的创新突破
+            </span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className={cn(
+              'text-4xl md:text-5xl lg:text-6xl font-bold mb-8',
+              'bg-gradient-to-r from-primary via-primary/80 to-primary',
+              'bg-clip-text text-transparent',
+            )}
+          >
+            云原生安全
+            <span className={cn('text-foreground ml-4')}>新时代</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className={cn(
+              'text-lg md:text-xl text-muted-foreground mb-6',
+              'max-w-4xl mx-auto leading-relaxed',
+            )}
+          >
+            在数字化转型的浪潮中，云原生技术以其弹性、可扩展性和敏捷性，正成为企业应用部署的核心。
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className={cn(
+              'text-lg md:text-xl text-muted-foreground mb-12',
+              'max-w-4xl mx-auto leading-relaxed',
+            )}
+          >
+            明焰CNAPP应运而生，旨在提供一套全面的、一体化的云原生安全解决方案。
+          </motion.p>
+        </AnimatedSection>
 
         {/* 挑战与解决方案 */}
         <AnimatedSection
@@ -608,111 +585,6 @@ export function CNAPPOverview() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              )
-            })}
-          </AnimatedList>
-        </AnimatedSection>
-
-        {/* 兼容性 */}
-        <AnimatedSection
-          className={cn(
-            'relative p-4 sm:p-6 lg:p-8 xl:p-12 rounded-2xl overflow-hidden',
-            'border border-primary/15',
-          )}
-        >
-          {/* 背景装饰 */}
-          <div
-            className={cn(
-              'absolute top-0 left-0 right-0 h-px bg-gradient-to-r',
-              'from-transparent via-primary/30 to-transparent',
-            )}
-          />
-          <AnimatedSection className='mb-8 sm:mb-10 lg:mb-12 relative z-10'>
-            <h3
-              className={cn(
-                'text-center ',
-                'text-3xl md:text-4xl font-bold mb-4',
-                'text-primary',
-              )}
-            >
-              广泛的兼容性支持
-            </h3>
-            <p
-              className={cn(
-                'text-lg text-muted-foreground max-w-2xl mx-auto',
-                'text-center ',
-              )}
-            >
-              无缝集成主流技术栈和云原生生态
-            </p>
-          </AnimatedSection>
-
-          <AnimatedList
-            className={cn(
-              'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto',
-            )}
-          >
-            {cnappCompatibility.map((compat, index) => {
-              return (
-                <div
-                  key={index}
-                  className={cn(
-                    'group relative p-4 sm:p-6 lg:p-8 rounded-2xl overflow-hidden text-center',
-                    'bg-card/40 backdrop-blur-sm',
-                    'border border-primary/15',
-                    'hover:border-primary/15',
-                    'transition-all duration-300',
-                    'hover:scale-105',
-                  )}
-                >
-                  <div
-                    className={cn(
-                      'absolute inset-0 opacity-0 group-hover:opacity-10',
-                      'bg-gradient-to-br from-primary/20 via-primary/10 to-primary/20',
-                      'transition-all duration-300 rounded-2xl',
-                    )}
-                  />
-                  {/* 装饰性背景 */}
-                  <div
-                    className={cn(
-                      'absolute top-0 left-0 w-full h-px',
-                      'bg-gradient-to-r from-transparent via-primary/30 to-transparent',
-                      'opacity-0 group-hover:opacity-100 transition-opacity duration-500',
-                    )}
-                  />
-                  <div
-                    className={cn(
-                      'w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mx-auto mb-2 sm:mb-3 lg:mb-4 rounded-xl',
-                      'bg-primary/10 flex items-center justify-center',
-                    )}
-                  >
-                    <compat.icon className='w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-primary' />
-                  </div>
-                  <h4
-                    className={cn(
-                      'text-center',
-                      'text-sm sm:text-base lg:text-lg font-bold text-foreground mb-2 sm:mb-3 lg:mb-4',
-                      'transition-colors duration-300',
-                    )}
-                  >
-                    {compat.category}
-                  </h4>
-                  <div className='space-y-0.5 sm:space-y-1'>
-                    {compat.items.map((item, itemIndex) => (
-                      <div
-                        key={itemIndex}
-                        className={cn(
-                          'text-center',
-                          'before:content-["•"] before:text-primary before:mr-1 sm:before:mr-2 before:text-sm sm:before:text-base',
-                          'text-xs sm:text-sm text-muted-foreground px-1 sm:px-2 lg:px-3',
-                          'transition-all duration-300',
-                        )}
-                      >
-                        {item}
-                      </div>
-                    ))}
                   </div>
                 </div>
               )
