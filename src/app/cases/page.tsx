@@ -6,7 +6,6 @@ import {
   CasesHero,
   CasesCTA,
   InteractiveCases,
-  CasesTimeline,
   IndustryGrid,
   CasesMetrics,
 } from '@/components/cases'
@@ -64,7 +63,7 @@ export default function CasesPage() {
         <CasesMetrics />
         <InteractiveCases />
         <IndustryGrid />
-        <CasesTimeline />
+        {/* <CasesTimeline /> */}
         <CasesCTA />
       </div>
       <Footer />
