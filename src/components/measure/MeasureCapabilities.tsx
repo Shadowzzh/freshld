@@ -71,7 +71,6 @@ const metrics = [
     label: '持续验证',
     description: '全天候安全验证',
   },
-
 ]
 
 export default function MeasureCapabilities() {

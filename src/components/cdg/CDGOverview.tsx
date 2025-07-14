@@ -1,28 +1,9 @@
 'use client'
 
-import { TrendingUp, AlertTriangle, Shield, Target } from 'lucide-react'
+import { TrendingUp, Shield, Target } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { NumberTicker } from '@/components/ui/number-ticker'
 import { cn } from '@/lib/utils'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
-
-const threatStats = [
-  {
-    value: 2021,
-    label: '年份',
-    description: '上半年全球勒索攻击事件已与2020年全年基本持平',
-  },
-  {
-    value: 10,
-    label: '倍增长',
-    description: '国内勒索病毒恶意域名访问量同比增长超10倍',
-  },
-  {
-    value: 100,
-    label: '% 覆盖',
-    description: '从政府机构到企业，勒索攻击无处不在',
-  },
-]
 
 const coreValues = [
   {
@@ -76,53 +57,6 @@ export function CDGOverview() {
             }
             className={cn('mb-16')}
           />
-
-          {/* 威胁统计 */}
-          <AnimatedList
-            className={cn('grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16')}
-            direction='up'
-          >
-            {threatStats.map(stat => (
-              <div key={stat.label} className={cn('text-center group')}>
-                <div
-                  className={cn(
-                    'relative p-8 rounded-2xl bg-white border transition-all duration-300',
-                    'border-primary/15 hover:border-primary/30',
-                    'hover:scale-105',
-                  )}
-                >
-                  {/* 警告图标 */}
-                  <div
-                    className={cn(
-                      'w-16 h-16 mx-auto mb-6 rounded-full',
-                      'bg-gradient-to-br from-primary/10 to-primary/20',
-                      'flex items-center justify-center',
-                      'group-hover:scale-110 transition-transform duration-300',
-                    )}
-                  >
-                    <AlertTriangle className={cn('w-8 h-8 text-primary')} />
-                  </div>
-
-                  <div className={cn('text-4xl font-bold text-primary mb-2')}>
-                    <NumberTicker
-                      value={stat.value}
-                      className={cn('text-primary')}
-                    />
-                    <span className={cn('text-2xl ml-1')}>{stat.label}</span>
-                  </div>
-
-                  <p
-                    className={cn(
-                      'text-sm text-gray-600 leading-relaxed',
-                      'text-ellipsis overflow-hidden whitespace-nowrap',
-                    )}
-                  >
-                    {stat.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </AnimatedList>
 
           {/* 法规要求 */}
           <AnimatedSection

@@ -72,7 +72,11 @@ export function AboutTimeline() {
       content: (
         <TimelineContent
           description='国际领先论文发表 完成天使轮融资，同年杭州奇盾成立'
-          items={[{ label: '天使轮融资' }, { label: '杭州奇盾成立' }]}
+          items={[
+            { label: '天使轮融资' },
+            { label: '杭州奇盾成立' },
+            { label: '国际论文发表' },
+          ]}
         />
       ),
     },
@@ -81,7 +85,7 @@ export function AboutTimeline() {
       content: (
         <TimelineContent
           description='启动主机APT防御国家级科研课题'
-          items={[{ label: '国际论文发表' }, { label: 'APT防御课题' }]}
+          items={[{ label: 'APT防御课题' }]}
         />
       ),
     },
