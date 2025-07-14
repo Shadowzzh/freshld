@@ -71,7 +71,7 @@ export function AboutTimeline() {
       title: '2017',
       content: (
         <TimelineContent
-          description='完成天使轮融资，发布商业化产品，同年杭州奇盾成立'
+          description='国际领先论文发表 完成天使轮融资，同年杭州奇盾成立'
           items={[{ label: '天使轮融资' }, { label: '杭州奇盾成立' }]}
         />
       ),
@@ -80,8 +80,8 @@ export function AboutTimeline() {
       title: '2015',
       content: (
         <TimelineContent
-          description='国际领先论文发表，奇盾信息成立'
-          items={[{ label: '国际论文发表' }, { label: '奇盾信息成立' }]}
+          description='启动主机APT防御国家级科研课题'
+          items={[{ label: '国际论文发表' }]}
         />
       ),
     },
@@ -89,7 +89,7 @@ export function AboutTimeline() {
       title: '2012',
       content: (
         <TimelineContent
-          description='浙江大学互联网安全实验室成立，同年启动主机APT防御国家级科研课题'
+          description='浙江大学互联网安全实验室成立'
           items={[{ label: '浙大安全实验室' }, { label: 'APT防御课题' }]}
         />
       ),

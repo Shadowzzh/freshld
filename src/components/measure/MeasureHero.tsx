@@ -12,8 +12,6 @@ import Link from 'next/link'
 const stats = [
   { value: 1000, label: '攻击场景', suffix: '+' },
   { value: 24, label: '持续验证', suffix: '/7', value2: 7 },
-  { value: 99.9, label: '模拟准确率', suffix: '%' },
-  { value: 0, label: '生产影响', suffix: '%' },
 ]
 
 const features = [
@@ -207,8 +205,8 @@ export default function MeasureHero() {
           viewport={{ once: true }}
           className={cn(
             'mt-16 pt-8 border-t border-white/10',
-            'grid grid-cols-2 md:grid-cols-4 gap-8',
-            'max-w-3xl mx-auto',
+            'grid grid-cols-2 md:grid-cols-2 gap-8',
+            'max-w-xl mx-auto',
           )}
         >
           {stats.map((stat, index) => (

@@ -9,7 +9,6 @@ import {
   FileSearch,
   Activity,
   RefreshCw,
-  CheckCircle,
 } from 'lucide-react'
 import { NumberTicker } from '@/components/ui/number-ticker'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
@@ -72,13 +71,7 @@ const metrics = [
     label: '持续验证',
     description: '全天候安全验证',
   },
-  {
-    icon: CheckCircle,
-    value: 0,
-    suffix: '%',
-    label: '生产影响',
-    description: '完全无害化测试',
-  },
+
 ]
 
 export default function MeasureCapabilities() {
@@ -177,7 +170,7 @@ export default function MeasureCapabilities() {
           </AnimatedSection>
 
           {/* 统计指标网格 */}
-          <AnimatedList className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6'>
+          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6'>
             {metrics.map((metric, index) => (
               <div
                 key={index}

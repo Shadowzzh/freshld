@@ -147,7 +147,7 @@ export function ProductOverviewSection() {
     },
     {
       icon: Activity,
-      title: '明焰度量验证平台',
+      title: '明焰安全验证平台',
       description:
         '基于真实威胁情报的全自动化安全验证平台，通过模拟真实攻击场景，持续验证企业安全防护体系的有效性，为企业提供可量化的安全评估服务。',
       features: [
