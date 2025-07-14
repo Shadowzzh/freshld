@@ -89,7 +89,7 @@ export default function MeasureFeatures() {
               全自动化、可量化的防御体系验证
             </h2>
             <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-              基于黑客组织和受害者情报为攻击库来源的安全验证度量平台，持续更新最新攻击手法进行测试
+              基于黑客组织和受害者情报为攻击库来源的安全验证平台，持续更新最新攻击手法进行测试
             </p>
           </AnimatedSection>
 
@@ -238,7 +238,7 @@ export default function MeasureFeatures() {
               验证平台核心优势
             </h3>
             <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-              通过真实数据展现明焰度量验证平台的专业能力和验证效果
+              通过真实数据展现明焰安全验证平台的专业能力和验证效果
             </p>
           </AnimatedSection>
 

@@ -165,7 +165,7 @@ export default function MeasureCapabilities() {
               平台验证能力统计
             </h3>
             <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-              通过真实数据展现明焰度量验证平台的专业能力和验证效果
+              通过真实数据展现明焰安全验证平台的专业能力和验证效果
             </p>
           </AnimatedSection>
 

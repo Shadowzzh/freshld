@@ -58,7 +58,7 @@ export default function MeasureHero() {
           <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/30 border border-primary/15 mb-6'>
             <Shield className='w-4 h-4 text-primary' />
             <span className='text-sm font-semibold text-primary'>
-              明焰 度量验证平台
+              明焰 安全验证平台
             </span>
           </div>
         </motion.div>
