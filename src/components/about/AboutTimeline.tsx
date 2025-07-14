@@ -81,7 +81,7 @@ export function AboutTimeline() {
       content: (
         <TimelineContent
           description='启动主机APT防御国家级科研课题'
-          items={[{ label: '国际论文发表' }]}
+          items={[{ label: '国际论文发表' }, { label: 'APT防御课题' }]}
         />
       ),
     },
@@ -90,7 +90,7 @@ export function AboutTimeline() {
       content: (
         <TimelineContent
           description='浙江大学互联网安全实验室成立'
-          items={[{ label: '浙大安全实验室' }, { label: 'APT防御课题' }]}
+          items={[{ label: '浙大安全实验室' }]}
         />
       ),
     },
