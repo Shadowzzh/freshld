@@ -70,11 +70,10 @@ export default function NGEPHero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className={cn(
-            'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold',
-            'mb-4 sm:mb-6 leading-tight',
+            'text-4xl md:text-5xl lg:text-6xl font-bold',
+            'mb-6 leading-tight',
             'bg-gradient-to-r from-white via-blue-100 to-white',
             'bg-clip-text text-transparent',
-            'px-2 sm:px-0',
           )}
         >
           主机安全防护系统
