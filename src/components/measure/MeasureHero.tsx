@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 const stats = [
   { value: 1000, label: '攻击场景', suffix: '+' },
-  { value: 24, label: '持续验证', suffix: '/7', value2: 7 },
+  { value: 7, label: '持续验证', suffix: 'x24' },
 ]
 
 const features = [
@@ -225,16 +225,6 @@ export default function MeasureHero() {
                   delay={0.8 + index * 0.2}
                   decimalPlaces={stat.label === '模拟准确率' ? 1 : 0}
                 />
-                {stat.value2 && (
-                  <>
-                    /
-                    <NumberTicker
-                      className='text-3xl font-bold text-primary'
-                      value={stat.value2}
-                      delay={0.8 + index * 0.2}
-                    />
-                  </>
-                )}
                 {stat.suffix}
               </div>
               <div className='text-sm text-blue-200'>{stat.label}</div>

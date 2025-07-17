@@ -66,8 +66,8 @@ const metrics = [
 
   {
     icon: RefreshCw,
-    value: 24,
-    suffix: '/7',
+    value: 7,
+    suffix: 'x24',
     label: '持续验证',
     description: '全天候安全验证',
   },

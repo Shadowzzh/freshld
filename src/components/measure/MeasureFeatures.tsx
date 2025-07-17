@@ -8,10 +8,8 @@ import {
   Target,
   Settings,
   CheckCircle,
-  RefreshCw,
   Activity,
 } from 'lucide-react'
-import { NumberTicker } from '@/components/ui/number-ticker'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
 
 // 产品功能数据
@@ -53,24 +51,6 @@ const features = [
     title: '多维度验证',
     description: '参照真实攻击场景进行可重复的持续性端到端的测试验证',
     category: '全面化',
-  },
-]
-
-// 核心优势数据
-const advantages = [
-  {
-    icon: Target,
-    value: 1000,
-    suffix: '+',
-    label: '攻击场景库',
-    description: '覆盖最新威胁场景',
-  },
-  {
-    icon: RefreshCw,
-    value: 24,
-    suffix: '/7',
-    label: '持续验证',
-    description: '全天候安全验证',
   },
 ]
 
@@ -227,76 +207,6 @@ export default function MeasureFeatures() {
                     </p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </AnimatedList>
-
-          {/* 核心优势展示 */}
-          <AnimatedSection className='text-center mb-12'>
-            <h3 className='text-2xl lg:text-3xl font-bold mb-4 text-primary'>
-              验证平台核心优势
-            </h3>
-            <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-              通过真实数据展现明焰安全验证平台的专业能力和验证效果
-            </p>
-          </AnimatedSection>
-
-          {/* 优势指标网格 */}
-          <AnimatedList className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6'>
-            {advantages.map((advantage, index) => (
-              <div
-                key={index}
-                className={cn(
-                  'group relative p-6 rounded-2xl border border-primary/15',
-                  'bg-white/80 backdrop-blur-sm',
-                  'hover:border-primary/30 hover:bg-white hover:scale-105',
-                  'transition-all duration-300',
-                )}
-              >
-                {/* 内容 */}
-                <div className='relative text-center'>
-                  {/* 图标 */}
-                  <div
-                    className={cn(
-                      'w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4',
-                      'transition-all duration-300 group-hover:scale-110',
-                      'bg-primary/10 text-primary',
-                    )}
-                  >
-                    <advantage.icon className='w-6 h-6' />
-                  </div>
-
-                  {/* 数值 */}
-                  <div className='mb-2'>
-                    <span className='text-3xl font-bold text-primary'>
-                      <NumberTicker
-                        value={advantage.value}
-                        decimalPlaces={advantage.value === 99.9 ? 1 : 0}
-                      />
-                      {advantage.suffix}
-                    </span>
-                  </div>
-
-                  {/* 标签 */}
-                  <h4 className='text-lg font-semibold text-gray-900 mb-1'>
-                    {advantage.label}
-                  </h4>
-
-                  {/* 描述 */}
-                  <p className='text-sm text-gray-600'>
-                    {advantage.description}
-                  </p>
-                </div>
-
-                {/* 悬停效果边框 */}
-                <div
-                  className={cn(
-                    'absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100',
-                    'transition-opacity duration-300',
-                    'bg-gradient-to-br from-primary/10 via-transparent to-primary/5',
-                    'pointer-events-none',
-                  )}
-                />
               </div>
             ))}
           </AnimatedList>

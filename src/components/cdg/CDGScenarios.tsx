@@ -122,7 +122,7 @@ const benefits = [
     icon: Users,
     title: '专业服务',
     description: '7×24小时专业技术支持和应急响应',
-    stats: '24/7 技术支持',
+    stats: '7x24 技术支持',
   },
 ]
 
