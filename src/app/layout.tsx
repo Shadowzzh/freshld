@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { Toaster } from 'sonner'
 import { rootLayoutMetadata } from '@/lib/metadata'
 import './globals.css'
+import Script from 'next/script'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
