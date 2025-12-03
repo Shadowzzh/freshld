@@ -5,7 +5,7 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
 
   // 检测子域名 dl.fyreshld.com，只允许访问 /lib 页面
-  if (hostname === 'dl.fyreshld.com') {
+  if (['dl.fyreshld.com', 'dl.fyreshld.cn'].includes(hostname || '')) {
     // 如果不是 /lib 路径，重定向到 /lib
     if (url.pathname !== '/lib') {
       url.pathname = '/lib'
