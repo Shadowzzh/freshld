@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 import { cn } from '@/lib/utils'
 import { LibHero } from '@/components/lib/LibHero'
 import { LibraryDownloadSection } from '@/components/lib/LibraryDownloadSection'
+import { LibraryLoadingFallback } from '@/components/lib/LibraryLoadingFallback'
 
 export const metadata: Metadata = {
   title: '病毒库下载中心',
-  description:
-    '病毒库下载中心',
+  description: '病毒库下载中心',
   keywords: [
     '病毒库下载',
     '病毒防护',
@@ -43,7 +44,9 @@ export default function LibPage() {
     >
       <div className='min-h-screen'>
         <LibHero />
-        <LibraryDownloadSection />
+        <Suspense fallback={<LibraryLoadingFallback />}>
+          <LibraryDownloadSection />
+        </Suspense>
       </div>
     </main>
   )

@@ -1,5 +1,3 @@
-'use client'
-
 import { cn } from '@/lib/utils'
 import { LibraryData } from './types'
 import { Terminal, Monitor, Download, Calendar } from 'lucide-react'
@@ -12,7 +10,13 @@ const platformIcons = {
   windows: Monitor,
 }
 
-export function LibraryCard({ libraryData }: { libraryData: LibraryData }) {
+export function LibraryCard({
+  libraryData,
+  allowedUuids,
+}: {
+  libraryData: LibraryData
+  allowedUuids?: string[]
+}) {
   const PlatformIcon =
     platformIcons[libraryData.platform === 'Linux' ? 'linux' : 'windows']
 
@@ -100,7 +104,7 @@ export function LibraryCard({ libraryData }: { libraryData: LibraryData }) {
           </div>
         </div>
 
-        <ValidationDialog libraryData={libraryData}>
+        <ValidationDialog libraryData={libraryData} allowedUuids={allowedUuids}>
           <Button size='full' className='group/btn'>
             <Download className='w-4 h-4 group-hover/btn:translate-y-0.5 transition-transform' />
             立即下载

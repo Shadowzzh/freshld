@@ -84,8 +84,7 @@ export function ContactForm({ variant = 'default' }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const form = useForm({
-    defaultValues:
-      env.NODE_ENV === 'development' ? testData : defaultValues,
+    defaultValues: env.NODE_ENV === 'development' ? testData : defaultValues,
 
     onSubmit: async ({ value, formApi }) => {
       setIsSubmitting(true)

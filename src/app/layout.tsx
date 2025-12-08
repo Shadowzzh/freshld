@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = env.DEPLOY_MODE === 'download' ? downloadMetadata : rootLayoutMetadata
+export const metadata: Metadata =
+  env.DEPLOY_MODE === 'download' ? downloadMetadata : rootLayoutMetadata
 
 export const viewport: Viewport = {
   colorScheme: 'light',

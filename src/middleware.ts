@@ -26,9 +26,9 @@ export function middleware(request: NextRequest) {
   // 新增：环境变量控制的部署模式路由限制
   if (deployMode === 'download') {
     const allowedPaths = ['/lib', '/api', '/_next', '/favicon.ico']
-    const isAllowed = allowedPaths.some(path =>
-      url.pathname.startsWith(path)
-    ) || url.pathname === '/'
+    const isAllowed =
+      allowedPaths.some(path => url.pathname.startsWith(path)) ||
+      url.pathname === '/'
 
     if (!isAllowed) {
       // 重定向到病毒库页面

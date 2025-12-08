@@ -128,9 +128,7 @@ export const rootLayoutMetadata: Metadata = {
 
   // 图标配置
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-    ],
+    icon: [{ url: '/favicon.ico', sizes: 'any' }],
   },
 
   // 应用配置
@@ -180,7 +178,6 @@ export const homeMetadata: Metadata = {
     canonical: '/',
   },
 }
-
 
 // NGEP 产品页面 metadata 配置
 export const ngepMetadata: Metadata = {
@@ -266,10 +263,8 @@ export const downloadMetadata: Metadata = {
 
   // 图标配置
   icons: {
-    icon: [
-      { url: '/globe.svg', type: 'image/svg+xml' }
-    ],
-    apple: '/globe.svg'
+    icon: [{ url: '/globe.svg', type: 'image/svg+xml' }],
+    apple: '/globe.svg',
   },
 
   // OpenGraph 配置
@@ -325,4 +320,3 @@ export const downloadMetadata: Metadata = {
     telephone: false,
   },
 }
-
