@@ -23,6 +23,9 @@ importers:
       '@react-email/components':
         specifier: 0.1.1
         version: 0.1.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@t3-oss/env-nextjs':
+        specifier: ^0.13.8
+        version: 0.13.8(typescript@5.8.3)(zod@3.25.76)
       '@tanstack/react-form':
         specifier: ^1.12.3
         version: 1.12.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -66,8 +69,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       zod:
-        specifier: ^3.25.67
-        version: 3.25.67
+        specifier: ^3.25.76
+        version: 3.25.76
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -865,6 +868,40 @@ packages:
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
+
+  '@t3-oss/env-core@0.13.8':
+    resolution: {integrity: sha512-L1inmpzLQyYu4+Q1DyrXsGJYCXbtXjC4cICw1uAKv0ppYPQv656lhZPU91Qd1VS6SO/bou1/q5ufVzBGbNsUpw==}
+    peerDependencies:
+      arktype: ^2.1.0
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0 || ^4.0.0-beta.0
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
+
+  '@t3-oss/env-nextjs@0.13.8':
+    resolution: {integrity: sha512-QmTLnsdQJ8BiQad2W2nvV6oUpH4oMZMqnFEjhVpzU0h3sI9hn8zb8crjWJ1Amq453mGZs6A4v4ihIeBFDOrLeQ==}
+    peerDependencies:
+      arktype: ^2.1.0
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0 || ^4.0.0-beta.0
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
 
   '@tailwindcss/node@4.1.8':
     resolution: {integrity: sha512-OWwBsbC9BFAJelmnNcrKuf+bka2ZxCE2A4Ft53Tkg4uoiE67r/PMEYwCsourC26E+kmxfwE0hVzMdxqeW+xu7Q==}
@@ -5602,8 +5639,8 @@ packages:
     peerDependencies:
       zod: ^3.25.0
 
-  zod@3.25.67:
-    resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
 snapshots:
 
@@ -6246,6 +6283,18 @@ snapshots:
   '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
+
+  '@t3-oss/env-core@0.13.8(typescript@5.8.3)(zod@3.25.76)':
+    optionalDependencies:
+      typescript: 5.8.3
+      zod: 3.25.76
+
+  '@t3-oss/env-nextjs@0.13.8(typescript@5.8.3)(zod@3.25.76)':
+    dependencies:
+      '@t3-oss/env-core': 0.13.8(typescript@5.8.3)(zod@3.25.76)
+    optionalDependencies:
+      typescript: 5.8.3
+      zod: 3.25.76
 
   '@tailwindcss/node@4.1.8':
     dependencies:
@@ -9633,8 +9682,8 @@ snapshots:
       smol-toml: 1.3.4
       strip-json-comments: 5.0.2
       typescript: 5.8.3
-      zod: 3.25.67
-      zod-validation-error: 3.5.2(zod@3.25.67)
+      zod: 3.25.76
+      zod-validation-error: 3.5.2(zod@3.25.76)
 
   language-subtag-registry@0.3.23: {}
 
@@ -12089,8 +12138,8 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-validation-error@3.5.2(zod@3.25.67):
+  zod-validation-error@3.5.2(zod@3.25.76):
     dependencies:
-      zod: 3.25.67
+      zod: 3.25.76
 
-  zod@3.25.67: {}
+  zod@3.25.76: {}
