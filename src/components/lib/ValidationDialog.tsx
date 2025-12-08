@@ -25,11 +25,13 @@ import { Button } from '../ui/button'
 export interface ValidationDialogProps {
   children: ReactNode
   libraryData: LibraryData
+  allowedUuids?: string[]
 }
 
 export function ValidationDialog({
   children,
   libraryData,
+  allowedUuids = [],
 }: ValidationDialogProps) {
   const [machineCode, setMachineCode] = useState('')
   const [isValidating, setIsValidating] = useState(false)
@@ -38,16 +40,14 @@ export function ValidationDialog({
   >(null)
   const [errorMessage, setErrorMessage] = useState('')
 
-  const validMachineCodes = ['c8504d56-3eca-47f8-6d77-78244dbbd73f']
-
   const handleValidate = async (machineCode: string): Promise<boolean> => {
     await new Promise(resolve => setTimeout(resolve, 1000))
 
-    return validMachineCodes.includes(machineCode.trim())
+    return allowedUuids.includes(machineCode.trim())
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubmit = async (e?: React.FormEvent | React.MouseEvent) => {
+    e?.preventDefault()
 
     if (!machineCode.trim()) {
       setValidationResult('error')
@@ -77,6 +77,13 @@ export function ValidationDialog({
       setErrorMessage('验证失败，请稍后重试')
     } finally {
       setIsValidating(false)
+    }
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' && !isValidating && validationResult !== 'success') {
+      e.preventDefault()
+      handleSubmit()
     }
   }
 
@@ -111,7 +118,7 @@ export function ValidationDialog({
           <DialogDescription>请输入您的机器码以验证下载权限</DialogDescription>
         </DialogHeader>
 
-        <form className={cn('space-y-4')}>
+        <form className={cn('space-y-4')} onSubmit={e => e.preventDefault()}>
           <div className='gap-3 flex flex-col'>
             <label htmlFor='machineCode' className='text-sm font-medium '>
               机器码
@@ -122,6 +129,7 @@ export function ValidationDialog({
               type='text'
               value={machineCode}
               onChange={e => setMachineCode(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder='请输入机器码 (格式: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx)'
               className={cn(
                 'w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50',
