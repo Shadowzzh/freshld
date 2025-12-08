@@ -10,7 +10,7 @@ export const env = createEnv({
     /** 邮件服务配置 */
     RESEND_API_KEY: z.string().min(1),
     /** 邮件接收地址 (需要在 API 路由中配置) */
-    RECEIVE_EMAIL_ADDRESS: z.string().email(),
+    RECEIVE_EMAIL: z.string().email(),
   },
 
   /**
@@ -37,7 +37,8 @@ export const env = createEnv({
   runtimeEnv: {
     // 服务端
     RESEND_API_KEY: process.env.RESEND_API_KEY,
-    RECEIVE_EMAIL_ADDRESS: process.env.RECEIVE_EMAIL_ADDRESS,
+    RECEIVE_EMAIL: process.env.RECEIVE_EMAIL,
+    DEPLOY_MODE: process.env.DEPLOY_MODE,
 
     // 客户端
     NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,

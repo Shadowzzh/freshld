@@ -20,7 +20,7 @@ const emailSchema = z.object({
 })
 
 export async function POST(request: NextRequest) {
-  if (!env.RECEIVE_EMAIL_ADDRESS) {
+  if (!env.RECEIVE_EMAIL) {
     return NextResponse.json({ error: '接收邮箱未配置' }, { status: 500 })
   }
 
@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     // 发送邮件
     const { data, error } = await resend.emails.send({
       from: '官网渠道 <site@fyreshld.com>',
-      to: [env.RECEIVE_EMAIL_ADDRESS],
+      to: [env.RECEIVE_EMAIL],
       subject: '官网新增客户登记',
       react: email,
     })
