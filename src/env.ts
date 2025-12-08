@@ -11,6 +11,8 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1),
     /** 邮件接收地址 (需要在 API 路由中配置) */
     RECEIVE_EMAIL: z.string().email(),
+    /** 部署模式配置 (服务端) */
+    DEPLOY_MODE: z.enum(['full', 'download']).default('full'),
   },
 
   /**

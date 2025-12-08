@@ -126,6 +126,13 @@ export const rootLayoutMetadata: Metadata = {
     yahoo: 'your-yahoo-verification-code',
   },
 
+  // 图标配置
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+  },
+
   // 应用配置
   applicationName: siteMetadata.title,
   referrer: 'origin-when-cross-origin',
@@ -234,6 +241,88 @@ export const cnappMetadata: Metadata = {
   },
   alternates: {
     canonical: '/products/cnapp',
+  },
+}
+
+// 病毒库下载中心 metadata 配置
+export const downloadMetadata: Metadata = {
+  title: '病毒库下载中心',
+  description: '提供最新病毒库文件下载服务，保护您的系统安全',
+  keywords: [
+    '病毒库下载',
+    '病毒定义',
+    '安全更新',
+    '病毒防护',
+    '系统安全',
+    '恶意软件防护',
+    '安全软件',
+    '病毒扫描',
+  ].join(','),
+  authors: [{ name: '病毒库下载中心' }],
+  creator: '病毒库下载中心',
+  publisher: '病毒库下载中心',
+  category: '系统安全',
+  metadataBase: new URL('https://dl.fyreshld.cn'),
+
+  // 图标配置
+  icons: {
+    icon: [
+      { url: '/globe.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/globe.svg'
+  },
+
+  // OpenGraph 配置
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    siteName: '病毒库下载中心',
+    title: '病毒库下载中心',
+    description: '提供最新病毒库文件下载服务',
+    url: 'https://dl.fyreshld.cn',
+    images: [
+      {
+        url: '/globe.svg',
+        width: 200,
+        height: 200,
+        alt: '病毒库下载中心',
+        type: 'image/svg+xml',
+      },
+    ],
+  },
+
+  // Twitter 配置
+  twitter: {
+    card: 'summary',
+    title: '病毒库下载中心',
+    description: '提供最新病毒库文件下载服务',
+    images: ['/globe.svg'],
+  },
+
+  // 搜索引擎优化
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  // 应用配置
+  applicationName: '病毒库下载中心',
+  referrer: 'origin-when-cross-origin',
+
+  // 格式检测
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
 }
 

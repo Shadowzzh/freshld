@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
 import { Toaster } from 'sonner'
-import { rootLayoutMetadata } from '@/lib/metadata'
+import { rootLayoutMetadata, downloadMetadata } from '@/lib/metadata'
 import './globals.css'
 import { env } from '@/env'
 
@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-export const metadata: Metadata = rootLayoutMetadata
+export const metadata: Metadata = env.DEPLOY_MODE === 'download' ? downloadMetadata : rootLayoutMetadata
 
 export const viewport: Viewport = {
   colorScheme: 'light',
