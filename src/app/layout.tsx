@@ -4,6 +4,7 @@ import Script from 'next/script'
 import { Toaster } from 'sonner'
 import { rootLayoutMetadata } from '@/lib/metadata'
 import './globals.css'
+import { env } from '@/env'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,7 +37,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Script
-          src='https://www.googletagmanager.com/gtag/js?id=G-LE3WTVCY2Y'
+          src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GA_ID}`}
           strategy='afterInteractive'
         />
         <Script id='google-analytics' strategy='afterInteractive'>
