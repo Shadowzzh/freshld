@@ -3,6 +3,8 @@
  * 自动检测性能并动态调整动画参数
  */
 
+import { env } from '@/env'
+
 export interface PerformanceMetrics {
   currentFPS: number
   averageFPS: number
@@ -262,7 +264,7 @@ export class AnimationPerformanceManager {
     this.currentTargetFPS = newTargetFPS
     this.frameInterval = 1000 / this.currentTargetFPS
 
-    if (this.config.debug || process.env.NODE_ENV === 'development') {
+    if (this.config.debug || env.NODE_ENV === 'development') {
       console.log(`🎯 动画帧率调整: ${oldFPS}fps → ${this.currentTargetFPS}fps`)
     }
   }

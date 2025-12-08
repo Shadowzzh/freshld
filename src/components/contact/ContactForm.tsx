@@ -8,6 +8,7 @@ import { useForm } from '@tanstack/react-form'
 import { z } from 'zod'
 import { cn } from '@/lib/utils'
 import { AnimatedList, AnimatedSlideIn } from '../ui/animated-section'
+import { env } from '@/env'
 
 const formSchema = z.object({
   company: z.string().min(1, '公司名称不能为空'),
@@ -84,7 +85,7 @@ export function ContactForm({ variant = 'default' }: ContactFormProps) {
 
   const form = useForm({
     defaultValues:
-      process.env.NODE_ENV === 'development' ? testData : defaultValues,
+      env.NODE_ENV === 'development' ? testData : defaultValues,
 
     onSubmit: async ({ value, formApi }) => {
       setIsSubmitting(true)

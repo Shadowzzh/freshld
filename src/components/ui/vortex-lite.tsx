@@ -7,6 +7,7 @@ import {
   DevicePerformanceDetector,
   type PerformanceMetrics,
 } from '@/lib/animation-performance'
+import { env } from '@/env'
 
 interface VortexProps {
   /** 子组件 */
@@ -428,7 +429,7 @@ export const Vortex = (props: VortexProps) => {
       </div>
 
       {/* 性能信息 - 开发环境显示 */}
-      {process.env.NODE_ENV === 'development' && autoOptimize && (
+      {env.NODE_ENV === 'development' && autoOptimize && (
         <div className='absolute top-2 right-2 z-20 bg-black/50 text-white p-2 rounded text-xs'>
           <div>粒子数: {currentParticleCount}</div>
           <div>发光效果: {glowEnabled ? '开启' : '关闭'}</div>

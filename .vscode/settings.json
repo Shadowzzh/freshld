@@ -12,5 +12,9 @@
   },
   "eslint.packageManager": "pnpm",
   "eslint.nodePath": ".pnpm",
-  "cSpell.words": ["CNAPP", "NGEP"]
+  "cSpell.words": [
+    "CNAPP",
+    "fyreshld",
+    "NGEP"
+  ]
 }
