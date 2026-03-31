@@ -1,0 +1,19 @@
+# Large files that should not be deployed
+*.tar
+*.tar.gz
+*.zip
+
+# Build artifacts that are regenerated
+/.next/cache/
+/out/
+
+# Development files
+/1.md
+/GEMINI.md
+/task.md
+
+# Large dependencies (will be installed fresh on Vercel)
+/node_modules/
+
+# Git files
+/.git/

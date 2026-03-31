@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     'localhost',
     '127.0.0.1',
     '192.168.4.131',
+    '100.109.26.102',
   ],
   // Enable output standalone for Docker
   output: 'standalone',
