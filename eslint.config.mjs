@@ -10,6 +10,17 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
+  {
+    ignores: [
+      '.next/**',
+      'out/**',
+      'node_modules/**',
+      'build/**',
+      'dist/**',
+      '*.config.{js,ts,mjs}',
+      'next-env.d.ts',
+    ],
+  },
   ...compat.extends(
     'next',
     'prettier',
