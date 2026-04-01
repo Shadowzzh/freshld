@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { env } from '@/env'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const hostname = request.headers.get('host')
   const url = request.nextUrl.clone()
 
