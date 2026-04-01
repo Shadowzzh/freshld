@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     inlineCss: true,
-    turbopack: {
-      root: __dirname,
-    },
   },
   // 允许的开发环境跨域来源
   allowedDevOrigins: [
