@@ -115,7 +115,7 @@ export const Footer = () => {
         <div className='border-t border-gray-700 pt-8'>
           <div className='flex flex-col md:flex-row justify-between items-center text-sm text-gray-400'>
             <div className='mb-4 md:mb-0'>
-              <p>&copy; 2025 明焰安全, Inc. 保留所有权利。</p>
+              <p>&copy; 2026 明焰安全, Inc. 保留所有权利。</p>
             </div>
             <div className='flex flex-wrap justify-center md:justify-end space-x-6'>
               <Link
