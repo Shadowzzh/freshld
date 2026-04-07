@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
     '127.0.0.1',
     '192.168.4.131',
     '100.109.26.102',
+    "https://test.logit.cn",
+    "test.logit.cn"
   ],
   // Enable output standalone for Docker
   output: 'standalone',

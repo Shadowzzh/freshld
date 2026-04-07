@@ -565,7 +565,7 @@ export default function NGEPScenarios() {
             <div
               className={cn(
                 'mt-16 p-12 rounded-2xl',
-                'bg-gradient-to-r from-gray-800 to-blue-700',
+                'bg-gradient-to-r from-gray-700 to-brand-secondary',
                 'text-white',
               )}
             >
