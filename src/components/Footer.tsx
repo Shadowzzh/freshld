@@ -1,16 +1,15 @@
 import Link from 'next/link'
 import { Facebook, Twitter, Linkedin, Youtube, Instagram } from 'lucide-react'
+import { productNavigationItems } from '@/lib/product-navigation'
 
 export const Footer = () => {
   const footerSections = [
     {
       title: '产品',
-      links: [
-        { name: 'NGEP 端点防护', href: '/products/ngep' },
-        { name: 'CNAPP 云原生安全', href: '/products/cnapp' },
-        { name: 'CDG 防勒索系统', href: '/products/cdg' },
-        { name: '产品对比', href: '/' },
-      ],
+      links: productNavigationItems.map(product => ({
+        name: product.footerTitle,
+        href: product.href,
+      })),
     },
     {
       title: '公司',
@@ -71,12 +70,12 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
+                    <Link
                       href={link.href}
                       className='text-gray-300 hover:text-white transition-colors duration-200 text-sm'
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

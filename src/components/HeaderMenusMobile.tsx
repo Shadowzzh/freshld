@@ -6,27 +6,7 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
-
-const services: { title: string; href: string; description: string }[] = [
-  {
-    title: '明焰 NGEP',
-    href: '/products/ngep',
-    description:
-      '提供深度防护和全面检查的统一主机安全产品，通过强大的实时监控和深入剖析主机行为。',
-  },
-  {
-    title: '明焰 CNAPP',
-    href: '/products/cnapp',
-    description:
-      '依托大数据和人工智能技术，为用户提供自适应、自学习的全栈式云原生应用安全防护。',
-  },
-  {
-    title: '明焰 CDG',
-    href: '/products/cdg',
-    description:
-      '针对勒索病毒提供有效的追踪和攻击路径展示，对系统和数据提供清洁的备份，并可以对已破坏的数据做清洁恢复。',
-  },
-]
+import { productNavigationItems } from '@/lib/product-navigation'
 
 interface HeaderMenusMobileProps {
   className?: string
@@ -53,7 +33,9 @@ export const HeaderMenusMobile = ({ className }: HeaderMenusMobileProps) => {
   }
 
   // 检查产品菜单是否应该高亮
-  const isProductActive = services.some(service => isActive(service.href))
+  const isProductActive = productNavigationItems.some(service =>
+    isActive(service.href),
+  )
 
   return (
     <div className={cn('lg:hidden', className)}>
@@ -167,7 +149,7 @@ export const HeaderMenusMobile = ({ className }: HeaderMenusMobileProps) => {
                         transition={{ duration: 0.2 }}
                         className='overflow-hidden bg-gray-50'
                       >
-                        {services.map(service => (
+                        {productNavigationItems.map(service => (
                           <Link
                             key={service.title}
                             href={service.href}

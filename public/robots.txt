@@ -12,6 +12,8 @@ Allow: /products/
 Allow: /products/ngep
 Allow: /products/cnapp
 Allow: /products/cdg
+Allow: /products/measure
+Allow: /products/aipentest
 
 # Static assets
 Allow: /images/

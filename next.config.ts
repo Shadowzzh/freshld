@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   // 允许的开发环境跨域来源
   allowedDevOrigins: [
     '100.103.79.86',
+    'mini',
     'localhost',
     '127.0.0.1',
     '192.168.4.131',
@@ -15,6 +16,9 @@ const nextConfig: NextConfig = {
     "https://test.logit.cn",
     "test.logit.cn"
   ],
+  turbopack: {
+    root: __dirname,
+  },
   // Enable output standalone for Docker
   output: 'standalone',
 }

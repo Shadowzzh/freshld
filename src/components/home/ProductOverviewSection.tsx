@@ -1,8 +1,15 @@
 import { cn } from '@/lib/utils'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Badge } from '@/components/ui/badge'
-import { Shield, Cloud, Target, Activity } from 'lucide-react'
-import { AnimatedList } from '@/components/ui/animated-section'
+import {
+  Activity,
+  BrainCircuit,
+  CheckCircle2,
+  Cloud,
+  Shield,
+  Target,
+} from 'lucide-react'
+import { AnimatedList, AnimatedSection } from '@/components/ui/animated-section'
 import { FeatureList } from '@/components/ui/shared/FeatureList'
 import { ActionButton } from '@/components/ui/shared/ActionButton'
 import { SectionBackground } from '@/components/ui/shared/SectionBackground'
@@ -92,6 +99,74 @@ function ProductCard({ product }: ProductCardProps) {
   )
 }
 
+function FeaturedAutomatedPentest() {
+  const features = [
+    '环境情报自动收集',
+    '潜在攻击面发现',
+    '攻击路径智能规划',
+    '可复现攻击计划',
+  ]
+
+  return (
+    <article
+      className={cn(
+        'group overflow-hidden rounded-2xl',
+        'bg-white/80 backdrop-blur-sm',
+        'border border-gray-200/60 transition-all duration-300',
+        'hover:border-primary/30 hover:-translate-y-2',
+      )}
+    >
+      <div className='grid gap-10 p-6 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10'>
+        <div className='min-w-0'>
+          <div className='flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary shadow-md shadow-black/5 transition-all duration-300 group-hover:scale-110'>
+            <BrainCircuit className='size-6' />
+          </div>
+          <div className='mt-6 flex flex-wrap items-center gap-3'>
+            <span className='text-xs font-semibold text-primary'>
+              AI 攻防能力
+            </span>
+            <Badge
+              variant='secondary'
+              className='bg-primary/10 text-primary shadow-sm'
+            >
+              自动化测试
+            </Badge>
+          </div>
+          <Link href='/products/aipentest'>
+            <h3 className='mt-3 text-2xl font-bold leading-tight text-gray-900 transition-colors hover:text-primary sm:text-3xl'>
+              自动化渗透测试
+            </h3>
+          </Link>
+          <p className='mt-4 max-w-2xl text-base leading-7 text-gray-600'>
+            利用大语言模型整合攻击知识，自动完成环境侦察和攻击面发现，规划攻击路径、生成可复现的攻击计划，并在授权范围内执行测试、生成渗透测试报告。
+          </p>
+        </div>
+
+        <div className='flex min-w-0 flex-col justify-between border-t border-gray-200 pt-6 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0'>
+          <div className='grid gap-3 sm:grid-cols-2 lg:grid-cols-1'>
+            {features.map(feature => (
+              <div
+                key={feature}
+                className='flex items-center gap-3 text-sm font-medium text-gray-700'
+              >
+                <CheckCircle2 className='size-4 shrink-0 text-primary' />
+                <span>{feature}</span>
+              </div>
+            ))}
+          </div>
+          <ActionButton
+            href='/products/aipentest'
+            variant='secondary'
+            className='mt-8 w-full sm:w-fit'
+          >
+            了解详情
+          </ActionButton>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 export function ProductOverviewSection() {
   const products = [
     {
@@ -177,7 +252,7 @@ export function ProductOverviewSection() {
         <SectionHeader
           title={
             <div className='flex-col items-center justify-center leading-tight'>
-              <div>四大核心产品</div>
+              <div>五大核心产品</div>
               <div>构建全方位网络安全防护体系</div>
             </div>
           }
@@ -185,6 +260,10 @@ export function ProductOverviewSection() {
           className='text-center'
         />
       </AnimatedList>
+
+      <AnimatedSection className='mb-6 sm:mb-8'>
+        <FeaturedAutomatedPentest />
+      </AnimatedSection>
 
       {/* 产品网格 */}
       <AnimatedList className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16'>
