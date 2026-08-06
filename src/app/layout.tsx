@@ -16,6 +16,8 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+const googleAnalyticsId = env.NEXT_PUBLIC_GA_ID
+
 export const metadata: Metadata =
   env.DEPLOY_MODE === 'download' ? downloadMetadata : rootLayoutMetadata
 
@@ -37,18 +39,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GA_ID}`}
-          strategy='afterInteractive'
-        />
-        <Script id='google-analytics' strategy='afterInteractive'>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-LE3WTVCY2Y');
-          `}
-        </Script>
+        {googleAnalyticsId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+              strategy='afterInteractive'
+            />
+            <Script id='google-analytics' strategy='afterInteractive'>
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', ${JSON.stringify(googleAnalyticsId)});
+              `}
+            </Script>
+          </>
+        )}
         {children}
         <Toaster position='top-right' richColors />
       </body>
