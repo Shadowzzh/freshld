@@ -6,12 +6,11 @@ import { Shield, ArrowRight, Play } from 'lucide-react'
 import { NumberTicker } from '@/components/ui/number-ticker'
 import { MetallicShineCard } from '@/components/ui/metallic-shine'
 import { ScrollIndicator } from '@/components/ui/scroll-indicator'
-import { VortexDynamic } from '@/components/ui/vortex-dynamic'
 import Link from 'next/link'
 
 const stats = [
   { value: 1000, label: '攻击场景', suffix: '+' },
-  { value: 24, label: '持续验证', suffix: '/7', value2: 7 },
+  { value: 7, label: '持续验证', suffix: 'x24' },
 ]
 
 const features = [
@@ -30,12 +29,37 @@ export default function MeasureHero() {
       className={cn(
         'flex flex-col items-center justify-center',
         'relative min-h-[calc(100vh-4rem)]',
-        'bg-gradient-to-br from-slate-800 via-blue-600 to-slate-700',
+        'bg-gradient-to-br from-slate-700 via-[var(--brand-secondary)] to-slate-600',
         'overflow-hidden',
         'py-12',
       )}
     >
-      <VortexDynamic rangeY={700} particleCount={100} baseHue={200} />
+      {/* Aurora 叠加层 - 蓝色系匹配副色 */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div
+          style={
+            {
+              "--aurora": "repeating-linear-gradient(100deg,var(--brand-secondary)_10%,#60a5fa_15%,#93c5fd_20%,#a5b4fc_25%,#3b82f6_30%)",
+              "--dark-gradient": "repeating-linear-gradient(100deg,#000_0%,#000_7%,transparent_10%,transparent_12%,#000_16%)",
+              "--white-gradient": "repeating-linear-gradient(100deg,#fff_0%,#fff_7%,transparent_10%,transparent_12%,#fff_16%)",
+              "--blue-300": "#93c5fd",
+              "--blue-400": "#60a5fa",
+              "--blue-500": "#3b82f6",
+              "--indigo-300": "#a5b4fc",
+              "--violet-200": "#ddd6fe",
+              "--black": "#000",
+              "--white": "#fff",
+              "--transparent": "transparent",
+            } as React.CSSProperties
+          }
+        >
+          <div
+            className={cn(
+              `after:animate-aurora pointer-events-none absolute -inset-[10px] [background-image:var(--white-gradient),var(--aurora)] [background-size:300%,_200%] [background-position:50%_50%,50%_50%] opacity-50 blur-[10px] invert filter will-change-transform [--aurora:repeating-linear-gradient(100deg,var(--blue-500)_10%,var(--indigo-300)_15%,var(--blue-300)_20%,var(--violet-200)_25%,var(--blue-400)_30%)] [--dark-gradient:repeating-linear-gradient(100deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)] [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] after:[background-size:200%,_100%] after:[background-attachment:fixed] after:mix-blend-difference after:content-[""] dark:[background-image:var(--dark-gradient),var(--aurora)] dark:invert-0 after:dark:[background-image:var(--dark-gradient),var(--aurora)] [mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`,
+            )}
+          ></div>
+        </div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -58,7 +82,7 @@ export default function MeasureHero() {
           <div className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/30 border border-primary/15 mb-6'>
             <Shield className='w-4 h-4 text-primary' />
             <span className='text-sm font-semibold text-primary'>
-              明焰 度量验证平台
+              明焰 安全验证平台
             </span>
           </div>
         </motion.div>
@@ -225,16 +249,6 @@ export default function MeasureHero() {
                   delay={0.8 + index * 0.2}
                   decimalPlaces={stat.label === '模拟准确率' ? 1 : 0}
                 />
-                {stat.value2 && (
-                  <>
-                    /
-                    <NumberTicker
-                      className='text-3xl font-bold text-primary'
-                      value={stat.value2}
-                      delay={0.8 + index * 0.2}
-                    />
-                  </>
-                )}
                 {stat.suffix}
               </div>
               <div className='text-sm text-blue-200'>{stat.label}</div>

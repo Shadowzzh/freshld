@@ -126,6 +126,11 @@ export const rootLayoutMetadata: Metadata = {
     yahoo: 'your-yahoo-verification-code',
   },
 
+  // 图标配置
+  icons: {
+    icon: [{ url: '/favicon.ico', sizes: 'any' }],
+  },
+
   // 应用配置
   applicationName: siteMetadata.title,
   referrer: 'origin-when-cross-origin',
@@ -171,45 +176,6 @@ export const homeMetadata: Metadata = {
   },
   alternates: {
     canonical: '/',
-  },
-}
-
-// 关于我们页面 metadata 配置
-export const aboutMetadata: Metadata = {
-  title: '关于我们 - 明焰安全发展历程',
-  description:
-    '了解明焰安全的发展历程，从2012年浙江大学互联网安全实验室成立，到2025年银联10万节点验收成功，见证我们在网络安全领域的专业成长。',
-  keywords: [
-    ...commonKeywords,
-    '关于我们',
-    '公司历程',
-    '发展历史',
-    '浙江大学',
-    '杭州奇盾',
-    'CNAPP',
-    '银联验收',
-  ].join(','),
-  openGraph: {
-    title: '关于我们 - 明焰安全发展历程',
-    description: '见证明焰安全在网络安全领域的专业成长历程',
-    url: '/about',
-    images: [
-      {
-        url: '/images/about-og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: '明焰安全发展历程',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: '关于我们 - 明焰安全发展历程',
-    description: '见证明焰安全在网络安全领域的专业成长历程',
-    images: ['/images/about-twitter-card.jpg'],
-  },
-  alternates: {
-    canonical: '/about',
   },
 }
 
@@ -275,90 +241,82 @@ export const cnappMetadata: Metadata = {
   },
 }
 
-// 生成动态 metadata 的工具函数
-export function generatePageMetadata(
-  title: string,
-  description: string,
-  path: string,
-  additionalKeywords: string[] = [],
-  ogImage?: string,
-): Metadata {
-  const fullTitle = `${title} | ${siteMetadata.title}`
-  const keywords = [...commonKeywords, ...additionalKeywords].join(',')
-  const canonicalUrl = `${siteMetadata.baseUrl}${path}`
+// 病毒库下载中心 metadata 配置
+export const downloadMetadata: Metadata = {
+  title: '病毒库下载中心',
+  description: '提供最新病毒库文件下载服务，保护您的系统安全',
+  keywords: [
+    '病毒库下载',
+    '病毒定义',
+    '安全更新',
+    '病毒防护',
+    '系统安全',
+    '恶意软件防护',
+    '安全软件',
+    '病毒扫描',
+  ].join(','),
+  authors: [{ name: '病毒库下载中心' }],
+  creator: '病毒库下载中心',
+  publisher: '病毒库下载中心',
+  category: '系统安全',
+  metadataBase: new URL('https://dl.fyreshld.cn'),
 
-  return {
-    /** 标题 */
-    title,
-    /** 描述 */
-    description,
-    /** 关键词 */
-    keywords,
-    /** 作者 */
-    authors: [{ name: siteMetadata.author }],
-    creator: siteMetadata.author,
-    /** 发布者 */
-    publisher: siteMetadata.author,
-    /** 分类 */
-    category: siteMetadata.category,
-    /** OpenGraph */
-    openGraph: {
-      /** 标题 */
-      title: fullTitle,
-      description,
-      /** 链接 */
-      url: path,
-      /** 类型 */
-      type: 'website',
-      /** 语言 */
-      locale: siteMetadata.locale,
-      /** 站点名称 */
-      siteName: siteMetadata.title,
-      /** 图片 */
-      images: ogImage
-        ? [
-            {
-              url: ogImage,
-              width: 1200,
-              height: 630,
-              alt: title,
-            },
-          ]
-        : undefined,
-    },
-    twitter: {
-      /** 卡片类型 */
-      card: 'summary_large_image',
-      /** 标题 */
-      title: fullTitle,
-      /** 描述 */
-      description,
-      /** 图片 */
-      images: ogImage ? [ogImage.replace('-og-', '-twitter-')] : undefined,
-    },
-    /** 搜索引擎优化 */
-    robots: {
-      /** 索引 */
-      index: true,
-      /** 跟随 */
-      follow: true,
-      /** Google 搜索引擎优化 */
-      googleBot: {
-        /** 索引 */
-        index: true,
-        /** 跟随 */
-        follow: true,
-        /** 视频预览 */
-        'max-video-preview': -1,
-        /** 图片预览 */
-        'max-image-preview': 'large',
-        /** 片段预览 */
-        'max-snippet': -1,
+  // 图标配置
+  icons: {
+    icon: [{ url: '/globe.svg', type: 'image/svg+xml' }],
+    apple: '/globe.svg',
+  },
+
+  // OpenGraph 配置
+  openGraph: {
+    type: 'website',
+    locale: 'zh_CN',
+    siteName: '病毒库下载中心',
+    title: '病毒库下载中心',
+    description: '提供最新病毒库文件下载服务',
+    url: 'https://dl.fyreshld.cn',
+    images: [
+      {
+        url: '/globe.svg',
+        width: 200,
+        height: 200,
+        alt: '病毒库下载中心',
+        type: 'image/svg+xml',
       },
+    ],
+  },
+
+  // Twitter 配置
+  twitter: {
+    card: 'summary',
+    title: '病毒库下载中心',
+    description: '提供最新病毒库文件下载服务',
+    images: ['/globe.svg'],
+  },
+
+  // 搜索引擎优化
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
-    /** 替代链接 */
-    alternates: {
-      canonical: canonicalUrl,
-    },
-  }
+  },
+
+  // 应用配置
+  applicationName: '病毒库下载中心',
+  referrer: 'origin-when-cross-origin',
+
+  // 格式检测
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
 }

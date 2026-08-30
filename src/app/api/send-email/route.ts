@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import resend from '@/lib/resend'
 import { EmailTemplate } from '@/components/email-template'
+import { env } from '@/env'
 
 /**
  * 表单验证
@@ -19,11 +20,11 @@ const emailSchema = z.object({
 })
 
 export async function POST(request: NextRequest) {
-  if (!process.env.RECEIVE_EMAIL) {
+  if (!env.RECEIVE_EMAIL) {
     return NextResponse.json({ error: '接收邮箱未配置' }, { status: 500 })
   }
 
-  if (!process.env.RESEND_API_KEY) {
+  if (!env.RESEND_API_KEY) {
     return NextResponse.json(
       { error: 'RESEND_API_KEY 未配置' },
       { status: 500 },
@@ -48,7 +49,7 @@ export async function POST(request: NextRequest) {
     // 发送邮件
     const { data, error } = await resend.emails.send({
       from: '官网渠道 <site@fyreshld.com>',
-      to: [process.env.RECEIVE_EMAIL],
+      to: [env.RECEIVE_EMAIL],
       subject: '官网新增客户登记',
       react: email,
     })

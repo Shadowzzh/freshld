@@ -56,7 +56,7 @@ const capabilities = [
       {
         icon: Eye,
         title: '实时监测',
-        description: '24/7监控端点活动，实时分析进程、网络和文件行为',
+        description: '7x24监控端点活动，实时分析进程、网络和文件行为',
       },
       {
         icon: Target,

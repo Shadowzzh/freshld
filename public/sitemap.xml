@@ -13,7 +13,7 @@
   <!-- 关于我们 -->
   <url>
     <loc>https://www.mingyan.com/about</loc>
-    <lastmod>2025-01-23</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -54,6 +54,22 @@
   <url>
     <loc>https://www.mingyan.com/products/cdg</loc>
     <lastmod>2025-01-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 安全验证平台 -->
+  <url>
+    <loc>https://www.mingyan.com/products/measure</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 自动化渗透测试 -->
+  <url>
+    <loc>https://www.mingyan.com/products/aipentest</loc>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

@@ -414,7 +414,7 @@ export default function NGEPArchitecture() {
         <AnimatedSection>
           <div
             className={cn(
-              'bg-gradient-to-r from-gray-800 to-blue-700',
+              'bg-gradient-to-r from-gray-700 to-brand-secondary',
               'rounded-3xl p-8 md:p-12 mb-20',
               'text-white',
             )}

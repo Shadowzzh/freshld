@@ -2,7 +2,6 @@
 
 import { Award, Shield } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { NumberTicker } from '@/components/ui/number-ticker'
 import { AnimatedList } from '@/components/ui/animated-section'
 
 export function WhyChooseUs() {
@@ -13,7 +12,6 @@ export function WhyChooseUs() {
       description:
         '我们拥有基于攻击链的威胁检测和实时溯源技术，能够实现进程级别的全路径溯源分析，帮助用户快速定位问题根源并进行取证。我们的产品在勒索防护、云原生安全、APT防御等多个关键领域表现卓越。',
       highlight: '进程级全路径溯源',
-      stats: { value: 99.9, suffix: '%', label: '检测准确率' },
     },
     {
       icon: Award,
@@ -21,7 +19,6 @@ export function WhyChooseUs() {
       description:
         '明焰安全已成功服务于中国银联、蚂蚁金服、中国联通、中国移动、中船重工、华为、阿里云、中兴、浙商证券、绍兴银行等众多知名企业和政府机构，覆盖金融、企业、政府、云计算等多个重点行业。',
       highlight: '知名企业客户',
-      stats: { value: 20, suffix: '+', label: '企业客户' },
     },
   ]
 
@@ -69,22 +66,6 @@ export function WhyChooseUs() {
                 <p className='text-muted-foreground leading-relaxed'>
                   {advantage.description}
                 </p>
-              </div>
-
-              {/* 数据统计 */}
-              <div className='border-t border-primary/15 pt-6'>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-primary mb-1'>
-                    <NumberTicker
-                      value={advantage.stats.value}
-                      decimalPlaces={advantage.stats.value < 10 ? 1 : 0}
-                    />
-                    {advantage.stats.suffix}
-                  </div>
-                  <div className='text-sm text-muted-foreground'>
-                    {advantage.stats.label}
-                  </div>
-                </div>
               </div>
             </div>
           ))}

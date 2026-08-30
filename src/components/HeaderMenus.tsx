@@ -11,33 +11,7 @@ import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 import { AnimatedBackground } from './ui/animated-background'
 import { HeaderNavLink } from '@/components/HeaderNavLink'
-
-const services: { title: string; href: string; description: string }[] = [
-  {
-    title: '明焰 NGEP',
-    href: '/products/ngep',
-    description:
-      '提供深度防护和全面检查的统一主机安全产品，通过强大的实时监控和深入剖析主机行为。',
-  },
-  {
-    title: '明焰 CNAPP',
-    href: '/products/cnapp',
-    description:
-      '依托大数据和人工智能技术，为用户提供自适应、自学习的全栈式云原生应用安全防护。',
-  },
-  {
-    title: '明焰 CDG',
-    href: '/products/cdg',
-    description:
-      '针对勒索病毒提供有效的追踪和攻击路径展示，对系统和数据提供清洁的备份，并可以对已破坏的数据做清洁恢复。',
-  },
-  {
-    title: '明焰安全度量验证平台',
-    href: '/products/measure',
-    description:
-      '明焰安全度量验证平台，基于顶尖攻防实战经验与前沿技术，提供全自动化、无害化的安全验证服务 。',
-  },
-]
+import { productNavigationItems } from '@/lib/product-navigation'
 
 interface NavigationMenuProps {
   className?: string
@@ -58,17 +32,22 @@ function ListItem({
       <HeaderNavLink
         href={href}
         variant='menu'
-        className={cn(isActive && 'bg-accent/20')}
+        className={cn('block rounded-lg p-4', isActive && 'bg-accent/20')}
       >
         <div
           className={cn(
-            'text-lg font-medium',
-            isActive ? 'text-primary' : 'text-black',
+            'text-base font-medium leading-tight',
+            isActive ? 'text-primary' : 'text-foreground',
           )}
         >
           {title}
         </div>
-        <p className='text-muted-foreground'>{children}</p>
+        <p
+          className='mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground'
+          title={typeof children === 'string' ? children : undefined}
+        >
+          {children}
+        </p>
       </HeaderNavLink>
     </li>
   )
@@ -107,7 +86,7 @@ export const HeaderMenus = (props: NavigationMenuProps) => {
           </NavigationMenuTrigger>
 
           <NavigationMenuContent>
-            <ul className='grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
+            <ul className='grid w-[90vw] max-w-[600px] gap-3 p-2 md:w-[500px] md:grid-cols-1 lg:w-[600px]'>
               <AnimatedBackground
                 className='rounded-lg bg-zinc-100 dark:bg-zinc-800'
                 transition={{
@@ -117,9 +96,9 @@ export const HeaderMenus = (props: NavigationMenuProps) => {
                 }}
                 enableHover
               >
-                {services.map(service => (
+                {productNavigationItems.map(service => (
                   <ListItem
-                    className='relative z-10 p-1'
+                    className='relative z-10'
                     data-id={service.title}
                     key={service.title}
                     title={service.title}

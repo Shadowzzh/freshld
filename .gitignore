@@ -42,3 +42,5 @@ next-env.d.ts
 
 /resource
 /.claude/
+/.agents/
+skills-lock.json

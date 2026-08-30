@@ -11,5 +11,6 @@
     "source.fixAll.eslint": "explicit"
   },
   "eslint.packageManager": "pnpm",
-  "eslint.nodePath": ".pnpm"
+  "eslint.nodePath": ".pnpm",
+  "cSpell.words": ["CNAPP", "fyreshld", "NGEP"]
 }

@@ -17,7 +17,6 @@ import {
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { NumberTicker } from '@/components/ui/number-ticker'
 import { AnimatedSection, AnimatedList } from '@/components/ui/animated-section'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -87,11 +86,7 @@ const customerCases = [
     ],
     result:
       '快速遏制和清理勒索病毒，保护数据安全，及时恢复业务，实现了全网威胁监控和自动阻断',
-    metrics: [
-      { label: '恢复时间', value: '2小时' },
-      { label: '数据损失', value: '0%' },
-      { label: '业务中断', value: '最小化' },
-    ],
+
     color: 'from-primary to-primary/80',
   },
   {
@@ -107,11 +102,7 @@ const customerCases = [
       '通过全路径溯源定位并清理勒索病毒和非法外联',
     ],
     result: '解决了勒索软件问题，同时阻止了非法外联导致的信息泄露',
-    metrics: [
-      { label: '威胁清除', value: '100%' },
-      { label: '外联阻断', value: '实时' },
-      { label: '生产恢复', value: '24小时' },
-    ],
+
     color: 'from-primary to-primary/80',
   },
 ]
@@ -121,33 +112,17 @@ const benefits = [
     icon: Zap,
     title: '快速响应',
     description: '毫秒级威胁检测，秒级应急响应',
-    stats: (
-      <>
-        <NumberTicker className='font-bold text-primary' value={100} />
-        ms 响应时间
-      </>
-    ),
   },
   {
     icon: TrendingUp,
     title: '业务连续',
     description: '最小化业务中断，确保业务连续性',
-    stats: (
-      <>
-        <NumberTicker
-          className='font-bold text-primary'
-          decimalPlaces={1}
-          value={99.9}
-        />
-        % 业务可用性
-      </>
-    ),
   },
   {
     icon: Users,
     title: '专业服务',
     description: '7×24小时专业技术支持和应急响应',
-    stats: '24/7 技术支持',
+    stats: '7x24 技术支持',
   },
 ]
 
@@ -308,7 +283,7 @@ export function CDGScenarios() {
                   </div>
 
                   {/* 解决方案 */}
-                  <div className='mb-6'>
+                  <div>
                     <h5 className='font-semibold text-gray-900 mb-3'>
                       解决方案
                     </h5>
@@ -320,38 +295,6 @@ export function CDGScenarios() {
                         </div>
                       ))}
                     </div>
-                  </div>
-
-                  {/* 效果指标 */}
-                  <div className='mb-6'>
-                    <h5 className='font-semibold text-gray-900 mb-3'>
-                      关键指标
-                    </h5>
-                    <div className='grid grid-cols-3 gap-4'>
-                      {caseItem.metrics.map((metric, metricIndex) => (
-                        <div
-                          key={metricIndex}
-                          className='text-center p-3 rounded-lg bg-gray-50'
-                        >
-                          <div className='text-lg font-bold text-primary mb-1'>
-                            {metric.value}
-                          </div>
-                          <div className='text-xs text-gray-600'>
-                            {metric.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* 客户评价 */}
-                  <div className='p-4 rounded-lg bg-gradient-to-r from-gray-50 to-gray-100 border-l-4 border-primary'>
-                    <h5 className='font-semibold text-gray-900 mb-2'>
-                      客户评价
-                    </h5>
-                    <p className='text-sm text-gray-700 leading-relaxed italic'>
-                      &ldquo;{caseItem.result}&rdquo;
-                    </p>
                   </div>
                 </Card>
               ))}
@@ -374,7 +317,7 @@ export function CDGScenarios() {
             </div>
 
             <AnimatedList
-              className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8'
+              className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-8'
               direction='up'
               itemClassName='text-center'
             >
@@ -389,9 +332,6 @@ export function CDGScenarios() {
                   <p className='text-sm text-gray-600 mb-3 leading-relaxed'>
                     {benefit.description}
                   </p>
-                  <div className='text-lg font-bold text-primary'>
-                    {benefit.stats}
-                  </div>
                 </div>
               ))}
             </AnimatedList>

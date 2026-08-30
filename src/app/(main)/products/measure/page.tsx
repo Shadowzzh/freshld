@@ -11,11 +11,11 @@ import {
 import { MeasureCTA } from '@/components/measure/MeasureCTA'
 
 export const metadata: Metadata = {
-  title: '度量验证平台 - 网络攻防实战演练平台 | 明焰安全',
+  title: '安全验证平台 - 网络攻防实战演练平台 | 明焰安全',
   description:
-    '明焰安全度量验证平台基于真实威胁情报的全自动化安全验证平台。7×24小时追踪APT组织动态，1000+攻击场景，99.9%模拟准确率，0%生产影响。支持护网、勒索防护、钓鱼邮件、边界验证等多种应用场景。',
+    '明焰安全验证平台基于真实威胁情报的全自动化安全验证平台。7×24小时追踪APT组织动态，1000+攻击场景。支持护网、勒索防护、钓鱼邮件、边界验证等多种应用场景。',
   keywords: [
-    '度量验证平台',
+    '安全验证平台',
     '明焰安全',
     '攻防演练',
     'APT追踪',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   category: '网络安全',
 
   openGraph: {
-    title: '度量验证平台 - 网络攻防实战演练平台',
+    title: '安全验证平台 - 网络攻防实战演练平台',
     description:
       '基于真实威胁情报的全自动化安全验证平台，7×24小时追踪APT组织动态，验证您的安全防线。',
     type: 'website',

@@ -534,11 +534,10 @@ export default function NGEPScenarios() {
               </div>
 
               <AnimatedList
-                className={cn('grid grid-cols-2 md:grid-cols-4 gap-8')}
+                className={cn('grid grid-cols-3 md:grid-cols-3 gap-8')}
               >
                 {[
                   { value: 8, label: '核心应用场景', suffix: '' },
-                  { value: 95, label: '威胁阻断率', suffix: '%' },
                   { value: 30, label: '平均响应时间', suffix: 's' },
                   { value: 1000, label: '成功案例', suffix: '+' },
                 ].map((stat, index) => (
@@ -566,7 +565,7 @@ export default function NGEPScenarios() {
             <div
               className={cn(
                 'mt-16 p-12 rounded-2xl',
-                'bg-gradient-to-r from-gray-800 to-blue-700',
+                'bg-gradient-to-r from-gray-700 to-brand-secondary',
                 'text-white',
               )}
             >

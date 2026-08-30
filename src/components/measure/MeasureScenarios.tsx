@@ -135,7 +135,7 @@ export default function MeasureScenarios() {
               全面覆盖企业安全防护薄弱环节
             </h2>
             <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-              明焰安全度量验证平台针对企业面临的各类安全挑战，提供丰富的应用场景，
+              明焰安全验证平台针对企业面临的各类安全挑战，提供丰富的应用场景，
               帮助您全方位提升安全防护能力
             </p>
           </AnimatedSection>

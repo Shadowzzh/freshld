@@ -10,18 +10,17 @@ const RenderPc = () => {
   return (
     <>
       <Image
-        src='/images/black-bg.png'
+        src='/images/blue-bg.webp'
         alt='Background'
         onLoad={() => setImageLoaded(true)}
         fill
         className={cn(
-          'brightness-0 saturate-0',
           'absolute left-0 z-10',
           'object-cover',
           'transition-[opacity,translate] duration-[0ms,3000ms] ease-out-circ',
           imageLoaded
-            ? 'opacity-100 translate-x-20'
-            : 'opacity-0 translate-x-0',
+            ? 'opacity-100 -translate-x-50'
+            : 'opacity-0 -translate-x-100',
         )}
         priority
         quality={100}
@@ -40,7 +39,7 @@ const RenderPc = () => {
         <div
           className={cn(
             'absolute left-0 top-0 size-full',
-            'bg-[#F6A834]/70',
+            'bg-primary/70',
             'backdrop-blur-xs',
           )}
         />
@@ -79,7 +78,7 @@ export const HeroBackground = () => {
         'transition-opacity duration-300',
         'absolute left-0 top-0',
         'min-h-[100vh] w-full',
-        'bg-black',
+        'bg-brand-secondary',
       )}
     >
       {isMobile ? <RenderMobile /> : <RenderPc />}

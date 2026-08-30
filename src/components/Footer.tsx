@@ -1,16 +1,15 @@
 import Link from 'next/link'
 import { Facebook, Twitter, Linkedin, Youtube, Instagram } from 'lucide-react'
+import { productNavigationItems } from '@/lib/product-navigation'
 
 export const Footer = () => {
   const footerSections = [
     {
       title: '产品',
-      links: [
-        { name: 'NGEP 端点防护', href: '/products/ngep' },
-        { name: 'CNAPP 云原生安全', href: '/products/cnapp' },
-        { name: 'CDG 防勒索系统', href: '/products/cdg' },
-        { name: '产品对比', href: '/' },
-      ],
+      links: productNavigationItems.map(product => ({
+        name: product.footerTitle,
+        href: product.href,
+      })),
     },
     {
       title: '公司',
@@ -71,12 +70,12 @@ export const Footer = () => {
               <ul className='space-y-2'>
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
+                    <Link
                       href={link.href}
                       className='text-gray-300 hover:text-white transition-colors duration-200 text-sm'
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -115,7 +114,7 @@ export const Footer = () => {
         <div className='border-t border-gray-700 pt-8'>
           <div className='flex flex-col md:flex-row justify-between items-center text-sm text-gray-400'>
             <div className='mb-4 md:mb-0'>
-              <p>&copy; 2025 明焰安全, Inc. 保留所有权利。</p>
+              <p>&copy; 2026 明焰安全, Inc. 保留所有权利。</p>
             </div>
             <div className='flex flex-wrap justify-center md:justify-end space-x-6'>
               <Link

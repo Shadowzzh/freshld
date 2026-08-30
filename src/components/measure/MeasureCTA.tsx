@@ -13,7 +13,7 @@ export function MeasureCTA() {
             <div className='relative p-8 rounded-2xl border border-primary/15 bg-card/50 backdrop-blur-sm'>
               <CheckCircle className='w-12 h-12 text-primary mx-auto mb-4' />
               <h3 className='text-2xl font-bold text-foreground mb-4'>
-                选择明焰安全度量验证平台
+                选择明焰安全验证平台
               </h3>
               <p className='text-muted-foreground mb-6 max-w-2xl mx-auto'>
                 让您在网络攻防对抗中占据先机，构建真正安全、可信的数字化未来

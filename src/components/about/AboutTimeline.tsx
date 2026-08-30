@@ -8,6 +8,32 @@ import { cn } from '@/lib/utils'
 export function AboutTimeline() {
   const timelineData = [
     {
+      title: '2026',
+      content: (
+        <TimelineContent
+          description='AI 自动化渗透测试在全国比赛中获得第五名（三等奖），推进本体论大模型 AI 智能体应用及 AI 安全运营中心解决方案。'
+          items={[
+            { label: '自动化渗透全国第五' },
+            { label: '本体论大模型 AI 智能体' },
+            { label: 'AI 安全运营中心' },
+          ]}
+        />
+      ),
+    },
+    {
+      title: '2025',
+      content: (
+        <TimelineContent
+          description='开展 AI 智能体安全与自动化渗透测试原型研发，推出数字身份底座解决方案。'
+          items={[
+            { label: 'AI 智能体安全' },
+            { label: '自动化渗透测试原型' },
+            { label: '数字身份底座' },
+          ]}
+        />
+      ),
+    },
+    {
       title: '2024',
       content: (
         <TimelineContent description='银联 10 万节点验收成功' items={[]} />
@@ -72,7 +98,11 @@ export function AboutTimeline() {
       content: (
         <TimelineContent
           description='国际领先论文发表 完成天使轮融资，同年杭州奇盾成立'
-          items={[{ label: '天使轮融资' }, { label: '杭州奇盾成立' }]}
+          items={[
+            { label: '天使轮融资' },
+            { label: '杭州奇盾成立' },
+            { label: '国际论文发表' },
+          ]}
         />
       ),
     },
@@ -81,7 +111,7 @@ export function AboutTimeline() {
       content: (
         <TimelineContent
           description='启动主机APT防御国家级科研课题'
-          items={[{ label: '国际论文发表' }]}
+          items={[{ label: 'APT防御课题' }]}
         />
       ),
     },
@@ -90,7 +120,7 @@ export function AboutTimeline() {
       content: (
         <TimelineContent
           description='浙江大学互联网安全实验室成立'
-          items={[{ label: '浙大安全实验室' }, { label: 'APT防御课题' }]}
+          items={[{ label: '浙大安全实验室' }]}
         />
       ),
     },
